@@ -113,13 +113,13 @@
   <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> <span class="keyword">static</span> Annotation[] getAnnotations(<span class="keyword">final</span> Class clazz) {</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;48</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;49</td>  <td class="nbHitsCovered">&nbsp;598</td>  <td class="src"><pre class="src">&nbsp;        Annotation[] annotations = clazz.getAnnotations();</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;50</td>  <td class="nbHitsCovered">&nbsp;598</td>  <td class="src"><pre class="src">&nbsp;        Annotation[] result = <span class="keyword">new</span> Annotation[annotations.length];</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;51</td>  <td class="nbHitsCovered"><a title="Line 51: Conditional coverage 100% (2/2).">&nbsp;1168</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 51: Conditional coverage 100% (2/2).">        <span class="keyword">for</span> (<span class="keyword">int</span> i = 0; i &lt; annotations.length; i++) {</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;52</td>  <td class="nbHitsCovered">&nbsp;570</td>  <td class="src"><pre class="src">&nbsp;            result[i] = getAnnotation(clazz, annotations[i].annotationType());</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;49</td>  <td class="nbHitsCovered">&nbsp;660</td>  <td class="src"><pre class="src">&nbsp;        Annotation[] annotations = clazz.getAnnotations();</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;50</td>  <td class="nbHitsCovered">&nbsp;660</td>  <td class="src"><pre class="src">&nbsp;        Annotation[] result = <span class="keyword">new</span> Annotation[annotations.length];</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;51</td>  <td class="nbHitsCovered"><a title="Line 51: Conditional coverage 100% (2/2).">&nbsp;1287</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 51: Conditional coverage 100% (2/2).">        <span class="keyword">for</span> (<span class="keyword">int</span> i = 0; i &lt; annotations.length; i++) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;52</td>  <td class="nbHitsCovered">&nbsp;627</td>  <td class="src"><pre class="src">&nbsp;            result[i] = getAnnotation(clazz, annotations[i].annotationType());</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;53</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;54</td>  <td class="nbHitsCovered">&nbsp;598</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> result;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;54</td>  <td class="nbHitsCovered">&nbsp;660</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> result;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;55</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;56</td>  <td class="nbHits">&nbsp;</td>
@@ -148,10 +148,10 @@
   <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T <span class="keyword">extends</span> Annotation&gt; T getAnnotation(<span class="keyword">final</span> Class clazz, <span class="keyword">final</span> Class&lt;T&gt; annotationClass) {</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;68</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;<span class="comment">//        if (clazz.isAnnotationPresent(annotationClass)) {</span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;69</td>  <td class="nbHitsCovered">&nbsp;2058</td>  <td class="src"><pre class="src">&nbsp;            Class proxyClass = Proxy.getProxyClass(DefaultAnnotation.<span class="keyword">class</span>.getClassLoader(), <span class="keyword">new</span> Class[] { annotationClass });</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;69</td>  <td class="nbHitsCovered">&nbsp;2266</td>  <td class="src"><pre class="src">&nbsp;            Class proxyClass = Proxy.getProxyClass(DefaultAnnotation.<span class="keyword">class</span>.getClassLoader(), <span class="keyword">new</span> Class[] { annotationClass });</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;70</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;            <span class="keyword">try</span> {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;71</td>  <td class="nbHitsCovered">&nbsp;2058</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> (T) proxyClass.getConstructor(<span class="keyword">new</span> Class[] { InvocationHandler.<span class="keyword">class</span> }).newInstance(<span class="keyword">new</span> Object[] { <span class="keyword">new</span> DefaultAnnotation(annotationClass, clazz.getAnnotation(annotationClass), clazz) });</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;71</td>  <td class="nbHitsCovered">&nbsp;2266</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> (T) proxyClass.getConstructor(<span class="keyword">new</span> Class[] { InvocationHandler.<span class="keyword">class</span> }).newInstance(<span class="keyword">new</span> Object[] { <span class="keyword">new</span> DefaultAnnotation(annotationClass, clazz.getAnnotation(annotationClass), clazz) });</pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;72</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            } <span class="keyword">catch</span> (IllegalArgumentException e) {</span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;73</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;                e.printStackTrace();</span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;74</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            } <span class="keyword">catch</span> (SecurityException e) {</span></pre></td></tr>
@@ -190,13 +190,13 @@
   <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> <span class="keyword">static</span> Annotation[] getAnnotations(<span class="keyword">final</span> Method method) {</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;97</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;98</td>  <td class="nbHitsCovered">&nbsp;10</td>  <td class="src"><pre class="src">&nbsp;        Annotation[] annotations = method.getAnnotations();</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;99</td>  <td class="nbHitsCovered">&nbsp;10</td>  <td class="src"><pre class="src">&nbsp;        Annotation[] result = <span class="keyword">new</span> Annotation[annotations.length];</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;100</td>  <td class="nbHitsCovered"><a title="Line 100: Conditional coverage 100% (2/2).">&nbsp;20</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 100: Conditional coverage 100% (2/2).">        <span class="keyword">for</span> (<span class="keyword">int</span> i = 0; i &lt; annotations.length; i++) {</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;101</td>  <td class="nbHitsCovered">&nbsp;10</td>  <td class="src"><pre class="src">&nbsp;            result[i] = getAnnotation(method, annotations[i].annotationType());</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;98</td>  <td class="nbHitsCovered">&nbsp;11</td>  <td class="src"><pre class="src">&nbsp;        Annotation[] annotations = method.getAnnotations();</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;99</td>  <td class="nbHitsCovered">&nbsp;11</td>  <td class="src"><pre class="src">&nbsp;        Annotation[] result = <span class="keyword">new</span> Annotation[annotations.length];</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;100</td>  <td class="nbHitsCovered"><a title="Line 100: Conditional coverage 100% (2/2).">&nbsp;22</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 100: Conditional coverage 100% (2/2).">        <span class="keyword">for</span> (<span class="keyword">int</span> i = 0; i &lt; annotations.length; i++) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;101</td>  <td class="nbHitsCovered">&nbsp;11</td>  <td class="src"><pre class="src">&nbsp;            result[i] = getAnnotation(method, annotations[i].annotationType());</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;102</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;103</td>  <td class="nbHitsCovered">&nbsp;10</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> result;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;103</td>  <td class="nbHitsCovered">&nbsp;11</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> result;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;104</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;105</td>  <td class="nbHits">&nbsp;</td>
@@ -225,10 +225,10 @@
   <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T <span class="keyword">extends</span> Annotation&gt; T getAnnotation(<span class="keyword">final</span> Method method, <span class="keyword">final</span> Class&lt;T&gt; annotationClass) {</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;117</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;<span class="comment">//        if (method.isAnnotationPresent(annotationClass)) {</span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;118</td>  <td class="nbHitsCovered">&nbsp;7250</td>  <td class="src"><pre class="src">&nbsp;            Class proxyClass = Proxy.getProxyClass(DefaultAnnotation.<span class="keyword">class</span>.getClassLoader(), <span class="keyword">new</span> Class[] { annotationClass });</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;118</td>  <td class="nbHitsCovered">&nbsp;7997</td>  <td class="src"><pre class="src">&nbsp;            Class proxyClass = Proxy.getProxyClass(DefaultAnnotation.<span class="keyword">class</span>.getClassLoader(), <span class="keyword">new</span> Class[] { annotationClass });</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;119</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;            <span class="keyword">try</span> {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;120</td>  <td class="nbHitsCovered">&nbsp;7250</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> (T) proxyClass.getConstructor(<span class="keyword">new</span> Class[] { InvocationHandler.<span class="keyword">class</span> }).newInstance(<span class="keyword">new</span> Object[] { <span class="keyword">new</span> DefaultAnnotation(annotationClass, method.getAnnotation(annotationClass), method) });</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;120</td>  <td class="nbHitsCovered">&nbsp;7997</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> (T) proxyClass.getConstructor(<span class="keyword">new</span> Class[] { InvocationHandler.<span class="keyword">class</span> }).newInstance(<span class="keyword">new</span> Object[] { <span class="keyword">new</span> DefaultAnnotation(annotationClass, method.getAnnotation(annotationClass), method) });</pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;121</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            } <span class="keyword">catch</span> (IllegalArgumentException e) {</span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;122</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;                e.printStackTrace();</span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;123</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            } <span class="keyword">catch</span> (SecurityException e) {</span></pre></td></tr>
@@ -302,10 +302,10 @@
   <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T <span class="keyword">extends</span> Annotation&gt; T getAnnotation(<span class="keyword">final</span> Field field, <span class="keyword">final</span> Class&lt;T&gt; annotationClass) {</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;166</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;<span class="comment">//        if (field.isAnnotationPresent(annotationClass)) {</span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;167</td>  <td class="nbHitsCovered">&nbsp;220</td>  <td class="src"><pre class="src">&nbsp;            Class proxyClass = Proxy.getProxyClass(DefaultAnnotation.<span class="keyword">class</span>.getClassLoader(), <span class="keyword">new</span> Class[] { annotationClass });</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;167</td>  <td class="nbHitsCovered">&nbsp;242</td>  <td class="src"><pre class="src">&nbsp;            Class proxyClass = Proxy.getProxyClass(DefaultAnnotation.<span class="keyword">class</span>.getClassLoader(), <span class="keyword">new</span> Class[] { annotationClass });</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;168</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;            <span class="keyword">try</span> {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;169</td>  <td class="nbHitsCovered">&nbsp;220</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> (T) proxyClass.getConstructor(<span class="keyword">new</span> Class[] { InvocationHandler.<span class="keyword">class</span> }).newInstance(<span class="keyword">new</span> Object[] { <span class="keyword">new</span> DefaultAnnotation(annotationClass, field.getAnnotation(annotationClass), field) });</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;169</td>  <td class="nbHitsCovered">&nbsp;242</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> (T) proxyClass.getConstructor(<span class="keyword">new</span> Class[] { InvocationHandler.<span class="keyword">class</span> }).newInstance(<span class="keyword">new</span> Object[] { <span class="keyword">new</span> DefaultAnnotation(annotationClass, field.getAnnotation(annotationClass), field) });</pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;170</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            } <span class="keyword">catch</span> (IllegalArgumentException e) {</span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;171</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;                e.printStackTrace();</span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;172</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            } <span class="keyword">catch</span> (SecurityException e) {</span></pre></td></tr>
@@ -385,17 +385,17 @@
   <td class="src"><pre class="src">&nbsp;        Field f;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;220</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        <span class="keyword">try</span> {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;221</td>  <td class="nbHitsCovered">&nbsp;200</td>  <td class="src"><pre class="src">&nbsp;            f = enumConstant.getClass().getField(enumConstant.name());</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;221</td>  <td class="nbHitsCovered">&nbsp;220</td>  <td class="src"><pre class="src">&nbsp;            f = enumConstant.getClass().getField(enumConstant.name());</pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;222</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;        } <span class="keyword">catch</span> (SecurityException e) {</span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;223</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            e.printStackTrace();</span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;224</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            <span class="keyword">return</span> <span class="keyword">null</span>;</span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;225</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;        } <span class="keyword">catch</span> (NoSuchFieldException e) {</span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;226</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            e.printStackTrace();</span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;227</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            <span class="keyword">return</span> <span class="keyword">null</span>;</span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;228</td>  <td class="nbHitsCovered">&nbsp;200</td>  <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;228</td>  <td class="nbHitsCovered">&nbsp;220</td>  <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;229</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        </pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;230</td>  <td class="nbHitsCovered">&nbsp;200</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> getAnnotation(f, annotationClass);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;230</td>  <td class="nbHitsCovered">&nbsp;220</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> getAnnotation(f, annotationClass);</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;231</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;232</td>  <td class="nbHits">&nbsp;</td>
@@ -420,8 +420,8 @@
   <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> <span class="keyword">static</span> &lt;T <span class="keyword">extends</span> Annotation&gt; T getAnnotationWithDefaults(<span class="keyword">final</span> Class&lt;? <span class="keyword">extends</span> Annotation&gt; annotationClass) {</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;242</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        <span class="keyword">try</span> {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;243</td>  <td class="nbHitsCovered">&nbsp;420</td>  <td class="src"><pre class="src">&nbsp;            Class proxyClass = Proxy.getProxyClass(DefaultAnnotation.<span class="keyword">class</span>.getClassLoader(), <span class="keyword">new</span> Class[] { annotationClass });</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;244</td>  <td class="nbHitsCovered">&nbsp;420</td>  <td class="src"><pre class="src">&nbsp;            <span class="keyword">return</span> (T) proxyClass.getConstructor(<span class="keyword">new</span> Class[] { InvocationHandler.<span class="keyword">class</span> }).newInstance(<span class="keyword">new</span> Object[] { <span class="keyword">new</span> DefaultAnnotation(annotationClass) });</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;243</td>  <td class="nbHitsCovered">&nbsp;462</td>  <td class="src"><pre class="src">&nbsp;            Class proxyClass = Proxy.getProxyClass(DefaultAnnotation.<span class="keyword">class</span>.getClassLoader(), <span class="keyword">new</span> Class[] { annotationClass });</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;244</td>  <td class="nbHitsCovered">&nbsp;462</td>  <td class="src"><pre class="src">&nbsp;            <span class="keyword">return</span> (T) proxyClass.getConstructor(<span class="keyword">new</span> Class[] { InvocationHandler.<span class="keyword">class</span> }).newInstance(<span class="keyword">new</span> Object[] { <span class="keyword">new</span> DefaultAnnotation(annotationClass) });</pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;245</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;        } <span class="keyword">catch</span> (Exception e) {</span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;246</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            e.printStackTrace();</span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;247</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            <span class="keyword">return</span> <span class="keyword">null</span>;</span></pre></td></tr>
@@ -451,13 +451,13 @@
   <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> set(<span class="keyword">final</span> Annotation annotation, <span class="keyword">final</span> Method method, <span class="keyword">final</span> Object value) {</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;260</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;261</td>  <td class="nbHitsUncovered"><a title="Line 261: Conditional coverage 50% (1/2).">&nbsp;2330</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 261: Conditional coverage 50% (1/2).">        <span class="keyword">if</span> (!isDefaultAnnotation(annotation)) {</a></span></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;261</td>  <td class="nbHitsUncovered"><a title="Line 261: Conditional coverage 50% (1/2).">&nbsp;2563</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 261: Conditional coverage 50% (1/2).">        <span class="keyword">if</span> (!isDefaultAnnotation(annotation)) {</a></span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;262</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"The first argument should be an annotation retrieved from "</span> + DefaultAnnotation.<span class="keyword">class</span>.getName());</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;263</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;264</td>  <td class="nbHitsCovered">&nbsp;2330</td>  <td class="src"><pre class="src">&nbsp;        DefaultAnnotation da = (DefaultAnnotation) Proxy.getInvocationHandler(annotation);</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;265</td>  <td class="nbHitsCovered">&nbsp;2330</td>  <td class="src"><pre class="src">&nbsp;        da.values.put(method, value);</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;266</td>  <td class="nbHitsCovered">&nbsp;2330</td>  <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;264</td>  <td class="nbHitsCovered">&nbsp;2563</td>  <td class="src"><pre class="src">&nbsp;        DefaultAnnotation da = (DefaultAnnotation) Proxy.getInvocationHandler(annotation);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;265</td>  <td class="nbHitsCovered">&nbsp;2563</td>  <td class="src"><pre class="src">&nbsp;        da.values.put(method, value);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;266</td>  <td class="nbHitsCovered">&nbsp;2563</td>  <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;267</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;268</td>  <td class="nbHits">&nbsp;</td>
@@ -486,22 +486,22 @@
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;280</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        <span class="keyword">try</span> {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;281</td>  <td class="nbHitsCovered">&nbsp;100</td>  <td class="src"><pre class="src">&nbsp;            method = annotation.annotationType().getMethod(methodName);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;281</td>  <td class="nbHitsCovered">&nbsp;110</td>  <td class="src"><pre class="src">&nbsp;            method = annotation.annotationType().getMethod(methodName);</pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;282</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;        } <span class="keyword">catch</span> (SecurityException e) {</span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;283</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(e);</span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;284</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;        } <span class="keyword">catch</span> (NoSuchMethodException e) {</span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;285</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(e);</span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;286</td>  <td class="nbHitsCovered">&nbsp;100</td>  <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;286</td>  <td class="nbHitsCovered">&nbsp;110</td>  <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;287</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;288</td>  <td class="nbHitsCovered">&nbsp;100</td>  <td class="src"><pre class="src">&nbsp;        InvocationHandler ih = Proxy.getInvocationHandler(annotation);</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;289</td>  <td class="nbHitsUncovered"><a title="Line 289: Conditional coverage 50% (1/2).">&nbsp;100</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 289: Conditional coverage 50% (1/2).">        <span class="keyword">if</span> (!(ih <span class="keyword">instanceof</span> DefaultAnnotation)) {</a></span></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;288</td>  <td class="nbHitsCovered">&nbsp;110</td>  <td class="src"><pre class="src">&nbsp;        InvocationHandler ih = Proxy.getInvocationHandler(annotation);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;289</td>  <td class="nbHitsUncovered"><a title="Line 289: Conditional coverage 50% (1/2).">&nbsp;110</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 289: Conditional coverage 50% (1/2).">        <span class="keyword">if</span> (!(ih <span class="keyword">instanceof</span> DefaultAnnotation)) {</a></span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;290</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"The first argument should be an annotation retrieved from "</span> + DefaultAnnotation.<span class="keyword">class</span>.getName());</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;291</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;292</td>  <td class="nbHitsCovered">&nbsp;100</td>  <td class="src"><pre class="src">&nbsp;        DefaultAnnotation da = (DefaultAnnotation) ih;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;293</td>  <td class="nbHitsCovered">&nbsp;100</td>  <td class="src"><pre class="src">&nbsp;        da.values.put(method, value);</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;294</td>  <td class="nbHitsCovered">&nbsp;100</td>  <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;292</td>  <td class="nbHitsCovered">&nbsp;110</td>  <td class="src"><pre class="src">&nbsp;        DefaultAnnotation da = (DefaultAnnotation) ih;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;293</td>  <td class="nbHitsCovered">&nbsp;110</td>  <td class="src"><pre class="src">&nbsp;        da.values.put(method, value);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;294</td>  <td class="nbHitsCovered">&nbsp;110</td>  <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;295</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;296</td>  <td class="nbHits">&nbsp;</td>
@@ -518,8 +518,8 @@
   <td class="src"><pre class="src">&nbsp;<span class="comment">     */</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;302</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> fillWithResourceBundle(<span class="keyword">final</span> Annotation annotation, <span class="keyword">final</span> ResourceBundle resourceBundle) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;303</td>  <td class="nbHitsCovered">&nbsp;9138</td>  <td class="src"><pre class="src">&nbsp;        recursiveFillWithResourceBundle(annotation, resourceBundle, annotation.annotationType().getName());</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;304</td>  <td class="nbHitsCovered">&nbsp;9138</td>  <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;303</td>  <td class="nbHitsCovered">&nbsp;10076</td>  <td class="src"><pre class="src">&nbsp;        recursiveFillWithResourceBundle(annotation, resourceBundle, annotation.annotationType().getName());</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;304</td>  <td class="nbHitsCovered">&nbsp;10076</td>  <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;305</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;306</td>  <td class="nbHits">&nbsp;</td>
@@ -556,27 +556,27 @@
   <td class="src"><pre class="src">&nbsp;    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> recursiveFillWithResourceBundle(<span class="keyword">final</span> Annotation annotation, <span class="keyword">final</span> ResourceBundle resourceBundle, <span class="keyword">final</span> String key) {</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;322</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;323</td>  <td class="nbHitsCovered">&nbsp;9608</td>  <td class="src"><pre class="src">&nbsp;        Class&lt;? <span class="keyword">extends</span> Annotation&gt; anClass = annotation.annotationType();</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;324</td>  <td class="nbHitsCovered">&nbsp;9608</td>  <td class="src"><pre class="src">&nbsp;        DefaultAnnotation defaultAnnotation = (DefaultAnnotation) Proxy.getInvocationHandler(annotation);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;323</td>  <td class="nbHitsCovered">&nbsp;10593</td>  <td class="src"><pre class="src">&nbsp;        Class&lt;? <span class="keyword">extends</span> Annotation&gt; anClass = annotation.annotationType();</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;324</td>  <td class="nbHitsCovered">&nbsp;10593</td>  <td class="src"><pre class="src">&nbsp;        DefaultAnnotation defaultAnnotation = (DefaultAnnotation) Proxy.getInvocationHandler(annotation);</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;325</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;326</td>  <td class="nbHitsCovered"><a title="Line 326: Conditional coverage 100% (2/2).">&nbsp;62848</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 326: Conditional coverage 100% (2/2).">        <span class="keyword">for</span> (Method method : anClass.getDeclaredMethods()) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;326</td>  <td class="nbHitsCovered"><a title="Line 326: Conditional coverage 100% (2/2).">&nbsp;69311</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 326: Conditional coverage 100% (2/2).">        <span class="keyword">for</span> (Method method : anClass.getDeclaredMethods()) {</a></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;327</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;328</td>  <td class="nbHitsCovered">&nbsp;53240</td>  <td class="src"><pre class="src">&nbsp;            String newkey = key + METHOD_SEPARATOR + method.getName();</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;329</td>  <td class="nbHitsCovered"><a title="Line 329: Conditional coverage 100% (2/2).">&nbsp;53240</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 329: Conditional coverage 100% (2/2).">            <span class="keyword">if</span> (method.getReturnType().isAnnotation()) {</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;330</td>  <td class="nbHitsCovered">&nbsp;50</td>  <td class="src"><pre class="src">&nbsp;                Annotation subAnnotation = (Annotation) defaultAnnotation.values.get(method);</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;331</td>  <td class="nbHitsCovered">&nbsp;50</td>  <td class="src"><pre class="src">&nbsp;                recursiveFillWithResourceBundle(subAnnotation, resourceBundle, newkey);</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;332</td>  <td class="nbHitsCovered">&nbsp;50</td>  <td class="src"><pre class="src">&nbsp;                set(annotation, method, subAnnotation);</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;333</td>  <td class="nbHitsCovered">&nbsp;50</td>  <td class="src"><pre class="src">&nbsp;            } <span class="keyword">else</span> {</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;328</td>  <td class="nbHitsCovered">&nbsp;58718</td>  <td class="src"><pre class="src">&nbsp;            String newkey = key + METHOD_SEPARATOR + method.getName();</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;329</td>  <td class="nbHitsCovered"><a title="Line 329: Conditional coverage 100% (2/2).">&nbsp;58718</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 329: Conditional coverage 100% (2/2).">            <span class="keyword">if</span> (method.getReturnType().isAnnotation()) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;330</td>  <td class="nbHitsCovered">&nbsp;55</td>  <td class="src"><pre class="src">&nbsp;                Annotation subAnnotation = (Annotation) defaultAnnotation.values.get(method);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;331</td>  <td class="nbHitsCovered">&nbsp;55</td>  <td class="src"><pre class="src">&nbsp;                recursiveFillWithResourceBundle(subAnnotation, resourceBundle, newkey);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;332</td>  <td class="nbHitsCovered">&nbsp;55</td>  <td class="src"><pre class="src">&nbsp;                set(annotation, method, subAnnotation);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;333</td>  <td class="nbHitsCovered">&nbsp;55</td>  <td class="src"><pre class="src">&nbsp;            } <span class="keyword">else</span> {</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;334</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                <span class="keyword">try</span> {</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;335</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;336</td>  <td class="nbHitsCovered"><a title="Line 336: Conditional coverage 100% (2/2).">&nbsp;53190</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 336: Conditional coverage 100% (2/2).">                    <span class="keyword">if</span> (method.getReturnType().isArray()) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;336</td>  <td class="nbHitsCovered"><a title="Line 336: Conditional coverage 100% (2/2).">&nbsp;58663</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 336: Conditional coverage 100% (2/2).">                    <span class="keyword">if</span> (method.getReturnType().isArray()) {</a></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;337</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;338</td>  <td class="nbHitsCovered"><a title="Line 338: Conditional coverage 100% (2/2).">&nbsp;5910</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 338: Conditional coverage 100% (2/2).">                        <span class="keyword">if</span> (method.getReturnType().getComponentType().isAnnotation()) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;338</td>  <td class="nbHitsCovered"><a title="Line 338: Conditional coverage 100% (2/2).">&nbsp;6523</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 338: Conditional coverage 100% (2/2).">                        <span class="keyword">if</span> (method.getReturnType().getComponentType().isAnnotation()) {</a></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;339</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;340</td>  <td class="nbHits">&nbsp;</td>
@@ -597,15 +597,15 @@
   <td class="src"><pre class="src">&nbsp;<span class="comment">                             */</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;348</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                            </pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;349</td>  <td class="nbHitsCovered">&nbsp;270</td>  <td class="src"><pre class="src">&nbsp;                            Object array = defaultAnnotation.invoke(<span class="keyword">null</span>, method, <span class="keyword">new</span> Object[] {});</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;349</td>  <td class="nbHitsCovered">&nbsp;297</td>  <td class="src"><pre class="src">&nbsp;                            Object array = defaultAnnotation.invoke(<span class="keyword">null</span>, method, <span class="keyword">new</span> Object[] {});</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;350</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;351</td>  <td class="nbHitsCovered">&nbsp;270</td>  <td class="src"><pre class="src">&nbsp;                            <span class="keyword">int</span> i = 0;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;352</td>  <td class="nbHitsCovered">&nbsp;270</td>  <td class="src"><pre class="src">&nbsp;                            String arrayKey = newkey + <span class="string">"["</span> + i + <span class="string">"]"</span>;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;353</td>  <td class="nbHitsCovered">&nbsp;270</td>  <td class="src"><pre class="src">&nbsp;                            <span class="keyword">boolean</span> hasPrefix = hasPrefix(resourceBundle, arrayKey);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;351</td>  <td class="nbHitsCovered">&nbsp;297</td>  <td class="src"><pre class="src">&nbsp;                            <span class="keyword">int</span> i = 0;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;352</td>  <td class="nbHitsCovered">&nbsp;297</td>  <td class="src"><pre class="src">&nbsp;                            String arrayKey = newkey + <span class="string">"["</span> + i + <span class="string">"]"</span>;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;353</td>  <td class="nbHitsCovered">&nbsp;297</td>  <td class="src"><pre class="src">&nbsp;                            <span class="keyword">boolean</span> hasPrefix = hasPrefix(resourceBundle, arrayKey);</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;354</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                            </pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;355</td>  <td class="nbHitsCovered">&nbsp;270</td>  <td class="src"><pre class="src">&nbsp;                            ArrayList&lt;Annotation&gt; newArrayValue = <span class="keyword">new</span> ArrayList&lt;Annotation&gt;();</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;355</td>  <td class="nbHitsCovered">&nbsp;297</td>  <td class="src"><pre class="src">&nbsp;                            ArrayList&lt;Annotation&gt; newArrayValue = <span class="keyword">new</span> ArrayList&lt;Annotation&gt;();</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;356</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                            </pre></td></tr>
 <tr>  <td class="numLine">&nbsp;357</td>  <td class="nbHits">&nbsp;</td>
@@ -622,39 +622,39 @@
   <td class="src"><pre class="src">&nbsp;<span class="comment">                             * the original array when there is no alternative.</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;363</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;<span class="comment">                             */</span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;364</td>  <td class="nbHitsCovered"><a title="Line 364: Conditional coverage 100% (2/2).">&nbsp;270</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 364: Conditional coverage 100% (2/2).">                            <span class="keyword">if</span> (array == <span class="keyword">null</span>) {</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;365</td>  <td class="nbHitsCovered"><a title="Line 365: Conditional coverage 100% (2/2).">&nbsp;40</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 365: Conditional coverage 100% (2/2).">                                <span class="keyword">while</span> (hasPrefix) {</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;366</td>  <td class="nbHitsCovered">&nbsp;30</td>  <td class="src"><pre class="src">&nbsp;                                    Annotation subAnnotation = DefaultAnnotation.getAnnotationWithDefaults((Class&lt;? <span class="keyword">extends</span> Annotation&gt;) method.getReturnType().getComponentType());</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;367</td>  <td class="nbHitsCovered">&nbsp;30</td>  <td class="src"><pre class="src">&nbsp;                                    recursiveFillWithResourceBundle(subAnnotation, resourceBundle, arrayKey);</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;368</td>  <td class="nbHitsCovered">&nbsp;30</td>  <td class="src"><pre class="src">&nbsp;                                    newArrayValue.add(subAnnotation);</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;369</td>  <td class="nbHitsCovered">&nbsp;30</td>  <td class="src"><pre class="src">&nbsp;                                    i++;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;370</td>  <td class="nbHitsCovered">&nbsp;30</td>  <td class="src"><pre class="src">&nbsp;                                    arrayKey = newkey + <span class="string">"["</span> + i + <span class="string">"]"</span>;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;371</td>  <td class="nbHitsCovered">&nbsp;30</td>  <td class="src"><pre class="src">&nbsp;                                    hasPrefix = hasPrefix(resourceBundle, arrayKey);</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;372</td>  <td class="nbHitsCovered">&nbsp;30</td>  <td class="src"><pre class="src">&nbsp;                                }</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;364</td>  <td class="nbHitsCovered"><a title="Line 364: Conditional coverage 100% (2/2).">&nbsp;297</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 364: Conditional coverage 100% (2/2).">                            <span class="keyword">if</span> (array == <span class="keyword">null</span>) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;365</td>  <td class="nbHitsCovered"><a title="Line 365: Conditional coverage 100% (2/2).">&nbsp;44</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 365: Conditional coverage 100% (2/2).">                                <span class="keyword">while</span> (hasPrefix) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;366</td>  <td class="nbHitsCovered">&nbsp;33</td>  <td class="src"><pre class="src">&nbsp;                                    Annotation subAnnotation = DefaultAnnotation.getAnnotationWithDefaults((Class&lt;? <span class="keyword">extends</span> Annotation&gt;) method.getReturnType().getComponentType());</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;367</td>  <td class="nbHitsCovered">&nbsp;33</td>  <td class="src"><pre class="src">&nbsp;                                    recursiveFillWithResourceBundle(subAnnotation, resourceBundle, arrayKey);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;368</td>  <td class="nbHitsCovered">&nbsp;33</td>  <td class="src"><pre class="src">&nbsp;                                    newArrayValue.add(subAnnotation);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;369</td>  <td class="nbHitsCovered">&nbsp;33</td>  <td class="src"><pre class="src">&nbsp;                                    i++;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;370</td>  <td class="nbHitsCovered">&nbsp;33</td>  <td class="src"><pre class="src">&nbsp;                                    arrayKey = newkey + <span class="string">"["</span> + i + <span class="string">"]"</span>;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;371</td>  <td class="nbHitsCovered">&nbsp;33</td>  <td class="src"><pre class="src">&nbsp;                                    hasPrefix = hasPrefix(resourceBundle, arrayKey);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;372</td>  <td class="nbHitsCovered">&nbsp;33</td>  <td class="src"><pre class="src">&nbsp;                                }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;373</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                            } <span class="keyword">else</span> {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;374</td>  <td class="nbHitsCovered"><a title="Line 374: Conditional coverage 100% (4/4) [each condition: 100%, 100%].">&nbsp;880</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 374: Conditional coverage 100% (4/4) [each condition: 100%, 100%].">                                <span class="keyword">while</span> (hasPrefix || i &lt; Array.getLength(array)) {</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;375</td>  <td class="nbHitsCovered"><a title="Line 375: Conditional coverage 100% (2/2).">&nbsp;620</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 375: Conditional coverage 100% (2/2).">                                    <span class="keyword">if</span> (i &gt;= Array.getLength(array)) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;374</td>  <td class="nbHitsCovered"><a title="Line 374: Conditional coverage 100% (4/4) [each condition: 100%, 100%].">&nbsp;968</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 374: Conditional coverage 100% (4/4) [each condition: 100%, 100%].">                                <span class="keyword">while</span> (hasPrefix || i &lt; Array.getLength(array)) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;375</td>  <td class="nbHitsCovered"><a title="Line 375: Conditional coverage 100% (2/2).">&nbsp;682</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 375: Conditional coverage 100% (2/2).">                                    <span class="keyword">if</span> (i &gt;= Array.getLength(array)) {</a></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;376</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                                        <span class="comment">// New value from resource bundle</span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;377</td>  <td class="nbHitsCovered">&nbsp;320</td>  <td class="src"><pre class="src">&nbsp;                                        Annotation subAnnotation = DefaultAnnotation.getAnnotationWithDefaults((Class&lt;? <span class="keyword">extends</span> Annotation&gt;) method.getReturnType().getComponentType());</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;378</td>  <td class="nbHitsCovered">&nbsp;320</td>  <td class="src"><pre class="src">&nbsp;                                        recursiveFillWithResourceBundle(subAnnotation, resourceBundle, arrayKey);</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;379</td>  <td class="nbHitsCovered">&nbsp;320</td>  <td class="src"><pre class="src">&nbsp;                                        newArrayValue.add(subAnnotation);</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;380</td>  <td class="nbHitsCovered"><a title="Line 380: Conditional coverage 100% (2/2).">&nbsp;320</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 380: Conditional coverage 100% (2/2).">                                    } <span class="keyword">else</span> <span class="keyword">if</span> (hasPrefix) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;377</td>  <td class="nbHitsCovered">&nbsp;352</td>  <td class="src"><pre class="src">&nbsp;                                        Annotation subAnnotation = DefaultAnnotation.getAnnotationWithDefaults((Class&lt;? <span class="keyword">extends</span> Annotation&gt;) method.getReturnType().getComponentType());</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;378</td>  <td class="nbHitsCovered">&nbsp;352</td>  <td class="src"><pre class="src">&nbsp;                                        recursiveFillWithResourceBundle(subAnnotation, resourceBundle, arrayKey);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;379</td>  <td class="nbHitsCovered">&nbsp;352</td>  <td class="src"><pre class="src">&nbsp;                                        newArrayValue.add(subAnnotation);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;380</td>  <td class="nbHitsCovered"><a title="Line 380: Conditional coverage 100% (2/2).">&nbsp;352</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 380: Conditional coverage 100% (2/2).">                                    } <span class="keyword">else</span> <span class="keyword">if</span> (hasPrefix) {</a></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;381</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                                        <span class="comment">// Replacing old value with one from resource bundle</span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;382</td>  <td class="nbHitsCovered">&nbsp;70</td>  <td class="src"><pre class="src">&nbsp;                                        Annotation subAnnotation = (Annotation) Array.get(array, i);</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;383</td>  <td class="nbHitsCovered">&nbsp;70</td>  <td class="src"><pre class="src">&nbsp;                                        recursiveFillWithResourceBundle(subAnnotation, resourceBundle, arrayKey);</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;384</td>  <td class="nbHitsCovered">&nbsp;70</td>  <td class="src"><pre class="src">&nbsp;                                        newArrayValue.add(subAnnotation);</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;385</td>  <td class="nbHitsCovered">&nbsp;70</td>  <td class="src"><pre class="src">&nbsp;                                    } <span class="keyword">else</span> {</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;382</td>  <td class="nbHitsCovered">&nbsp;77</td>  <td class="src"><pre class="src">&nbsp;                                        Annotation subAnnotation = (Annotation) Array.get(array, i);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;383</td>  <td class="nbHitsCovered">&nbsp;77</td>  <td class="src"><pre class="src">&nbsp;                                        recursiveFillWithResourceBundle(subAnnotation, resourceBundle, arrayKey);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;384</td>  <td class="nbHitsCovered">&nbsp;77</td>  <td class="src"><pre class="src">&nbsp;                                        newArrayValue.add(subAnnotation);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;385</td>  <td class="nbHitsCovered">&nbsp;77</td>  <td class="src"><pre class="src">&nbsp;                                    } <span class="keyword">else</span> {</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;386</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                                        <span class="comment">// Keeping old value</span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;387</td>  <td class="nbHitsCovered">&nbsp;230</td>  <td class="src"><pre class="src">&nbsp;                                        newArrayValue.add((Annotation) Array.get(array, i));</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;387</td>  <td class="nbHitsCovered">&nbsp;253</td>  <td class="src"><pre class="src">&nbsp;                                        newArrayValue.add((Annotation) Array.get(array, i));</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;388</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                                    }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;389</td>  <td class="nbHitsCovered">&nbsp;620</td>  <td class="src"><pre class="src">&nbsp;                                    i++;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;390</td>  <td class="nbHitsCovered">&nbsp;620</td>  <td class="src"><pre class="src">&nbsp;                                    arrayKey = newkey + <span class="string">"["</span> + i + <span class="string">"]"</span>;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;391</td>  <td class="nbHitsCovered">&nbsp;620</td>  <td class="src"><pre class="src">&nbsp;                                    hasPrefix = hasPrefix(resourceBundle, arrayKey);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;389</td>  <td class="nbHitsCovered">&nbsp;682</td>  <td class="src"><pre class="src">&nbsp;                                    i++;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;390</td>  <td class="nbHitsCovered">&nbsp;682</td>  <td class="src"><pre class="src">&nbsp;                                    arrayKey = newkey + <span class="string">"["</span> + i + <span class="string">"]"</span>;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;391</td>  <td class="nbHitsCovered">&nbsp;682</td>  <td class="src"><pre class="src">&nbsp;                                    hasPrefix = hasPrefix(resourceBundle, arrayKey);</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;392</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                                }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;393</td>  <td class="nbHits">&nbsp;</td>
@@ -663,8 +663,8 @@
   <td class="src"><pre class="src">&nbsp;                            </pre></td></tr>
 <tr>  <td class="numLine">&nbsp;395</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                            </pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;396</td>  <td class="nbHitsCovered">&nbsp;270</td>  <td class="src"><pre class="src">&nbsp;                            defaultAnnotation.values.put(method, newArrayValue.toArray((Object[]) Array.newInstance(method.getReturnType().getComponentType(), newArrayValue.size())));</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;397</td>  <td class="nbHitsCovered">&nbsp;270</td>  <td class="src"><pre class="src">&nbsp;                        } <span class="keyword">else</span> {</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;396</td>  <td class="nbHitsCovered">&nbsp;297</td>  <td class="src"><pre class="src">&nbsp;                            defaultAnnotation.values.put(method, newArrayValue.toArray((Object[]) Array.newInstance(method.getReturnType().getComponentType(), newArrayValue.size())));</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;397</td>  <td class="nbHitsCovered">&nbsp;297</td>  <td class="src"><pre class="src">&nbsp;                        } <span class="keyword">else</span> {</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;398</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                            </pre></td></tr>
 <tr>  <td class="numLine">&nbsp;399</td>  <td class="nbHits">&nbsp;</td>
@@ -673,8 +673,8 @@
   <td class="src"><pre class="src">&nbsp;<span class="comment">                             * key = [ a, b, c] </span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;401</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;<span class="comment">                             */</span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;402</td>  <td class="nbHitsCovered"><a title="Line 402: Conditional coverage 100% (2/2).">&nbsp;5640</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 402: Conditional coverage 100% (2/2).">                            <span class="keyword">if</span>(resourceBundle.containsKey(defaultAnnotation.getBasePrefix() + newkey)) {</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;403</td>  <td class="nbHitsCovered">&nbsp;30</td>  <td class="src"><pre class="src">&nbsp;                                set(annotation, method, StringObjectConversion.fromString(method.getReturnType(), resourceBundle.getString(defaultAnnotation.getBasePrefix() + newkey)));</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;402</td>  <td class="nbHitsCovered"><a title="Line 402: Conditional coverage 100% (2/2).">&nbsp;6226</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 402: Conditional coverage 100% (2/2).">                            <span class="keyword">if</span>(resourceBundle.containsKey(defaultAnnotation.getBasePrefix() + newkey)) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;403</td>  <td class="nbHitsCovered">&nbsp;33</td>  <td class="src"><pre class="src">&nbsp;                                set(annotation, method, StringObjectConversion.fromString(method.getReturnType(), resourceBundle.getString(defaultAnnotation.getBasePrefix() + newkey)));</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;404</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                            }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;405</td>  <td class="nbHits">&nbsp;</td>
@@ -689,31 +689,31 @@
   <td class="src"><pre class="src">&nbsp;<span class="comment">                             */</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;410</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                            <span class="keyword">else</span> {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;411</td>  <td class="nbHitsCovered">&nbsp;5610</td>  <td class="src"><pre class="src">&nbsp;                                ArrayList&lt;String&gt; value = <span class="keyword">new</span> ArrayList&lt;String&gt;();</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;412</td>  <td class="nbHitsCovered">&nbsp;5610</td>  <td class="src"><pre class="src">&nbsp;                                <span class="keyword">int</span> i = 0;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;413</td>  <td class="nbHitsCovered">&nbsp;5610</td>  <td class="src"><pre class="src">&nbsp;                                String arrayKey = newkey + <span class="string">"["</span> + i + <span class="string">"]"</span>;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;414</td>  <td class="nbHitsCovered"><a title="Line 414: Conditional coverage 100% (2/2).">&nbsp;5900</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 414: Conditional coverage 100% (2/2).">                                <span class="keyword">while</span> (resourceBundle.containsKey(arrayKey)) {</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;415</td>  <td class="nbHitsCovered">&nbsp;290</td>  <td class="src"><pre class="src">&nbsp;                                    value.add(resourceBundle.getString(arrayKey));</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;416</td>  <td class="nbHitsCovered">&nbsp;290</td>  <td class="src"><pre class="src">&nbsp;                                    i++;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;417</td>  <td class="nbHitsCovered">&nbsp;290</td>  <td class="src"><pre class="src">&nbsp;                                    arrayKey = newkey + <span class="string">"["</span> + i + <span class="string">"]"</span>;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;411</td>  <td class="nbHitsCovered">&nbsp;6193</td>  <td class="src"><pre class="src">&nbsp;                                ArrayList&lt;String&gt; value = <span class="keyword">new</span> ArrayList&lt;String&gt;();</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;412</td>  <td class="nbHitsCovered">&nbsp;6193</td>  <td class="src"><pre class="src">&nbsp;                                <span class="keyword">int</span> i = 0;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;413</td>  <td class="nbHitsCovered">&nbsp;6193</td>  <td class="src"><pre class="src">&nbsp;                                String arrayKey = newkey + <span class="string">"["</span> + i + <span class="string">"]"</span>;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;414</td>  <td class="nbHitsCovered"><a title="Line 414: Conditional coverage 100% (2/2).">&nbsp;6512</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 414: Conditional coverage 100% (2/2).">                                <span class="keyword">while</span> (resourceBundle.containsKey(arrayKey)) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;415</td>  <td class="nbHitsCovered">&nbsp;319</td>  <td class="src"><pre class="src">&nbsp;                                    value.add(resourceBundle.getString(arrayKey));</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;416</td>  <td class="nbHitsCovered">&nbsp;319</td>  <td class="src"><pre class="src">&nbsp;                                    i++;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;417</td>  <td class="nbHitsCovered">&nbsp;319</td>  <td class="src"><pre class="src">&nbsp;                                    arrayKey = newkey + <span class="string">"["</span> + i + <span class="string">"]"</span>;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;418</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                                }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;419</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                                </pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;420</td>  <td class="nbHitsCovered"><a title="Line 420: Conditional coverage 100% (2/2).">&nbsp;5610</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 420: Conditional coverage 100% (2/2).">                                <span class="keyword">if</span> (value.size() &gt; 0) {</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;421</td>  <td class="nbHitsCovered">&nbsp;80</td>  <td class="src"><pre class="src">&nbsp;                                    Object[] array = (Object[]) Array.newInstance(method.getReturnType().getComponentType(), value.size());</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;422</td>  <td class="nbHitsCovered">&nbsp;80</td>  <td class="src"><pre class="src">&nbsp;                                    set(annotation, method, value.toArray(array));</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;420</td>  <td class="nbHitsCovered"><a title="Line 420: Conditional coverage 100% (2/2).">&nbsp;6193</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 420: Conditional coverage 100% (2/2).">                                <span class="keyword">if</span> (value.size() &gt; 0) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;421</td>  <td class="nbHitsCovered">&nbsp;88</td>  <td class="src"><pre class="src">&nbsp;                                    Object[] array = (Object[]) Array.newInstance(method.getReturnType().getComponentType(), value.size());</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;422</td>  <td class="nbHitsCovered">&nbsp;88</td>  <td class="src"><pre class="src">&nbsp;                                    set(annotation, method, value.toArray(array));</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;423</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                                }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;424</td>  <td class="nbHitsCovered">&nbsp;5610</td>  <td class="src"><pre class="src">&nbsp;                            }</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;424</td>  <td class="nbHitsCovered">&nbsp;6193</td>  <td class="src"><pre class="src">&nbsp;                            }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;425</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                        }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;426</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                    } <span class="keyword">else</span> {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;427</td>  <td class="nbHitsCovered"><a title="Line 427: Conditional coverage 100% (2/2).">&nbsp;47280</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 427: Conditional coverage 100% (2/2).">                        <span class="keyword">if</span>(resourceBundle.containsKey(defaultAnnotation.getBasePrefix() + newkey)) {</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;428</td>  <td class="nbHitsCovered">&nbsp;270</td>  <td class="src"><pre class="src">&nbsp;                            set(annotation, method, StringObjectConversion.fromString(method.getReturnType(), resourceBundle.getString(defaultAnnotation.getBasePrefix() + newkey)));</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;429</td>  <td class="nbHitsCovered"><a title="Line 429: Conditional coverage 100% (2/2).">&nbsp;47010</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 429: Conditional coverage 100% (2/2).">                        } <span class="keyword">else</span> <span class="keyword">if</span> (resourceBundle.containsKey(newkey)) {</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;430</td>  <td class="nbHitsCovered">&nbsp;1100</td>  <td class="src"><pre class="src">&nbsp;                            set(annotation, method, StringObjectConversion.fromString(method.getReturnType(), resourceBundle.getString(newkey)));</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;427</td>  <td class="nbHitsCovered"><a title="Line 427: Conditional coverage 100% (2/2).">&nbsp;52140</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 427: Conditional coverage 100% (2/2).">                        <span class="keyword">if</span>(resourceBundle.containsKey(defaultAnnotation.getBasePrefix() + newkey)) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;428</td>  <td class="nbHitsCovered">&nbsp;297</td>  <td class="src"><pre class="src">&nbsp;                            set(annotation, method, StringObjectConversion.fromString(method.getReturnType(), resourceBundle.getString(defaultAnnotation.getBasePrefix() + newkey)));</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;429</td>  <td class="nbHitsCovered"><a title="Line 429: Conditional coverage 100% (2/2).">&nbsp;51843</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 429: Conditional coverage 100% (2/2).">                        } <span class="keyword">else</span> <span class="keyword">if</span> (resourceBundle.containsKey(newkey)) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;430</td>  <td class="nbHitsCovered">&nbsp;1210</td>  <td class="src"><pre class="src">&nbsp;                            set(annotation, method, StringObjectConversion.fromString(method.getReturnType(), resourceBundle.getString(newkey)));</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;431</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                        }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;432</td>  <td class="nbHits">&nbsp;</td>
@@ -728,12 +728,12 @@
 <tr>  <td class="numLineCover">&nbsp;440</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;                    e.printStackTrace();</span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;441</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;                } <span class="keyword">catch</span> (Throwable e) {</span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;442</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;                    e.printStackTrace();</span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;443</td>  <td class="nbHitsCovered">&nbsp;53190</td>  <td class="src"><pre class="src">&nbsp;                }</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;443</td>  <td class="nbHitsCovered">&nbsp;58663</td>  <td class="src"><pre class="src">&nbsp;                }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;444</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;            }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;445</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;446</td>  <td class="nbHitsCovered">&nbsp;9608</td>  <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;446</td>  <td class="nbHitsCovered">&nbsp;10593</td>  <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;447</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;448</td>  <td class="nbHits">&nbsp;</td>
@@ -752,14 +752,14 @@
   <td class="src"><pre class="src">&nbsp;<span class="comment">     */</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;455</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> hasPrefix(<span class="keyword">final</span> ResourceBundle resourceBundle, <span class="keyword">final</span> String prefix) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;456</td>  <td class="nbHitsCovered"><a title="Line 456: Conditional coverage 100% (2/2).">&nbsp;920</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 456: Conditional coverage 100% (2/2).">        <span class="keyword">for</span> (String s : resourceBundle.keySet()) {</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;457</td>  <td class="nbHitsCovered"><a title="Line 457: Conditional coverage 100% (2/2).">&nbsp;10040</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 457: Conditional coverage 100% (2/2).">            <span class="keyword">if</span> (s.startsWith(prefix)) {</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;458</td>  <td class="nbHitsCovered">&nbsp;420</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> <span class="keyword">true</span>;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;456</td>  <td class="nbHitsCovered"><a title="Line 456: Conditional coverage 100% (2/2).">&nbsp;1012</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 456: Conditional coverage 100% (2/2).">        <span class="keyword">for</span> (String s : resourceBundle.keySet()) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;457</td>  <td class="nbHitsCovered"><a title="Line 457: Conditional coverage 100% (2/2).">&nbsp;11044</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 457: Conditional coverage 100% (2/2).">            <span class="keyword">if</span> (s.startsWith(prefix)) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;458</td>  <td class="nbHitsCovered">&nbsp;462</td>  <td class="src"><pre class="src">&nbsp;                <span class="keyword">return</span> <span class="keyword">true</span>;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;459</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;            }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;460</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;461</td>  <td class="nbHitsCovered">&nbsp;500</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> <span class="keyword">false</span>;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;461</td>  <td class="nbHitsCovered">&nbsp;550</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> <span class="keyword">false</span>;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;462</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;463</td>  <td class="nbHits">&nbsp;</td>
@@ -776,8 +776,8 @@
   <td class="src"><pre class="src">&nbsp;<span class="comment">     */</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;469</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">boolean</span> isDefaultAnnotation(<span class="keyword">final</span> Annotation annotation) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;470</td>  <td class="nbHitsCovered">&nbsp;2390</td>  <td class="src"><pre class="src">&nbsp;        InvocationHandler ih = Proxy.getInvocationHandler(annotation);</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;471</td>  <td class="nbHitsCovered">&nbsp;2390</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> ih <span class="keyword">instanceof</span> DefaultAnnotation;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;470</td>  <td class="nbHitsCovered">&nbsp;2629</td>  <td class="src"><pre class="src">&nbsp;        InvocationHandler ih = Proxy.getInvocationHandler(annotation);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;471</td>  <td class="nbHitsCovered">&nbsp;2629</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> ih <span class="keyword">instanceof</span> DefaultAnnotation;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;472</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;473</td>  <td class="nbHits">&nbsp;</td>
@@ -812,7 +812,7 @@
   <td class="src"><pre class="src">&nbsp;<span class="comment">     * </span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;488</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;<span class="comment">     */</span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;489</td>  <td class="nbHitsCovered">&nbsp;10328</td>  <td class="src"><pre class="src">&nbsp;    <span class="keyword">private</span> <span class="keyword">final</span> Hashtable&lt;Method, Object&gt; values = <span class="keyword">new</span> Hashtable&lt;Method, Object&gt;();</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;489</td>  <td class="nbHitsCovered">&nbsp;11385</td>  <td class="src"><pre class="src">&nbsp;    <span class="keyword">private</span> <span class="keyword">final</span> Hashtable&lt;Method, Object&gt; values = <span class="keyword">new</span> Hashtable&lt;Method, Object&gt;();</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;490</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    <span class="comment">/**</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;491</td>  <td class="nbHits">&nbsp;</td>
@@ -831,12 +831,12 @@
   <td class="src"><pre class="src">&nbsp;<span class="comment">     *            TODO</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;498</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;<span class="comment">     */</span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;499</td>  <td class="nbHitsCovered">&nbsp;420</td>  <td class="src"><pre class="src">&nbsp;    <span class="keyword">private</span> DefaultAnnotation(<span class="keyword">final</span> Class&lt;? <span class="keyword">extends</span> Annotation&gt; clazz) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;500</td>  <td class="nbHitsCovered">&nbsp;420</td>  <td class="src"><pre class="src">&nbsp;        annotation = <span class="keyword">null</span>;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;501</td>  <td class="nbHitsCovered">&nbsp;420</td>  <td class="src"><pre class="src">&nbsp;        annotationClass = clazz;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;502</td>  <td class="nbHitsCovered">&nbsp;420</td>  <td class="src"><pre class="src">&nbsp;        basePrefix = <span class="keyword">null</span>;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;503</td>  <td class="nbHitsCovered">&nbsp;420</td>  <td class="src"><pre class="src">&nbsp;        init();</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;504</td>  <td class="nbHitsCovered">&nbsp;420</td>  <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;499</td>  <td class="nbHitsCovered">&nbsp;462</td>  <td class="src"><pre class="src">&nbsp;    <span class="keyword">private</span> DefaultAnnotation(<span class="keyword">final</span> Class&lt;? <span class="keyword">extends</span> Annotation&gt; clazz) {</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;500</td>  <td class="nbHitsCovered">&nbsp;462</td>  <td class="src"><pre class="src">&nbsp;        annotation = <span class="keyword">null</span>;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;501</td>  <td class="nbHitsCovered">&nbsp;462</td>  <td class="src"><pre class="src">&nbsp;        annotationClass = clazz;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;502</td>  <td class="nbHitsCovered">&nbsp;462</td>  <td class="src"><pre class="src">&nbsp;        basePrefix = <span class="keyword">null</span>;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;503</td>  <td class="nbHitsCovered">&nbsp;462</td>  <td class="src"><pre class="src">&nbsp;        init();</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;504</td>  <td class="nbHitsCovered">&nbsp;462</td>  <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;505</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;506</td>  <td class="nbHits">&nbsp;</td>
@@ -919,28 +919,28 @@
   <td class="src"><pre class="src">&nbsp;<span class="comment">     *            TODO</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;557</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;<span class="comment">     */</span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;558</td>  <td class="nbHitsCovered">&nbsp;2058</td>  <td class="src"><pre class="src">&nbsp;    <span class="keyword">private</span> DefaultAnnotation(<span class="keyword">final</span> Class&lt;? <span class="keyword">extends</span> Annotation&gt; clazz, <span class="keyword">final</span> Annotation annotationObject, <span class="keyword">final</span> Class&lt;?&gt; base) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;559</td>  <td class="nbHitsCovered">&nbsp;2058</td>  <td class="src"><pre class="src">&nbsp;        annotation = annotationObject;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;560</td>  <td class="nbHitsCovered">&nbsp;2058</td>  <td class="src"><pre class="src">&nbsp;        annotationClass = clazz;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;561</td>  <td class="nbHitsCovered">&nbsp;2058</td>  <td class="src"><pre class="src">&nbsp;        basePrefix = base.getName() + ANNOTATION_SEPARATOR;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;562</td>  <td class="nbHitsCovered">&nbsp;2058</td>  <td class="src"><pre class="src">&nbsp;        init();</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;563</td>  <td class="nbHitsCovered">&nbsp;2058</td>  <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;558</td>  <td class="nbHitsCovered">&nbsp;2266</td>  <td class="src"><pre class="src">&nbsp;    <span class="keyword">private</span> DefaultAnnotation(<span class="keyword">final</span> Class&lt;? <span class="keyword">extends</span> Annotation&gt; clazz, <span class="keyword">final</span> Annotation annotationObject, <span class="keyword">final</span> Class&lt;?&gt; base) {</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;559</td>  <td class="nbHitsCovered">&nbsp;2266</td>  <td class="src"><pre class="src">&nbsp;        annotation = annotationObject;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;560</td>  <td class="nbHitsCovered">&nbsp;2266</td>  <td class="src"><pre class="src">&nbsp;        annotationClass = clazz;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;561</td>  <td class="nbHitsCovered">&nbsp;2266</td>  <td class="src"><pre class="src">&nbsp;        basePrefix = base.getName() + ANNOTATION_SEPARATOR;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;562</td>  <td class="nbHitsCovered">&nbsp;2266</td>  <td class="src"><pre class="src">&nbsp;        init();</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;563</td>  <td class="nbHitsCovered">&nbsp;2266</td>  <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;564</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    </pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;565</td>  <td class="nbHitsCovered">&nbsp;7630</td>  <td class="src"><pre class="src">&nbsp;    <span class="keyword">private</span> DefaultAnnotation(<span class="keyword">final</span> Class&lt;? <span class="keyword">extends</span> Annotation&gt; clazz, <span class="keyword">final</span> Annotation annotationObject, <span class="keyword">final</span> Method base) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;566</td>  <td class="nbHitsCovered">&nbsp;7630</td>  <td class="src"><pre class="src">&nbsp;        annotation = annotationObject;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;567</td>  <td class="nbHitsCovered">&nbsp;7630</td>  <td class="src"><pre class="src">&nbsp;        annotationClass = clazz;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;568</td>  <td class="nbHitsCovered">&nbsp;7630</td>  <td class="src"><pre class="src">&nbsp;        basePrefix = base.getDeclaringClass().getName() + METHOD_SEPARATOR + base.getName() + ANNOTATION_SEPARATOR;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;569</td>  <td class="nbHitsCovered">&nbsp;7630</td>  <td class="src"><pre class="src">&nbsp;        init();</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;570</td>  <td class="nbHitsCovered">&nbsp;7630</td>  <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;565</td>  <td class="nbHitsCovered">&nbsp;8415</td>  <td class="src"><pre class="src">&nbsp;    <span class="keyword">private</span> DefaultAnnotation(<span class="keyword">final</span> Class&lt;? <span class="keyword">extends</span> Annotation&gt; clazz, <span class="keyword">final</span> Annotation annotationObject, <span class="keyword">final</span> Method base) {</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;566</td>  <td class="nbHitsCovered">&nbsp;8415</td>  <td class="src"><pre class="src">&nbsp;        annotation = annotationObject;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;567</td>  <td class="nbHitsCovered">&nbsp;8415</td>  <td class="src"><pre class="src">&nbsp;        annotationClass = clazz;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;568</td>  <td class="nbHitsCovered">&nbsp;8415</td>  <td class="src"><pre class="src">&nbsp;        basePrefix = base.getDeclaringClass().getName() + METHOD_SEPARATOR + base.getName() + ANNOTATION_SEPARATOR;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;569</td>  <td class="nbHitsCovered">&nbsp;8415</td>  <td class="src"><pre class="src">&nbsp;        init();</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;570</td>  <td class="nbHitsCovered">&nbsp;8415</td>  <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;571</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    </pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;572</td>  <td class="nbHitsCovered">&nbsp;220</td>  <td class="src"><pre class="src">&nbsp;    <span class="keyword">private</span> DefaultAnnotation(<span class="keyword">final</span> Class&lt;? <span class="keyword">extends</span> Annotation&gt; clazz, <span class="keyword">final</span> Annotation annotationObject, <span class="keyword">final</span> Field base) {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;573</td>  <td class="nbHitsCovered">&nbsp;220</td>  <td class="src"><pre class="src">&nbsp;        annotation = annotationObject;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;574</td>  <td class="nbHitsCovered">&nbsp;220</td>  <td class="src"><pre class="src">&nbsp;        annotationClass = clazz;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;575</td>  <td class="nbHitsCovered">&nbsp;220</td>  <td class="src"><pre class="src">&nbsp;        basePrefix = base.getDeclaringClass().getName() + FIELD_SEPARATOR + base.getName() + ANNOTATION_SEPARATOR;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;576</td>  <td class="nbHitsCovered">&nbsp;220</td>  <td class="src"><pre class="src">&nbsp;        init();</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;577</td>  <td class="nbHitsCovered">&nbsp;220</td>  <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;572</td>  <td class="nbHitsCovered">&nbsp;242</td>  <td class="src"><pre class="src">&nbsp;    <span class="keyword">private</span> DefaultAnnotation(<span class="keyword">final</span> Class&lt;? <span class="keyword">extends</span> Annotation&gt; clazz, <span class="keyword">final</span> Annotation annotationObject, <span class="keyword">final</span> Field base) {</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;573</td>  <td class="nbHitsCovered">&nbsp;242</td>  <td class="src"><pre class="src">&nbsp;        annotation = annotationObject;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;574</td>  <td class="nbHitsCovered">&nbsp;242</td>  <td class="src"><pre class="src">&nbsp;        annotationClass = clazz;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;575</td>  <td class="nbHitsCovered">&nbsp;242</td>  <td class="src"><pre class="src">&nbsp;        basePrefix = base.getDeclaringClass().getName() + FIELD_SEPARATOR + base.getName() + ANNOTATION_SEPARATOR;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;576</td>  <td class="nbHitsCovered">&nbsp;242</td>  <td class="src"><pre class="src">&nbsp;        init();</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;577</td>  <td class="nbHitsCovered">&nbsp;242</td>  <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;578</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    </pre></td></tr>
 <tr>  <td class="numLine">&nbsp;579</td>  <td class="nbHits">&nbsp;</td>
@@ -959,26 +959,26 @@
   <td class="src"><pre class="src">&nbsp;<span class="comment">         * values later.</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;586</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;<span class="comment">         */</span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;587</td>  <td class="nbHitsCovered"><a title="Line 587: Conditional coverage 100% (2/2).">&nbsp;10328</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 587: Conditional coverage 100% (2/2).">        <span class="keyword">if</span> (annotation != <span class="keyword">null</span>) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;587</td>  <td class="nbHitsCovered"><a title="Line 587: Conditional coverage 100% (2/2).">&nbsp;11385</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 587: Conditional coverage 100% (2/2).">        <span class="keyword">if</span> (annotation != <span class="keyword">null</span>) {</a></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;588</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;            <span class="keyword">try</span> {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;589</td>  <td class="nbHitsCovered"><a title="Line 589: Conditional coverage 100% (2/2).">&nbsp;62540</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 589: Conditional coverage 100% (2/2).">                <span class="keyword">for</span> (Method method : annotationClass.getDeclaredMethods()) {</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;590</td>  <td class="nbHitsCovered"><a title="Line 590: Conditional coverage 100% (2/2).">&nbsp;53000</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 590: Conditional coverage 100% (2/2).">                    <span class="keyword">if</span> (method.getReturnType().isAnnotation()) {</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;591</td>  <td class="nbHitsCovered">&nbsp;100</td>  <td class="src"><pre class="src">&nbsp;                        Annotation subAnnotation = (Annotation) method.invoke(annotation, <span class="keyword">new</span> Object[] {});</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;592</td>  <td class="nbHitsCovered">&nbsp;100</td>  <td class="src"><pre class="src">&nbsp;                        Class proxyClass = Proxy.getProxyClass(DefaultAnnotation.<span class="keyword">class</span>.getClassLoader(), <span class="keyword">new</span> Class[] { method.getReturnType() });</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;593</td>  <td class="nbHitsCovered">&nbsp;100</td>  <td class="src"><pre class="src">&nbsp;                        Object dynamicProxy = proxyClass.getConstructor(<span class="keyword">new</span> Class[] { InvocationHandler.<span class="keyword">class</span> }).newInstance(<span class="keyword">new</span> Object[] { <span class="keyword">new</span> DefaultAnnotation((Class&lt;? <span class="keyword">extends</span> Annotation&gt;) method.getReturnType(), subAnnotation, method) });</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;594</td>  <td class="nbHitsCovered">&nbsp;100</td>  <td class="src"><pre class="src">&nbsp;                        values.put(method, dynamicProxy);</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;595</td>  <td class="nbHitsCovered"><a title="Line 595: Conditional coverage 100% (4/4) [each condition: 100%, 100%].">&nbsp;100</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 595: Conditional coverage 100% (4/4) [each condition: 100%, 100%].">                    } <span class="keyword">else</span> <span class="keyword">if</span> (method.getReturnType().isArray() &amp;&amp; method.getReturnType().getComponentType().isAnnotation()) {</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;596</td>  <td class="nbHitsCovered">&nbsp;160</td>  <td class="src"><pre class="src">&nbsp;                        Object array = method.invoke(annotation, <span class="keyword">new</span> Object[] {});</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;597</td>  <td class="nbHitsCovered">&nbsp;160</td>  <td class="src"><pre class="src">&nbsp;                        Object subArray = Array.newInstance(method.getReturnType().getComponentType(), Array.getLength(array));</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;598</td>  <td class="nbHitsCovered"><a title="Line 598: Conditional coverage 100% (2/2).">&nbsp;440</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 598: Conditional coverage 100% (2/2).">                        <span class="keyword">for</span> (<span class="keyword">int</span> i = 0; i &lt; Array.getLength(array); i++) {</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;599</td>  <td class="nbHitsCovered">&nbsp;280</td>  <td class="src"><pre class="src">&nbsp;                            Annotation subAnnotation = (Annotation) Array.get(array, i);</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;600</td>  <td class="nbHitsCovered">&nbsp;280</td>  <td class="src"><pre class="src">&nbsp;                            Class proxyClass = Proxy.getProxyClass(DefaultAnnotation.<span class="keyword">class</span>.getClassLoader(), <span class="keyword">new</span> Class[] { method.getReturnType().getComponentType() });</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;601</td>  <td class="nbHitsCovered">&nbsp;280</td>  <td class="src"><pre class="src">&nbsp;                            Object dynamicProxy = proxyClass.getConstructor(<span class="keyword">new</span> Class[] { InvocationHandler.<span class="keyword">class</span> }).newInstance(<span class="keyword">new</span> Object[] { <span class="keyword">new</span> DefaultAnnotation((Class&lt;? <span class="keyword">extends</span> Annotation&gt;) method.getReturnType().getComponentType(), subAnnotation, method) });</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;602</td>  <td class="nbHitsCovered">&nbsp;280</td>  <td class="src"><pre class="src">&nbsp;                            Array.set(subArray, i, dynamicProxy);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;589</td>  <td class="nbHitsCovered"><a title="Line 589: Conditional coverage 100% (2/2).">&nbsp;68948</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 589: Conditional coverage 100% (2/2).">                <span class="keyword">for</span> (Method method : annotationClass.getDeclaredMethods()) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;590</td>  <td class="nbHitsCovered"><a title="Line 590: Conditional coverage 100% (2/2).">&nbsp;58432</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 590: Conditional coverage 100% (2/2).">                    <span class="keyword">if</span> (method.getReturnType().isAnnotation()) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;591</td>  <td class="nbHitsCovered">&nbsp;110</td>  <td class="src"><pre class="src">&nbsp;                        Annotation subAnnotation = (Annotation) method.invoke(annotation, <span class="keyword">new</span> Object[] {});</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;592</td>  <td class="nbHitsCovered">&nbsp;110</td>  <td class="src"><pre class="src">&nbsp;                        Class proxyClass = Proxy.getProxyClass(DefaultAnnotation.<span class="keyword">class</span>.getClassLoader(), <span class="keyword">new</span> Class[] { method.getReturnType() });</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;593</td>  <td class="nbHitsCovered">&nbsp;110</td>  <td class="src"><pre class="src">&nbsp;                        Object dynamicProxy = proxyClass.getConstructor(<span class="keyword">new</span> Class[] { InvocationHandler.<span class="keyword">class</span> }).newInstance(<span class="keyword">new</span> Object[] { <span class="keyword">new</span> DefaultAnnotation((Class&lt;? <span class="keyword">extends</span> Annotation&gt;) method.getReturnType(), subAnnotation, method) });</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;594</td>  <td class="nbHitsCovered">&nbsp;110</td>  <td class="src"><pre class="src">&nbsp;                        values.put(method, dynamicProxy);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;595</td>  <td class="nbHitsCovered"><a title="Line 595: Conditional coverage 100% (4/4) [each condition: 100%, 100%].">&nbsp;110</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 595: Conditional coverage 100% (4/4) [each condition: 100%, 100%].">                    } <span class="keyword">else</span> <span class="keyword">if</span> (method.getReturnType().isArray() &amp;&amp; method.getReturnType().getComponentType().isAnnotation()) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;596</td>  <td class="nbHitsCovered">&nbsp;176</td>  <td class="src"><pre class="src">&nbsp;                        Object array = method.invoke(annotation, <span class="keyword">new</span> Object[] {});</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;597</td>  <td class="nbHitsCovered">&nbsp;176</td>  <td class="src"><pre class="src">&nbsp;                        Object subArray = Array.newInstance(method.getReturnType().getComponentType(), Array.getLength(array));</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;598</td>  <td class="nbHitsCovered"><a title="Line 598: Conditional coverage 100% (2/2).">&nbsp;484</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 598: Conditional coverage 100% (2/2).">                        <span class="keyword">for</span> (<span class="keyword">int</span> i = 0; i &lt; Array.getLength(array); i++) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;599</td>  <td class="nbHitsCovered">&nbsp;308</td>  <td class="src"><pre class="src">&nbsp;                            Annotation subAnnotation = (Annotation) Array.get(array, i);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;600</td>  <td class="nbHitsCovered">&nbsp;308</td>  <td class="src"><pre class="src">&nbsp;                            Class proxyClass = Proxy.getProxyClass(DefaultAnnotation.<span class="keyword">class</span>.getClassLoader(), <span class="keyword">new</span> Class[] { method.getReturnType().getComponentType() });</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;601</td>  <td class="nbHitsCovered">&nbsp;308</td>  <td class="src"><pre class="src">&nbsp;                            Object dynamicProxy = proxyClass.getConstructor(<span class="keyword">new</span> Class[] { InvocationHandler.<span class="keyword">class</span> }).newInstance(<span class="keyword">new</span> Object[] { <span class="keyword">new</span> DefaultAnnotation((Class&lt;? <span class="keyword">extends</span> Annotation&gt;) method.getReturnType().getComponentType(), subAnnotation, method) });</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;602</td>  <td class="nbHitsCovered">&nbsp;308</td>  <td class="src"><pre class="src">&nbsp;                            Array.set(subArray, i, dynamicProxy);</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;603</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                        }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;604</td>  <td class="nbHitsCovered">&nbsp;160</td>  <td class="src"><pre class="src">&nbsp;                        values.put(method, subArray);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;604</td>  <td class="nbHitsCovered">&nbsp;176</td>  <td class="src"><pre class="src">&nbsp;                        values.put(method, subArray);</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;605</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;                    }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;606</td>  <td class="nbHits">&nbsp;</td>
@@ -995,10 +995,10 @@
 <tr>  <td class="numLineCover">&nbsp;616</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;                e.printStackTrace();</span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;617</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            } <span class="keyword">catch</span> (NoSuchMethodException e) {</span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;618</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;                e.printStackTrace();</span></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;619</td>  <td class="nbHitsCovered">&nbsp;9540</td>  <td class="src"><pre class="src">&nbsp;            }</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;619</td>  <td class="nbHitsCovered">&nbsp;10516</td>  <td class="src"><pre class="src">&nbsp;            }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;620</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;621</td>  <td class="nbHitsCovered">&nbsp;10328</td>  <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;621</td>  <td class="nbHitsCovered">&nbsp;11385</td>  <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;622</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;623</td>  <td class="nbHits">&nbsp;</td>
@@ -1085,14 +1085,14 @@
   <td class="src"><pre class="src">&nbsp;<span class="comment">     */</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;676</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> Class&lt;? <span class="keyword">extends</span> Annotation&gt; annotationType() {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;677</td>  <td class="nbHitsCovered">&nbsp;19716</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> annotationClass;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;677</td>  <td class="nbHitsCovered">&nbsp;21736</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> annotationClass;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;678</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;679</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    </pre></td></tr>
 <tr>  <td class="numLine">&nbsp;680</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> String getBasePrefix() {</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;681</td>  <td class="nbHitsCovered">&nbsp;53220</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> basePrefix;</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;681</td>  <td class="nbHitsCovered">&nbsp;58696</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> basePrefix;</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;682</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;683</td>  <td class="nbHits">&nbsp;</td>
@@ -1103,68 +1103,68 @@
   <td class="src"><pre class="src">&nbsp;    <span class="keyword">public</span> Object invoke(<span class="keyword">final</span> Object proxy, <span class="keyword">final</span> Method method, <span class="keyword">final</span> Object[] args) <span class="keyword">throws</span> Throwable {</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;686</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;687</td>  <td class="nbHitsUncovered"><a title="Line 687: Conditional coverage 50% (1/2).">&nbsp;67876</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 687: Conditional coverage 50% (1/2).">        <span class="keyword">if</span> (method.equals(Annotation.<span class="keyword">class</span>.getMethod(<span class="string">"equals"</span>, Object.<span class="keyword">class</span>))) {</a></span></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;687</td>  <td class="nbHitsUncovered"><a title="Line 687: Conditional coverage 50% (1/2).">&nbsp;74864</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 687: Conditional coverage 50% (1/2).">        <span class="keyword">if</span> (method.equals(Annotation.<span class="keyword">class</span>.getMethod(<span class="string">"equals"</span>, Object.<span class="keyword">class</span>))) {</a></span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;688</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            <span class="keyword">return</span> <span class="keyword">this</span>.equals(args[0]);</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;689</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;690</td>  <td class="nbHitsUncovered"><a title="Line 690: Conditional coverage 50% (1/2).">&nbsp;67876</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 690: Conditional coverage 50% (1/2).">        <span class="keyword">if</span> (method.equals(Annotation.<span class="keyword">class</span>.getMethod(<span class="string">"hashCode"</span>))) {</a></span></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;690</td>  <td class="nbHitsUncovered"><a title="Line 690: Conditional coverage 50% (1/2).">&nbsp;74864</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 690: Conditional coverage 50% (1/2).">        <span class="keyword">if</span> (method.equals(Annotation.<span class="keyword">class</span>.getMethod(<span class="string">"hashCode"</span>))) {</a></span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;691</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            <span class="keyword">return</span> <span class="keyword">this</span>.hashCode();</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;692</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;693</td>  <td class="nbHitsUncovered"><a title="Line 693: Conditional coverage 50% (1/2).">&nbsp;67876</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 693: Conditional coverage 50% (1/2).">        <span class="keyword">if</span> (method.equals(Annotation.<span class="keyword">class</span>.getMethod(<span class="string">"toString"</span>))) {</a></span></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;693</td>  <td class="nbHitsUncovered"><a title="Line 693: Conditional coverage 50% (1/2).">&nbsp;74864</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 693: Conditional coverage 50% (1/2).">        <span class="keyword">if</span> (method.equals(Annotation.<span class="keyword">class</span>.getMethod(<span class="string">"toString"</span>))) {</a></span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;694</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            <span class="keyword">return</span> <span class="keyword">this</span>.toString();</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;695</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;696</td>  <td class="nbHitsCovered"><a title="Line 696: Conditional coverage 100% (2/2).">&nbsp;67876</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 696: Conditional coverage 100% (2/2).">        <span class="keyword">if</span> (method.equals(Annotation.<span class="keyword">class</span>.getMethod(<span class="string">"annotationType"</span>))) {</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;697</td>  <td class="nbHitsCovered">&nbsp;19716</td>  <td class="src"><pre class="src">&nbsp;            <span class="keyword">return</span> <span class="keyword">this</span>.annotationType();</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;696</td>  <td class="nbHitsCovered"><a title="Line 696: Conditional coverage 100% (2/2).">&nbsp;74864</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 696: Conditional coverage 100% (2/2).">        <span class="keyword">if</span> (method.equals(Annotation.<span class="keyword">class</span>.getMethod(<span class="string">"annotationType"</span>))) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;697</td>  <td class="nbHitsCovered">&nbsp;21736</td>  <td class="src"><pre class="src">&nbsp;            <span class="keyword">return</span> <span class="keyword">this</span>.annotationType();</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;698</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;699</td>  <td class="nbHitsUncovered"><a title="Line 699: Conditional coverage 50% (1/2).">&nbsp;48160</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 699: Conditional coverage 50% (1/2).">        <span class="keyword">if</span> (method.equals(Object.<span class="keyword">class</span>.getMethod(<span class="string">"notify"</span>))) {</a></span></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;699</td>  <td class="nbHitsUncovered"><a title="Line 699: Conditional coverage 50% (1/2).">&nbsp;53128</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 699: Conditional coverage 50% (1/2).">        <span class="keyword">if</span> (method.equals(Object.<span class="keyword">class</span>.getMethod(<span class="string">"notify"</span>))) {</a></span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;700</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            <span class="keyword">this</span>.notify();</span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;701</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            <span class="keyword">return</span> <span class="keyword">null</span>;</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;702</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;703</td>  <td class="nbHitsUncovered"><a title="Line 703: Conditional coverage 50% (1/2).">&nbsp;48160</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 703: Conditional coverage 50% (1/2).">        <span class="keyword">if</span> (method.equals(Object.<span class="keyword">class</span>.getMethod(<span class="string">"notifyAll"</span>))) {</a></span></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;703</td>  <td class="nbHitsUncovered"><a title="Line 703: Conditional coverage 50% (1/2).">&nbsp;53128</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 703: Conditional coverage 50% (1/2).">        <span class="keyword">if</span> (method.equals(Object.<span class="keyword">class</span>.getMethod(<span class="string">"notifyAll"</span>))) {</a></span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;704</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            <span class="keyword">this</span>.notifyAll();</span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;705</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            <span class="keyword">return</span> <span class="keyword">null</span>;</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;706</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;707</td>  <td class="nbHitsUncovered"><a title="Line 707: Conditional coverage 50% (1/2).">&nbsp;48160</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 707: Conditional coverage 50% (1/2).">        <span class="keyword">if</span> (method.equals(Object.<span class="keyword">class</span>.getMethod(<span class="string">"wait"</span>))) {</a></span></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;707</td>  <td class="nbHitsUncovered"><a title="Line 707: Conditional coverage 50% (1/2).">&nbsp;53128</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 707: Conditional coverage 50% (1/2).">        <span class="keyword">if</span> (method.equals(Object.<span class="keyword">class</span>.getMethod(<span class="string">"wait"</span>))) {</a></span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;708</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            <span class="keyword">this</span>.wait();</span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;709</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            <span class="keyword">return</span> <span class="keyword">null</span>;</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;710</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;711</td>  <td class="nbHitsUncovered"><a title="Line 711: Conditional coverage 50% (1/2).">&nbsp;48160</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 711: Conditional coverage 50% (1/2).">        <span class="keyword">if</span> (method.equals(Object.<span class="keyword">class</span>.getMethod(<span class="string">"wait"</span>, <span class="keyword">long</span>.<span class="keyword">class</span>))) {</a></span></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;711</td>  <td class="nbHitsUncovered"><a title="Line 711: Conditional coverage 50% (1/2).">&nbsp;53128</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 711: Conditional coverage 50% (1/2).">        <span class="keyword">if</span> (method.equals(Object.<span class="keyword">class</span>.getMethod(<span class="string">"wait"</span>, <span class="keyword">long</span>.<span class="keyword">class</span>))) {</a></span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;712</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            <span class="keyword">this</span>.wait((Long) args[0]);</span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;713</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            <span class="keyword">return</span> <span class="keyword">null</span>;</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;714</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;715</td>  <td class="nbHitsUncovered"><a title="Line 715: Conditional coverage 50% (1/2).">&nbsp;48160</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 715: Conditional coverage 50% (1/2).">        <span class="keyword">if</span> (method.equals(Object.<span class="keyword">class</span>.getMethod(<span class="string">"wait"</span>, <span class="keyword">long</span>.<span class="keyword">class</span>, <span class="keyword">int</span>.<span class="keyword">class</span>))) {</a></span></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;715</td>  <td class="nbHitsUncovered"><a title="Line 715: Conditional coverage 50% (1/2).">&nbsp;53128</a></td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;<a title="Line 715: Conditional coverage 50% (1/2).">        <span class="keyword">if</span> (method.equals(Object.<span class="keyword">class</span>.getMethod(<span class="string">"wait"</span>, <span class="keyword">long</span>.<span class="keyword">class</span>, <span class="keyword">int</span>.<span class="keyword">class</span>))) {</a></span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;716</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            <span class="keyword">this</span>.wait((Long) args[0], (Integer) args[1]);</span></pre></td></tr>
 <tr>  <td class="numLineCover">&nbsp;717</td>  <td class="nbHitsUncovered">&nbsp;0</td>  <td class="src"><pre class="src"><span class="srcUncovered">&nbsp;            <span class="keyword">return</span> <span class="keyword">null</span>;</span></pre></td></tr>
 <tr>  <td class="numLine">&nbsp;718</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;719</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;720</td>  <td class="nbHitsCovered"><a title="Line 720: Conditional coverage 100% (2/2).">&nbsp;48160</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 720: Conditional coverage 100% (2/2).">        <span class="keyword">if</span> (values.containsKey(method)) {</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;721</td>  <td class="nbHitsCovered">&nbsp;6770</td>  <td class="src"><pre class="src">&nbsp;            <span class="keyword">return</span> values.get(method);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;720</td>  <td class="nbHitsCovered"><a title="Line 720: Conditional coverage 100% (2/2).">&nbsp;53128</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 720: Conditional coverage 100% (2/2).">        <span class="keyword">if</span> (values.containsKey(method)) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;721</td>  <td class="nbHitsCovered">&nbsp;7447</td>  <td class="src"><pre class="src">&nbsp;            <span class="keyword">return</span> values.get(method);</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;722</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;723</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;724</td>  <td class="nbHitsCovered"><a title="Line 724: Conditional coverage 100% (2/2).">&nbsp;41390</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 724: Conditional coverage 100% (2/2).">        <span class="keyword">if</span> (annotation != <span class="keyword">null</span>) {</a></pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;725</td>  <td class="nbHitsCovered">&nbsp;37040</td>  <td class="src"><pre class="src">&nbsp;            <span class="keyword">return</span> method.invoke(annotation, args);</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;724</td>  <td class="nbHitsCovered"><a title="Line 724: Conditional coverage 100% (2/2).">&nbsp;45681</a></td>  <td class="src"><pre class="src">&nbsp;<a title="Line 724: Conditional coverage 100% (2/2).">        <span class="keyword">if</span> (annotation != <span class="keyword">null</span>) {</a></pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;725</td>  <td class="nbHitsCovered">&nbsp;40844</td>  <td class="src"><pre class="src">&nbsp;            <span class="keyword">return</span> method.invoke(annotation, args);</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;726</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;        }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;727</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;</pre></td></tr>
-<tr>  <td class="numLineCover">&nbsp;728</td>  <td class="nbHitsCovered">&nbsp;4350</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> method.getDefaultValue();</pre></td></tr>
+<tr>  <td class="numLineCover">&nbsp;728</td>  <td class="nbHitsCovered">&nbsp;4837</td>  <td class="src"><pre class="src">&nbsp;        <span class="keyword">return</span> method.getDefaultValue();</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;729</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;    }</pre></td></tr>
 <tr>  <td class="numLine">&nbsp;730</td>  <td class="nbHits">&nbsp;</td>
   <td class="src"><pre class="src">&nbsp;}</pre></td></tr>
 </table>
 
-<div class="footer">Report generated by <a href="http://cobertura.sourceforge.net/" target="_top">Cobertura</a> 1.9.4.1 on 9/7/13 5:28 PM.</div>
+<div class="footer">Report generated by <a href="http://cobertura.sourceforge.net/" target="_top">Cobertura</a> 1.9.4.1 on 9/7/13 5:42 PM.</div>
 </body>
 </html>
