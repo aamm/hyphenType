@@ -123,6 +123,7 @@
     </div>
     <div id="bodyColumn">
       <div id="contentBox">
+<<<<<<< HEAD
         <div class="section"><h2>hyphenType is...<a name="hyphenType_is..."></a></h2><p>hyphenType is a Java library to make it easy for programmers to parse command line arguments.</p><p>hyphenType is different from other solutions in that it parses command line arguments into an object. Instead of having to specify parsing arguments using a library, a programmer needs only to write a simple annotated Java interface and hyphenType will do the rest.</p></div><div class="section"><h2>A very fast start<a name="A_very_fast_start"></a></h2><p>Let's say that your application expects to receive only two arguments from the command line and ignore all other arguments. Both arguments should be plain strings. Let's take a look at a simple class that solves this problem using hyphenType:</p><div class="source"><pre>package example.case1;
 
 import org.hyphenType.wrapper.StandAloneAppWrapper;
@@ -258,6 +259,9 @@ Options
 
   -h, --help        Shows this help message
 </pre></div><p>Note that so far we did not call any class of hyphenType directly. The only references to hyphenType were the SimpleArgument annotation and extending Options and StandAloneAppWrapper.</p><p>Another interesting thing to notice is that the main method is not static. In fact, adding a static modifier to this method will not change the outcome. Internally, hyphenType will check whether the main method is static or not. If it is static, then it will simply call the method. If the method is not static, then hyphenType will first create an instance of the class (in the example above, an instance of XApp) and call the main method from that instance.</p></div><div class="section"><h2>Where to go next?<a name="Where_to_go_next"></a></h2><p>At this point you already know the basic idea behind hyphenType: you need to write an options interface and hyphenType will use it to both understand how command line arguments should be parsed, and to create an object that will give you easy access to the parsed data.</p><p>But hyphenType can parse arguments that are more complex then those of the examples we just saw. For instance, there are ways to tell hyphenType to create lists or parse arguments to custom classes.</p><p>We designed hyphenType to be not only a command line parsing tool, but also a tool to help unit test and document stand alone applications.</p><p>Check the menu on the left for more resources regarding hyphenType.</p></div>
+=======
+        <div class="section"><h2>About hyphenType<a name="About_hyphenType"></a></h2><p>Please check <a href="./default.html">this page</a> for more information.</p></div>
+>>>>>>> a32c0fb711f691c99e4f759d4c30d3811d469640
       </div>
     </div>
     <div class="clear">
