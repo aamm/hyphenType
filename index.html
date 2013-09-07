@@ -69,6 +69,9 @@
                           <a href="advanced_topics.html" title="Advanced Topics">Advanced Topics</a>
                   </li>
                                                                     <li class="collapsed">
+                          <a href="examples.html" title="Examples / Cookbook">Examples / Cookbook</a>
+                  </li>
+                                                                    <li class="collapsed">
                           <a href="tips.html" title="Tips">Tips</a>
                   </li>
                   <li class="none">
@@ -128,7 +131,7 @@
     </div>
     <div id="bodyColumn">
       <div id="contentBox">
-        <div class="section"><h2>hyphenType is...<a name="hyphenType_is..."></a></h2><p>hyphenType is a Java library to make it easy for programmers to parse command line arguments.</p><p>hyphenType is different from other solutions in that it parses command line arguments into an object. Instead of having to specify parsing arguments using a library, a programmer needs only to write a simple annotated Java interface and hyphenType will do the rest.</p><p>This is the documentation site. Our GitHub site is <a class="externalLink" href="https://github.com/aamm/hyphenType/">https://github.com/aamm/hyphenType/</a>.</p><p>Please use our <a href="./mail-lists.html">mailing list</a> to contact us.</p></div><div class="section"><h2>A very fast start<a name="A_very_fast_start"></a></h2><p>Let's say that your application expects to receive only two arguments from the command line and ignore all other arguments. Both arguments should be plain strings. Let's take a look at a simple class that solves this problem using hyphenType:</p><div class="source"><pre>package example.case1;
+        <div class="section"><h2>hyphenType is...<a name="hyphenType_is..."></a></h2><p>hyphenType is a Java library to make it easy for programmers to parse command line arguments.</p><p>hyphenType is different from other solutions in that it parses command line arguments into an object. Instead of having to specify parsing arguments using a library, a programmer needs only to write a simple annotated Java interface and hyphenType will do the rest.</p><p>This is the documentation site. Our GitHub site is <a class="externalLink" href="https://github.com/aamm/hyphenType/">https://github.com/aamm/hyphenType/</a>.</p><p>Please use our <a href="./mail-lists.html">mailing list</a> to contact us.</p></div><div class="section"><h2>Feature list<a name="Feature_list"></a></h2><ul><li>Arguments are parsed to Java objects</li><li>Short arguments &quot;-h&quot; can coexist with long arguments &quot;--help&quot;</li><li>Short arguments can be combined for short CLI. &quot;-xyz&quot; is the same as &quot;-x -y -z&quot;</li><li>Documentation can be added in Java annotations or external resource bundles</li><li>UTF-8 resource bundles - easy to edit for Asian languages</li><li>Documentation generator tool</li><li>Configurable input channels. If a mandatory argument was not given as CLI argument, hyphenType can ask the user to type the argument in the command line, or even show a dialog window.</li><li>Return codes. hyphenType can manage return codes (the number n in System.exit(n)), converting enumerations into integers. Also, it can convert exceptions into a certain return code.</li><li>Validators - validation of CLI arguments can be made using built-in configurable validators. You can also easily create your own validator. </li><li>Documentation formatters - you can add a number of documentation formatters to your CLI. The standard one, for instance, even formats the output to have a maximum number of columns.</li><li>Advanced unit testing. Unit testing parsing or the application that reads parsing.</li><li>Unit testing can be used to generate documentation. Unit tests can easily write text files containing the result of executing your program, simulating a terminal. The outputs on this pages were all automatically generated using this feature.</li></ul></div><div class="section"><h2>A very fast start<a name="A_very_fast_start"></a></h2><p>Let's say that your application expects to receive only two arguments from the command line and ignore all other arguments. Both arguments should be plain strings. Let's take a look at a simple class that solves this problem using hyphenType:</p><div class="source"><pre>package example.case1;
 
 import org.hyphenType.wrapper.StandAloneAppWrapper;
 
@@ -211,15 +214,21 @@ import org.hyphenType.datastructure.annotations.SimpleArgument;
 @SuppressWarnings(&quot;unchecked&quot;)
 @ArgumentsObject(description = &quot;Prints argA and argB to stdout.&quot;)
 public interface XOpt extends Options {
-
+    
     @Option(names = { &quot;h&quot;, &quot;help&quot; }, description = &quot;Shows this help message&quot;)
     boolean h();
-
-    @SimpleArgument(index = 0)
+    
+    @SimpleArgument(index = 0, name = &quot;a&quot;, description = &quot;This is a short description of argument a.&quot;)
     public String argA();
-
-    @SimpleArgument(index = 1)
+    
+    @SimpleArgument(index = 1, name = &quot;b&quot;, description = &quot;This is the description of argument b. &quot; +
+    		&quot;This is a very long description to demonstrate the automated formatting &quot; +
+    		&quot;capability of hyphenType. As you can see, the output will have line &quot; +
+    		&quot;breaks that guarantee that text will only go until a certain column, &quot; +
+    		&quot;which ensures that documentation will look great even in low resolution &quot; +
+    		&quot;terminals.&quot;)
     public String argB();
+    
 }
 </pre></div><p>And change one line of our class:</p><div class="source"><pre>package example.case3;
 
@@ -237,27 +246,37 @@ public class XApp extends StandAloneAppWrapper {
     }
 }
 </pre></div><p>Let's run it again. This time, passing the arguments -h or --help:</p><div class="source"><pre>_&gt; java example.case3.XApp -h
-usage: program [options] [argA] [argB] 
+usage: program [options] [a] [b] 
 
 Prints argA and argB to stdout.
 
 Arguments
 
-
-
+  a                 This is a short description of argument a.
+  b                 This is the description of argument b. This is a very long 
+                    description to demonstrate the automated formatting 
+                    capability of hyphenType. As you can see, the output will 
+                    have line breaks that guarantee that text will only go until
+                    a certain column, which ensures that documentation will look
+                    great even in low resolution terminals.
 
 Options
 
   -h, --help        Shows this help message
-</pre></div><div class="source"><pre>_&gt; java example.case3.XApp --help
-usage: program [options] [argA] [argB] 
+</pre></div><p>We can also notice that we added documentation to the two options. So hyphenType will automatically print the documentation and format long lines so it looks good in low resolution terminals.</p><div class="source"><pre>_&gt; java example.case3.XApp --help
+usage: program [options] [a] [b] 
 
 Prints argA and argB to stdout.
 
 Arguments
 
-
-
+  a                 This is a short description of argument a.
+  b                 This is the description of argument b. This is a very long 
+                    description to demonstrate the automated formatting 
+                    capability of hyphenType. As you can see, the output will 
+                    have line breaks that guarantee that text will only go until
+                    a certain column, which ensures that documentation will look
+                    great even in low resolution terminals.
 
 Options
 
