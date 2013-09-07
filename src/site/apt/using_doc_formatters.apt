@@ -1,0 +1,98 @@
+Using Documentation Formatters
+
+  A documentation formatter is an object that analyzes the options interface and creates a documentation of this interface. The actual format of the documentation can be a formatted text, an HTML, or anything else. You can also create your own custom made formatter, which will be the topic of another section. Here we explain the basic usage of a documentation formatter.
+  
+  hyphenType comes with two built-in documentation formatters: {{{./apidocs/org/hyphenType/documentation/lib/StandardFormatterEngine.StandardFormatter.html}@StandardFormatter}} and {{{./apidocs/org/hyphenType/documentation/lib/HTMLFormatterEngine.HTMLFormatter.html}@HTMLFormatter}}. Both are annotations, as you may have already noticed. The reason why they are annotations is because they will decorate options interfaces.
+  
+* Choosing the documentation formatter
+
+  There are two basic ways to choose which the documentation formatter to use. Firstly, you can simply use the preferred documentation formatter, which is configured in the options interface. Secondly, you can explicitly choose the documentation formatter when you ask for any documentation.
+  
+  The first method is the effortless one. Use this method if you always want to use the preferred documentation formatter. If you do not specify the documentation formatter you want to use for your options interface, the default formatter is the {{{./apidocs/org/hyphenType/documentation/lib/StandardFormatterEngine.StandardFormatter.html}@StandardFormatter}}.
+  
+  The second method requires the caller to chose the documentation formatter. Use this method if you need to use multiple documentation formatters.
+
+  At follows, we explain each method in details.
+
+** Using the preferred documentation formatter.
+
+  The following code illustrates how to use the preferred formatter. As you can see, you do not need to explicitly refer to any formatter.
+
++------------------------------------------------------+
+public static void main(MyOptions args) {
+    args.printDocumentation();
+}
++------------------------------------------------------+
+
+  You can chose the preferred formatter for the documentation of an options interface using the preferredDocumentationFormatter property in the {{{./apidocs/org/hyphenType/datastructure/annotations/ArgumentsObject.html}@ArgumentsObject}} annotation.
+  
+  Also, you can configure this property in resource bundle files.
+  
+  You can use the preferred documentation formatter through the methods {{{./apidocs/org/hyphenType/datastructure/Options.html}Options.printDocumentation()}} and {{{./apidocs/org/hyphenType/datastructure/Options.html}Options.printDocumentation(PrintStream pw)}}. The only difference between these two methods is that the first outputs the documentation to the standard System.out PrintStream while the second allows you to choose which PrintStream will be used. 
+  
+  The default value of the preferredDocumentationFormatter property is StandardFormatter.class. In other words, if you do not specify which formatter to use, hyphenType will assume it should use StandardFormatter.
+
+** Explicitly selecting a documentation formatter at runtime. 
+
+  The following code illustrates how to select a documentation formatter at runtime. In the code bellow we are asking the API to use MyFormatter.
+
++------------------------------------------------------+
+public static void main(MyOptions args) {
+    args.printDocumentation(MyFormatter.class);
+}
++------------------------------------------------------+
+
+  You can select the documentation formatter to use through the methods {{{./apidocs/org/hyphenType/datastructure/Options.html}Options.printDocumentation(Class\<? extends Annotation\> formatterClass)}} and {{{./apidocs/org/hyphenType/datastructure/Options.html}Options.printDocumentation(Class\<? extends Annotation\> formatterClass, PrintStream pw)}}. As in the case of the two methods that call the preferred documentation formatter, the only difference between these two methods is that the first outputs the documentation to the standard System.out PrintStream while the second allows you to choose which PrintStream will be used.
+
+* Configuring a documentation formatter
+
+  There are two configurations related to documentation formatters. It is important to explain the distinction between them to avoid confusions.
+  
+** Preferred formatter configuration
+  
+  The first configuration is to set what is the documentation formatter. As we already said, the default value of this configuration is StandardFormatter, which is based on the GNU standard to document command line interfaces.
+  
+  The following code shows how to set this configuration. This can also be configured via resource bundles.
+  
++------------------------------------------------------+
+@ArgumentsObject(preferredDocumentationFormatter = SomeFormatter.class)
+public interface MyOptions extends Options {
+    // ...
+}
++------------------------------------------------------+
+
+** Formatter configuration 
+  
+  You can also configure the formatter itself. Each formatter may have its own configuration properties. For instance, a hypothetical formatter that outputs image files might need users to chose the format of the images or the directory where to put the images. Because each formatter has its own particularities, every formatter needs to provide an annotation to enable users to configure the formatter.
+  
+  The following code illustrates how would be the configuration of such hypothetical documentation formatter. You can also configure documentation formatters using resource bundles.
+  
++------------------------------------------------------+
+@HypotheticalImageFormatter(
+    outputFormat="PNG",
+    imageWidth=500
+)
+public interface MyOptions extends Options {
+    // ...
+}
++------------------------------------------------------+
+
+  You do NOT need to necessarily provide configuration for documentation formatters. You can simply omit the configuration for a documentation formatter if you are satisfied with the default settings of this formatter. The only reason to add an annotation such as in the source code above is to overwrite the default settings of a documentation formatter.
+
+  Just to be clear, the above source code do NOT set the documentation formatter to be the HypotheticalImageFormatter. Instead, the source code above only configures the HypotheticalImageFormatter to prepare this formatter to be called. If you want to set the HypotheticalImageFormatter to be the formatter that will be used by default, you should set the preferredDocumentationFormatter property, as explained before.
+
+** Using multiple formatters
+
+  You can also have multiple documentation formatters configured for the same options interface. The following code is an example of that.  
+  
++------------------------------------------------------+
+@ACertainDocumentationFormatter(flavor="banana")
+@AnotherDocumentationFormatter(color="blue")
+public interface MyOptions extends Options {
+    // ...
+}
++------------------------------------------------------+
+
+  In the example above, ACertainDocumentationFormatter and AnotherDocumentationFormatter are configured in a way that is specific to the MyOptions options interface. Any of the formatters in this set can be chosen using the methods {{{./apidocs/org/hyphenType/datastructure/Options.html}Options.printDocumentation(Class\<? extends Annotation\> formatterClass)}} or {{{./apidocs/org/hyphenType/datastructure/Options.html}Options.printDocumentation(Class\<? extends Annotation\> formatterClass, PrintStream pw)}}, as explained above.
+  
+  But, as we explained before, having these two annotations do not mean these are the only formatters available. You are free to use any other documentation formatter in your classpath as long as you are satisfied with the default configuration of this other formatter.

@@ -1,0 +1,18 @@
+Basics
+
+  This is the minimum knowledge you need to make hyphenType work.
+   
+  There is no installation section, as hyphenType is distributed as a single JAR file. All you need to do is to add this JAR file to your CLASSPATH and enjoy. You will find a section about configuration, but this configuration does not specify how the tool will work in a developer's desktop (as the configuration of Eclipse does, for instance). Instead, the configuration is part of the implementation of a system. Think of it as what CSS does for HTML.
+
+  ~~ Unfortunately, there is an open bug preventing a table to have header and have no border.
+  ~~ This is the bug report: http://jira.codehaus.org/browse/DOXIA-404?page=com.atlassian.jira.plugin.system.issuetabpanels%3Acomment-tabpanel#issue-tabs
+
+*--------------------------------------------------------+------------------------------------------------------------------+
+|| Section                                               || Contents                                                        |
+*--------------------------------------------------------+------------------------------------------------------------------+
+| {{{./options_interfaces.html}Options Interfaces}}      | Introduces the most basic and important element of hyphenType.   |
+*--------------------------------------------------------+------------------------------------------------------------------+
+| {{{./anatomy_main_class.html}Anatomy of a Main Class}} | Explains how a main class should look like. There are several\   |
+|                                                        | ways to implement main classes depending on how much a\          |
+|                                                        | programmer wants hyphenType to control the execution.            |
+*--------------------------------------------------------+------------------------------------------------------------------+

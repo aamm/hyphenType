@@ -1,0 +1,69 @@
+Welcome message
+
+  It is very easy to add a welcome message to a command line interface using hyphenType. The main
+  problem to add a welcome message is that hyphenType may be set to automatically prints error
+  messages as the result of failing validations. If a validator is executed and finds a problem,
+  this validator may print an error message. Also, exit status constants may exit the JVM before
+  the main class has even the chance to execute. For all these reasons, we cannot add a welcome
+  message at the top of the main method. Many things may be printed before the main method will
+  even have the chance to execute.
+  
+  Then how get a command line application to print a welcome message before printing anything else?
+  
+  The solution is simply to use the CustomizableValidator and to add a rule that prints the
+  welcome message to this validator. In the CustomizableValidator, rules are executed in the order
+  in which they are declared in the "rules" property. The following source code illustrates how
+  to add the CustomizableValidator to an options interface, and how to add the WelcomeMessage
+  validation rule to the CustomizableValidator:
+  
++-----------------------------------------------------------------------------+
+@CustomizableValidator(rules = { WelcomeMessage.class, AnotherValidator.class })
+public interface MyOptionsInterface extends Options<ExitStatus> {
+
+	@Option
+	boolean o();
+	
+	// Other options ...
+}
++-----------------------------------------------------------------------------+
+
+  In the source code above, AnotherValidator represents a generic rule that checks the options
+  typed by the user and decide whether to proceed or not with the execution of the application. It
+  is important that the WelcomeMessage validation rule is the first in order to make sure that the
+  welcome message is printed before anything else.
+  
+  Here is the source code of the WelcomeMessage validator:
+  
++-----------------------------------------------------------------------------+
+package my.package;
+
+import java.io.InputStream;
+
+import org.hyphenType.optionprocessors.lib.CustomizableValidatorEngine.Rule;
+
+public class WelcomeMessage implements Rule<CommandLineArguments> {
+
+	@Override
+	public void validate(CommandLineArguments option) {
+		try {
+			InputStream inputStream = WelcomeMessage.class.
+			getClassLoader().getResourceAsStream("welcomeMessage.txt");
+			byte[] buffer = new byte[inputStream.available()];
+			inputStream.read(buffer);
+			System.out.print(new String(buffer));
+		}
+		catch (Exception e) {
+		}
+	}
+}
++-----------------------------------------------------------------------------+
+
+  This validator is quite simple. It searches for a text file called welcomeMessage.txt anywhere
+  in the root of the classpath and prints the contents of this file, if the file was found. If
+  anything goes wrong, this validator will simply not print anything.
+  
+  This example shows how flexible is the mechanism to execute validators. Another way to add a
+  welcome message is to create your own validator engine that prints the messages, but this
+  solution is a bit more complex, which makes it less interesting for didactic purposes.
+  
+  For more details about validators, please refer to {{{./validators.html}Validators}}.

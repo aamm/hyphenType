@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/DECORATION/1.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd"
+	name="hyphenType">
+	<!--
+		<skin> <groupId>org.apache.maven.skins</groupId>
+		<artifactId>maven-stylus-skin</artifactId> <version>1.3</version>
+		</skin>
+	-->
+	<bannerLeft>
+		<!-- <name>hyphenType</name> -->
+		<src>images/hyphenTypeLogo.png</src>
+		<href>index.html</href>
+	</bannerLeft>
+	<bannerRight>
+		<src>images/hyphenTypeLogo.png</src>
+		<href>index.html</href>
+	</bannerRight>
+	<body>
+		<breadcrumbs>
+			<item name="Overview" href="default.html" />
+			<item name="Options Interfaces" href="options_interfaces.html" />
+			<item name="Main Class" href="anatomy_main_class.html" />
+			<item name="Documentation Formatters" href="using_doc_formatters.html" />
+			<item name="Validators" href="validators.html" />
+			<item name="Unit Testing" href="unit_testing.html" />
+		</breadcrumbs>
+		<menu name="Overview">
+			<item name="Five Minutes Overview" href="default.html" />
+			<item name="Basics" href="basics.html" collapse="true">
+				<item name="Options Interfaces" href="options_interfaces.html" />
+				<item name="Anatomy of a Main Class" href="anatomy_main_class.html" />
+				<item name="Using Dcumentation Formatters" href="using_doc_formatters.html" />
+				<item name="Configuration from resource bundles" href="resource_bundles.html"/>
+				<item name="Validators" href="validators.html" />
+				<item name="Exit Status Codes" href="exit.html" collapse="true">
+					<item name="Documentation" href="exit_documenting.html"/>
+					<item name="Exceptions" href="exit_exceptions.html"/>
+				</item>
+				<item name="Unit Testing" href="unit_testing.html" />
+				<item name="Debugging" href="debugging.html" />
+			</item>
+			<item name="Advanced Topics" href="advanced_topics.html" collapse="true">
+				<item name="Creating Documentation Formatters" href="creating_documentation_formatters.html" />
+				<item name="Creating Validators" href="creating_validators.html" />
+				<item name="Calling hyphenType from your application" href="calling_from_app.html" />
+			</item>
+			<item name="Tips" href="tips.html" collapse="true">
+				<item name="Welcome Message" href="tips_welcome_message.html" />
+			</item>
+			<item name="FAQ" href="faq.html" />
+		</menu>
+		<menu ref="reports" />
+		<menu ref="modules" />
+	</body>
+</project>

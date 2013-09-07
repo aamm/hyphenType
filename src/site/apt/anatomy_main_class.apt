@@ -1,0 +1,23 @@
+Anatomy of a Main Class
+
+  Here we will see how a main class can look like.
+  
+How to access the options object
+
+  As we saw, we can access the options object that comes as the argument for the main method. But there are cases in which we need to access the options object from classes other than the one that started the applications.
+  
+  This is the case, for example, when a certain class finds a fatal error and is expected to trigger the termination of the JVM instance. In such case, we need a convenient way to access the options object from anywhere.
+  
+  hyphenType has a simple solution for this problem. Similarly to the java.lang.System class, which gives you access to the exit() method, the StandAloneAppWrapper class allows you to access the options object using the options() method. You can also refer to this method by using the name of your main class instead, which increases code readability. Here is an example:
+  
++-----------------------------------------+
+MyOptions options = MyMainClass.options();
++-----------------------------------------+
+
+  Thanks to Java generics, the options() method will automatically try to parse the options object to the MyOptions type. But the source code above will compile even if you mistakenly try to assign the options object to the incorrect options interface as the following example shows.
+
++-------------------------------------------+
+WrongOptions options = MyMainClass.options();
++-------------------------------------------+
+
+  The result of running the above example will be a runtime ClassCastException. Therefore, you need to be extra careful about which assignment you do.

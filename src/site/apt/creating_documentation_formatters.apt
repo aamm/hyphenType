@@ -1,0 +1,7 @@
+Creating documentation formatters
+
+  This is how to create documentation formatters.
+  
+  We should talk about how to document a documentation formatter. This is accomplished by using the org.hyphenType.documentation.Description annotation. See the source code of the StandardFormatter for more information.
+  
+  The Description tag accepts documentation with multiple lines (having the \n character separating the lines). This is useful to format the documentation of a formatter.

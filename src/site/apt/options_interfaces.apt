@@ -1,0 +1,7 @@
+Options interface
+
+  An option interface is a standard Java interface that both (1) tells hyphenType how to parse the command lines, and (2) provides an easy way to access the parsed data structure and some helper methods.
+  
+  All option interfaces must extend the {{{./apidocs/org/hyphenType/datastructure/Options.html}org.hyphenType.datastructure.Options}} interface. This is essential, because the helper methods are declared in the Options interface.
+  
+  

@@ -1,0 +1,54 @@
+Calling hyphenType from your application
+
+  There are cases in which you may want to call hyphenType from your own application. This is the
+  case, for instance, when you want to create a textual user interface in your application.
+  
+  Running hyphenType from inside of your application is a bit different from running it from the
+  command line since your application will be able to receive more sophisticated things than an
+  integer status code and text output in the System.out and System.err.
+
+  Also, your application can provide very unambiguous parameters for hyphenType as Java objects.
+  Here is an example of use of hyphenType from a Java application:
+  
++------------------------------------------------------------+
+String[] arguments = new String[]{"argument1", "argument2"};
+StandAloneAppWrapper appWrapper = new StandAloneAppWrapper();
+appWrapper.invokeMain(MyApplication.class, arguments, false);
++------------------------------------------------------------+
+
+  In this example, we are asking hyphenType to execute the class MyApplication using the arguments
+  "argument1" and "argument2". The third argument of invokeMain tells hyphenType not to catch
+  any throwable that was not caught by any exit status constant.
+  
+  In order to understand what this third argument does, you need first to know that exit status
+  constants can catch exceptions. This feature was presented in
+  {{{exit_exceptions.html}Catching exceptions with exit status codes}}.
+  
+  When a throwable is thrown but not caught by any exit status enumeration constant, hyphenType
+  re-throws this throwable if the last argument is false.
+  
+  Despite of the value of this third argument, an error message will be printed in the System.err.
+
+  In the example above, we are still using the StandAloneAppWrapper. As the name implies, this
+  class is prepared to handle stand alone applications. The implications are that the
+  StandAloneAppWrapper will in fact allow the main application to terminate the JVM if the
+  application calls any of the exit() methods. Therefore, although the StandAloneAppWrapper
+  provides a simple way to execute a main method (in the example above, a main method in the
+  class MyApplication), the StandAloneAppWrapper does not enable us to control what is happening
+  during the execution of the application, or what happens when one of the exit() methods is
+  called.
+  
+  So there should be a way to use hyphenType while having more control over what happens
+  behind the scenes. That is the subject of the next section.
+  
+* Getting an options interface manually
+
+  TODO continue writing this part, based on the following source code.
+  
++-----------------------------------------------------------------------------------+
+OptionsExtractor<MyOptions> soe = new OptionsExtractor<MyOptions>(MyOptions.class);
+MyOptions options = soe.options("aaa", "1234", "true");
+assertEquals("aaa", options.v1());
+assertEquals(1234, options.v2());
+assertEquals(true, options.v3());
++-----------------------------------------------------------------------------------+

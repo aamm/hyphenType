@@ -1,0 +1,102 @@
+Exit status codes
+
+  When an application finishes, it releases a status code. This code is an
+  integer number that can be then read by another process to determine in
+  which conditions the application was terminated. In general, a status
+  code equals to zero means the application was terminated as expected
+  while a status code different from zero means that there was an error
+  in the execution of the application.
+
+  Although this is the standard interpretation of a status code, each program
+  is free to use whatever meaning for status codes. For instace, a program that
+  aims at checking a certain condition to be either true or false may use the
+  status code to give this information to a caller process.
+
+Status codes in hyphenType
+
+  As we already saw, hyphenType can be used to wrap the execution of stand
+  alone applications using the
+  {{{./apidocs/org/hyphenType/wrapper/StandAloneAppWrapper.html}StandAloneAppWrapper}}.
+  So it is natural to expect hyphenType to also provide some help with status codes.
+  
+  Any application that uses hyphenType to parse command line arguments can
+  deliver status codes by simply calling the traditional System.exit(statusCode).
+  Everything will work just fine.
+
+  But we already saw that we can use documentation formatters to document how our
+  application should be called. Wouldn't it be nice to have the documentation
+  formatter also documenting the status codes as well? For this to work we need
+  to tell hyphenType what are the status codes and what is the documentation
+  text associated with each status code.
+
+  The following is a source code of an options interface that uses status codes:
+
+%{snippet|id=1|file=src/test/java/org/hyphenType/tests/exit/MyOptions.java}
+
+  And here is the source code of MyExitStatus:
+
+%{snippet|id=1|file=src/test/java/org/hyphenType/tests/exit/MyExitStatus.java}
+  
+  As you can see, MyExitStatus appears twice in the source code of MyOptions.
+
+  First, it appears as the value of the statusCodeEnum property of the
+  {{{./apidocs/org/hyphenType/datastructure/annotations/ArgumentsObject.html}ArgumentsObject}}
+  annotation. This property serves for documentation purposes and for the
+  {{{./apidocs/org/hyphenType/optionprocessors/lib/BooleanValidatorEngine.BooleanValidator.html}BooleanValidator}}.
+  Whatever status code class you set the statusCodeEnum property to, the
+  documentation will use this class when generating documentation.
+
+  Second, MyExitStatus appears as a generic parameter for the MyOptions
+  interface. This parameter will specify the signature of
+  {{{./apidocs/org/hyphenType/datastructure/Options.html}Options.exit(T status)}}
+  as the type T.
+
+* Why twice?
+
+  One can make the reasonable question: why do I need to write MyExitStatus
+  twice in the source code of MyOptions? Why not simply setting MyExitStatus
+  as the generic parameter and let hyphenType read this parameter? Having two
+  things that need to be necessarily always equal is not only confusing but
+  also error prone.
+
+  The simple answer is: because this is not possible in Java. This impossibility
+  has to do with the way generics were implemented in Java. Generics are simply
+  a compilation-step check and are not available at runtime. This is called erasure.
+
+  As a result, this information is not available at runtime via reflection. That
+  is why we need this information to be on the annotation, which can be easily
+  read at runtime.
+
+  After resignation to this reality, one may ask why whould happen if one makes
+  a mistake. In other words, what happens if statusCodeEnum is X.class, but my
+  options interface extends Options\<Y\>, instead of Options\<X\>. In this case,
+  the documentation and the
+  {{{./apidocs/org/hyphenType/optionprocessors/lib/BooleanValidatorEngine.BooleanValidator.html}BooleanValidator}}
+  will only match the reality if X and Y are identical.
+
+* How to generate status codes?
+
+  While the canonical way to generate status codes in Java is by calling
+  System.exit(statusCode), using hyphenType you need to call opt.exit(statusCode)
+  where opt is the arguments object and statusCode can be either an integer or
+  an enumeration constant.
+
+* What is the actual status code when I use an enumeration constant as the argument to exit?
+
+  Short answer: <<the ordinal of the enumeration>>.
+  
+  Long answer: As we said before, status codes are always an integer, not a Java
+  object. This is something the operating system is expecting from the running
+  application. This is universal to any programming language and therefore Java
+  needs to adhere to this standard. Whatever the status code your application
+  generates to the JVM, the JVM will re-generate this status code to the operating
+  system. In the example above, opt.exit(A) yields 0, while opt.exit(B) yields 1.
+
+Canonical Exit Code
+
+  The {{{./apidocs/org/hyphenType/exit/CanonicalExitCode.html}CanonicalExitCode}}
+  is the simplest possible exit code enumeration. It has only two constants:
+  SUCCESS (code is 0), and ERROR (code is 1). If you do not choose any exit code
+  in the statusCodeEnum property, hyphenType will assume this to be the exit code
+  by default.
+ 

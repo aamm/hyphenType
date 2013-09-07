@@ -1,0 +1,209 @@
+Catching exceptions with exit status codes
+
+  It is common that the design of a main class is such that when certain
+  exceptions are found, the application should be simply interrupted. Users
+  should probably get an error message and the operating system should
+  receive a meaningful error code. In such cases, it is reasonable to
+  associate each sort of exception with a certain exit status code.
+  hyphenType provides support for such design.
+  
+  It is also possible to implement the visitor design pattern in exit status
+  enumerations. The basic idea is that any exception or error thrown by the
+  main method will be used to select which exit status will be called. Let us
+  take a look at a simple example to make this concept clear. Let us start by
+  the declaration of the status code enumeration:
+  
++------------------------------------------------------+
+public enum ExitStatus implements StatusCode {
+
+	@ExitStatusDocumentation(catches = NullPointerException.class)
+	A,
+	
+	@ExitStatusDocumentation(catches = Exception.class)
+	B;
+	
+	@Override
+	public void beforeExit(ExitStatusHelper helper) {
+	    // Not doing anything before exit.
+	}
+}
++------------------------------------------------------+
+  
+  The "catches" property is equivalent to a catch selector in a try-catch
+  block. This property tells hyphenType what to do if any throwable is thrown
+  by the main method. For instance, if the main method throws a
+  NullPointerException, the JVM will be terminated using the status code A
+  (i.e., the operating system will get a status code 0).
+
+  The "catches" property works in a hierarchical manner, just like a catch
+  selector in a try-catch. In oder words, if a subclass of NullPointerException
+  is thrown, A will catch the exception. If the exception thrown is a subclass
+  of Exception but not a subclass of NullPointerException, then A cannot catch
+  the exception, and the exception will be caught by B instead.
+  
+  hyphenType will always select the selector that is closer to the exception or
+  error thrown. So for example, if the exception thrown is a subclass of
+  NullPointerException, the selected status will be A, not B.
+
+* Accessing the exception thrown in the beforeExit method
+
+  The ExitStatusHelper object gives you access to the thrown exception. All you
+  need to do is to call the ExitStatusHelper.throwable() method. The following
+  code shows an example of such call:
+  
++--------------------------------------------------+
+@Override
+public void beforeExit(ExitStatusHelper helper) {
+	helper.throwable().printStackTrace();
+}
++--------------------------------------------------+
+
+* Bad practice: two constants catching the same exception class
+
+  If two enumeration constants catch the same sort of exception, hyphenType will
+  select the first constant that appears in the Class.getFields() array. Note
+  that, according to the documentation of the Class class, Class.getFields()
+  returns the array of fields in no particular order. Meaning, if you have two
+  enumeration constants catching the same exception, you have no assurance about
+  which enumeration constant will catch the exception.
+  
+  Even if you successfully test your application over and over in your
+  environment, there are no assurances that your application will behave the
+  same way when used over another JVM. Don't forget that the JVM is a standard,
+  not a particular implementation.
+  
+  You should always avoid this situation in your exit status enumeration. If
+  you do have such a problem in your exit status enumeration, please review the
+  design of your enumeration.
+
+  The following code is a <<counter>> example, illustrating this <<bad
+  practice>>:
+
++------------------------------------------------------+
+/*
+ * Don't do this! You cannot predict which status code
+ * will be yielded when a NullPointerException is thrown.
+ */
+public enum ExitStatus implements StatusCode {
+
+	@ExitStatusDocumentation(catches = NullPointerException.class)
+	A,
+	
+	@ExitStatusDocumentation(catches = NullPointerException.class)
+	B;
+	
+	@Override
+	public void beforeExit(ExitStatusHelper helper) {
+	    // Not doing anything before exit.
+	}
+}
++------------------------------------------------------+
+  
+NonExceptionalExit
+
+  What we have discussed so far in this section is all the information a
+  developer needs in order to use hyphenType functions to exit an environment
+  (a JVM or something else). But there are cases in which developers will find
+  a couple of side effects of using hyphenType to exit environments. This is
+  because behind the scenes hyphenType throws a NonExceptionalExit in order to
+  interrupt the execution of methods.
+  
+  Throwing NonExceptionalExit exceptions is the way for hyphenType to break the
+  standard execution flow of a method and initiate the actual process to
+  terminate an environment. Although this method is expected to work fine for
+  most applications, it is also reasonable that developers expect no exception
+  catching and no finally block to be executed after any exit() method was
+  called. The following code illustrates such case:
+  
++------------------------------------+
+public class MyApp {
+    public void main(MyOptions m) {
+        try {
+            m.exit(1);
+            System.out.println("A");
+        } catch (Exception e) {
+            System.out.println("B");
+        }
+    }
+}
++------------------------------------+
+
+  The result will be the console printing only "B". In the code above, the
+  programmer expects neither "A" nor "B" to be printed in the console, but
+  because the exit() method silently throws a NonExceptionalExit, the catch
+  block will trap this exception and will in fact execute the contents of the
+  catch block.
+
+  A solution for this problem is simply ignoring NonExceptionalExit exceptions.
+  The following code illustrates how:
+  
++------------------------------------+
+public class MyApp {
+    public void main(MyOptions m) {
+        try {
+            m.exit(1);
+            System.out.println("A");
+        } catch (NonExceptionalExit e) {
+        } catch (Exception e) {
+            System.out.println("B");
+        }
+    }
+}
++------------------------------------+
+
+  NonExceptionalExit is a RuntimeException, therefore methods do not need to
+  explicitly declare they throw this exception.
+
+Uncaught throwables
+
+  What happens when a throwable was thrown but nothing (not even a status code
+  enumeration constant) catches this throwable?
+  
+  In this case, hyphenType has no instructions on what to do and will execute
+  the following default procedure:
+  
+  * Exit the JVM or environment using the status code 0.
+
+  * Print the localized message of the throwable to System.err.
+  
+  * hyphenType will not re-throw the exception. This is to avoid the JVM
+  	getting an uncaught exception, which will cause the JVM to print the stack
+  	trace of the exception in the user console. We avoid this approach since we
+  	believe the end user should not see overly technical information.
+  
+  []
+  
+  If you are not satisfied with the default behavior presented above, you
+  should not allow an exception go uncaught. As already presented, you can
+  catch exceptions either (1) in your main method or (2) by making at least one
+  of your exit status constants catch the exception.
+  
+  The following two source codes illustrate how to make sure no throwable will
+  remain uncaught by catching it in a main method or via an exit status
+  constant, respectively:
+  
++------------------------------+	
+public void main(MyOptions opt) {
+    try {
+        // The main procedure
+    }
+    catch(Throwable t) {
+        // Do something with t
+    }
+}
++------------------------------+
+
++------------------------------+	
+@ExitStatusDocumentation(catches = Throwable.class)
+UNKNOWN_PROBLEM {
+    @Override
+    public void beforeExit(ExitStatusHelper helper) {
+        // Do something with the throwable, which
+        // can be accessed using helper.getThrowable()
+    }
+};
++------------------------------+
+
+  It is also possible to force hyphenType to actually throw the exception to the JVM or environment
+  if you are calling hyphentype from your own application, instead of calling hyphenType directly
+  from the command line. For more details, see {{{calling_from_app.html}Calling hyphenType from your application}}}. 

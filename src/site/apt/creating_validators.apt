@@ -1,0 +1,47 @@
+Creating validator engines
+
+  hyphenType comes with two validator engines: CustomizableValidator and BooleanValidator. Although these two validators are highly customizable, it is possible that you may want to create your own validator engine.
+  
+  Creating your own validator engine is relatively easy. All you need to do is to create a class that implements the ArgumentsProcessorEngine interface, and follow some simple rules.
+  
+  As with documentation formatters, validator engines comprise two entities: the annotation and the engine itself.
+  
+  [[1]] validator annotation - The anotation that will decorate an options interface. This annotation should contain all properties that will configure the validator.
+  
+  [[2]] validator engine - Contains the logic that will check the options interface based on the configuration provided in to the annotation.
+  
+  []
+  
+  Here are the rules a validator engine should follow. We will use the naming convention XEngine for the validator engine and X for the validator annotation.
+  
+  [[1]] XEngine should have an inner annotation called X.
+
+  [[2]] XEngine should implement the ArgumentsProcessorEngine interface and should parameterize the ArgumentsProcessorEngine type using X:
+  
++-----------------------------------------------------------------+
+public class XEngine implements ArgumentsProcessorEngine<XEngine.X>
++-----------------------------------------------------------------+
+  
+  A direct consequence of this rule is that X should have a method with the following signature:
+  
++--------------------------------------------------------------------------------------+
+@Override
+public <T extends Options<?>> void process(Class<T> interfaceClass, T options, X config)
++--------------------------------------------------------------------------------------+
+  
+  Note that the instance of X is called "config" for a reason. This instance in fact holds the configuration for XEngine.
+  
+  Having the @Override annotation is not mandatory but is a good practice.
+  
+  [[3]] XEngine should have a no-argument constructor, or the default constructor.
+  
+  In case you are wondering, yes, there is a difference between those two constructors: http://docs.oracle.com/javase/specs/jls/se7/html/jls-8.html#jls-8.8.9
+  
+  This difference is irrelevant here. What is relevant is that if you explicitly add a constructor that accepts any argument to X, you will have no default constructor. Then you will need to correct this problem by adding a non-argument constructor to X.
+
+  [[4]] When the validator finds anything wrong during the execution of process(), it should call one of the exit methods in the config object.
+
+  []
+  
+  Please check the source code of CustomizableValidator for an example of a validator source code.
+  

@@ -1,0 +1,325 @@
+Configuration from resource bundles
+  
+  Adding annotations to an options interface is a very easy way to tell hyphenType how to parse
+  command line options. But these annotations can become hard to maintain, especially if you need
+  to add lots of documentation to them.
+  
+  A better solution is to have separated entities:
+  
+  [[1]] The options interface - A Java interface with annotations, as we saw on previous sections.
+   
+  [[2]] A set of resource bundle files - Text files containing all text that will appear as the documentation for users. These files may also configure the behavior of the options interface. You can provide many of those files, one for each language you want to support.
+  
+  []
+  
+  hyphenType is ready to overwrite any property of any annotation you add to the options interface
+  using a resource bundle file.
+  
+Example
+
+  Let us start by checking a very simple example.
+  
++------------------------------------------------------+
+org.hyphenType.tests.exit.MyExitStatus.A = x 
+org.hyphenType.tests.exit.MyExitStatus.A.message = y 
+org.hyphenType.tests.exit.MyExitStatus.B = z
+org.hyphenType.tests.exit.MyExitStatus.B.message = w 
++------------------------------------------------------+
+  
+How resource bundles are read
+
+* Resource bundle location
+
+  The default location of the resource bundle is the same of the options interface. For instance,
+  if the options interface is called a.b.c.MyOptions, hyphenType will search for a file called
+  /a/b/c/MyOptions.properties where the root directory is the root of the classpath.
+  
+  You can change the behavior of hyphenType make it load any other file as the resource bundle.
+  This is set using the property resourceBundlesLocation in the @ArgumentsObject annotation.
+  
+* Resource bundle encoding
+  
+  The default encoding for resource bundles is UTF-8. Using UTF-8 as the default encoding is good
+  to allow for simple editing of messages in languages that use characters out of the ASCII table.
+  
+  You can set the encoding in the resourceBundlesEncoding property in the @ArgumentsObject
+  annotation.
+  
+Resource bundle syntax
+  
+  Configuration files are no more than resource bundle files with some extensions.
+  
+  Standard Java resource bundle files have some limitations that keep them from fitting into
+  hyphenType. The main limitations are:
+
+  [[1]] The lack of an alias to make property names short - As you may have already noticed, property keys in hyphenType tend to be quite long because they are based on class names. We need a way to keep property names short while using full class names to avoid collisions between names.  
+   
+  [[2]] UTF-8 encoding - Standard Java resource bundles are not encoded at UFT-8. As a result, documentation in languages that uses anything not in the ASCII table need special editors or cumbersome translations to escaping formats.
+  
+  [[3]] Arrays - Sometimes we need to store arrays. For instance, the {{{.site/apidocs/org/hyphenType/datastructure/annotations/Option.html}org.hyphenType.annotations.Option}} annotation has the "names" property, which is an array of strings.
+  
+  []
+  
+  Resource bundles are used in hyphenType to allow for programmers to change the way annotations
+  are applied to the options interface and to its methods. There is a specific syntax to represent
+  such configuration. The following code illustrates this syntax:
+
++--------------------------------------------------------+
+# Setting the value of the 'name' field of the
+# ClassAnnotation annotation, which decorates the MyClass
+# class
+org.MyClass@my.package.ClassAnnotation.name = Name
+
+# Setting the value of the 'x' field of the same annotation
+org.MyClass@my.package.ClassAnnotation.x = 2
+
+# Setting the value of the 'name' field of the the
+# FieldAnnotation annotation, which is applied to the
+# field1 field of the MyClass class. 
+org.MyClass.field1@my.package.FieldAnnotation.name = X
+
+# Setting the value of the 'name' field of the the
+# MethodAnnotation annotation, which is applied to the
+# method1 method of the MyClass class. 
+org.MyClass.method1@my.package.MethodAnnotation.name = Y
++--------------------------------------------------------+
+  
+  As you can see from the example above, setting the value of a field in a class is
+  straightforward. All you need to do is to refer to the field and give it a value.
+  
+  The @ sign means the application of a certain annotation.
+  
+* Assignment priority for annotation properties
+
+  Assume the following options interface:
+  
++------------------------------------------------------+
+@MyAnnotation(
+    p1 = "a", // case A
+    p2 = "b",
+    p3 = "c"
+)
+public interface MyOptions extends Options {
+
+	// ...
+
+}
++------------------------------------------------------+
+
+  And the following configuration file:
+  
++------------------------------------------------------+
+# case B
+MyAnnotation.p2 = "B"
+MyAnnotation.p3 = "C"
+# case C
+MyOptions@MyAnnotation.p3 = "3"
++------------------------------------------------------+
+
+  What will be the values of each of the annotation properties p1, p2, and p3? There is no
+  question that the value of p1 is "a", which we call case A. What about cases B and C? When an
+  options interface is loaded by hyphenType, the values of each field are set using the following
+  order:
+  
+  [[A]] Assignment in the explicit application of the annotation.
+  
+  [[B]] The value of an unbounded assignment.
+  
+  [[C]] The value of a bounded assignment.
+  
+  []
+
+  So the answer is that the value of p2 is "B" and the value of p3 is "3". The string
+  "MyComplexOptions@MyAnnotation" stands for the instance of MyAnnotation that decorates the
+  MyComplexOptions class.
+  
+  In order to identify an instance of an annotation, it is enough to say to which class, method,
+  field, etc the annotation is attached to, since Java does not allow for the same annotation to be
+  applied more than once to the same artifact.
+  
+* Aliases
+
+  As you may have already realized, key names tend to become quite long since sometimes we
+  concatenate the name of classes, methods, annotations, and annotation properties. Therefore we
+  need a more convenient way to refer to class and annotation names. 
+  
+  Our resource bundle loading procedures address this problem by allowing keys to use aliases. Let
+  us take a look at an example to see how to use this feature. The first example above can be
+  rewritten as:
+
++------------------------------------------------------+
+alias.status = org.hyphenType.tests.exit.MyExitStatus
+${status}.A = x 
+${status}.A.message = y 
+${status}.B = z
+${status}.B.message = w 
++------------------------------------------------------+
+  
+  Key names starting with "alias." are treated in a special way. They declare an alias to be used
+  in other key names. In the example above, the first line is defining the alias "status", which
+  is used on the four next lines.
+  
+  As you can see in the example above, using an alias is rather simple. Once the alias X was
+  defined using the key "alias.X", you can use this alias anywhere in key names using the string
+  "$\{X\}". You can also use more than one alias at the same time, which is quite useful when
+  declaring the application of an annotation:
+  
++------------------------------------------------------+
+alias.a = org.hyphenType.tests.exit.MyExitStatus
+alias.b = bla.bla.bla
+${a}@${b} = x
++------------------------------------------------------+
+  
+  The configuration file above is much simpler to read and to maintain. If we change the name of
+  the class we don't need to replace text in several lines of the resource bundle file.
+  
+* Arrays
+
+  Array values can be declared using two distinct syntaxes. Each syntax fits a specific situation.
+
+** One line declaration
+
+  Declaration of an array as a single line follows the format of arrays when they are printed using
+  the toString() method. This kind of declaration is good when you are specifying the value of an
+  array of primitives or string.
+
++------------------------------------------------------+
+myStringArray = [Mon, Tue, Wed, Thu, Fri, Sat]
+myIntArray = [2, 5, 7, 11, 13]
++------------------------------------------------------+
+
+** Multiple lines declaration
+
+  You can also declare arrays using multiple lines. Each line will refer to a single cell in the
+  array.
+
++------------------------------------------------------+
+myIntArray[0] = 2
+myIntArray[1] = 5
+myIntArray[2] = 7
+myIntArray[3] = 11
+myIntArray[4] = 13
++------------------------------------------------------+
+
+  This syntax is particularly suitable when you want to create binary trees of annotations, as in
+  the following example:
+  
++------------------------------------------------------+
+node[0].name = animal
+node[0].node[0].name = mammal
+node[0].node[0].node[0].name = wolf
+node[0].node[0].node[1].name = rabbit
+node[0].node[1].name = reptile
+node[0].node[1].node[0].name = snake
+node[0].node[1].node[1].name = lizard
+node[0].node[2].name = fish
+node[0].node[2].node[0].name = salmon
+node[0].node[2].node[1].name = shark
+node[1].name = vegetable
++------------------------------------------------------+
+
+Multiple languages
+
+  The resource bundles are read using the Java standard for
+  internationalization. More information can be found here:
+  {{{Java Internationalization: Localization with ResourceBundles}http://java.sun.com/developer/technicalArticles/Intl/ResourceBundles/}}.
+  
+  For instance, for an options interface called x.y.z.MyOptInterface, you can
+  overwrite the hard coded values in the source code using the file
+  /x/y/z/MyOptInterface.properties where / is the root of your class path. If
+  you want to support the Japanese language, you need a second file called
+  /x/y/z/MyOptInterface_ja_JP.properties.
+  
+  If you chose to set the value of the variable resourceBundlesLocation in the
+  @ArgumentsObject annotation, resource bundle files for additional locales
+  should be similar to the one in the resourceBundlesLocation variable. For
+  example, if resourceBundlesLocation="/a/b/c/D", then the default resource
+  bundle should be /a/b/c/D.properties and support for the Japanese language
+  should be added in the file /a/b/c/D_ja_JP.properties
+
+RBGenerator
+
+  Writing a complete configuration for an options interface can be a tedious
+  task. We provide the RBGenerator tool to make this task easier.
+  
+  {{{.site/apidocs/org/hyphenType/documentation/rbgenerator/RBGenerator.html}org.hyphenType.documentation.rbgenerator.RBGenerator}}
+  is a simple command line application that generates a template for an options
+  interface. When calling the RBGenerator, one needs to pass the full name of
+  the options interface. The RBGenerator analyzes the options interface and
+  outputs a template of the configuration.
+  
+* Calling the RBGenerator
+
+  The hyphenType JAR is set to execute the RBGenerator as the default main class. So calling the
+  RBGenerator tool is done by simply running the
+  org.hyphenType.documentation.rbgenerator.RBGenerator class in the distribution JAR. The following
+  shows how to it. Please note that you may have a different version of the hyphenType distribution,
+  so the JAR file name can be something other than "hyphenType-0.1.jar" depending on the version.
+  
++----------------------------------------------------------------------------------------------+
+java -classpath hyphenType-0.1.jar org.hyphenType.documentation.rbgenerator.RBGenerator
++----------------------------------------------------------------------------------------------+
+
+  And this is the output you should get:
+
++-------------------------------------------------------------+
+No options interface. Giving up. Use --help for more details.
++-------------------------------------------------------------+
+
+  This error means that RBGenerator expects the user to provide the name of the options interface.
+  Also, note that the RBGenerator should be able to reach the provided options interface. Therefore
+  you need to add your own JAR to the classpath when you call the RBGenerator. As the message
+  states, in order to get details on how to call the RBGenerator, you should provide the "--help"
+  argument. Here is how to provide this argument:
+
++----------------------------------------------------------------------------------------------+
+java -classpath hyphenType-0.1.jar org.hyphenType.documentation.rbgenerator.RBGenerator --help
++----------------------------------------------------------------------------------------------+
+
+  And this is the output you should get:
+
++-----------------------------------------------------------------------------+  
+usage: program [options] [optionsClass] [supportedLanguages...] 
+
+Creates a resource bundle based on a options interface.
+
+Arguments
+
+  optionsClass      The options class that will be analyzed.
+  supportedLanguages
+                    The language variants that will be supported. If no variant 
+                    is provided, it will only write a template for the default 
+                    variant. This argument is ignored if the -f, --file option 
+                    is not used.
+
+Options
+
+  -f=fileName, --filename=fileName
+                    The name of the file to write the output to. If more than 
+                    one language is supported, this name will be used as the 
+                    basis to create the set of files. If no file is given, this 
+                    tool will output the contents of the resource bundle to the 
+                    standard output.
+  -h, --help        Shows this help message.
++-----------------------------------------------------------------------------+  
+  
+  Assuming that your options interface is called a.b.c.MyOptions and that this interface is
+  available in a JAR file called MyApp.jar, a correct execution of the RBGenerator will look like
+  the following:
+
++----------------------------------------------------------------------------------------------------------------+
+java -classpath MyApp.jar:hyphenType-0.1.jar org.hyphenType.documentation.rbgenerator.RBGenerator a.b.c.MyOptions
++----------------------------------------------------------------------------------------------------------------+
+
+  As you did not provide a 
+
+* "Hidden" keys
+
+  Besides the obvious properties (the ones that can be printed as part of the documentation, for
+  instance), the RBGenerator also outputs the keys for internal error messages, such as the one
+  that controls how org.hyphenType.lexerparser.exceptions.MandatoryMapValueNotFoundException
+  outputs error messages.
+  
+  These properties are hard to remember since they are spread across the hyphenType API. This is
+  actually one of the key benefits of using the RBGenerator instead of trying to search for all
+  necessary keys manually.

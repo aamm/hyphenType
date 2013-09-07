@@ -1,0 +1,244 @@
+Documenting a status code
+
+  Documenting a status code means three different things:
+  
+  [[a]] The documentation you show to the end user telling him/her what each status code means.
+  
+  [[b]] The messages you show to the end user when your application terminates.
+  
+  [[c]] The documentation to developers that will use the status code or that will provide translations to the status code.
+  
+  []
+  
+  The difference between a. and c. is very subtle. Although both explain the
+  meaning of a exit status code constant, each is directed to a different
+  person.
+  
+  Think of the first kind of documentation as similar to a manual of a program.
+  The end user should read this manual in his native language and all
+  descriptions cannot be very technical or talk about the internals of the
+  program. For example, this is the documentation the end user wants to see
+  when he uses the option --help.
+  
+  The third kind of documentation will only have one version (for instance,
+  one in a lingua franca) for all developers to read. Think of this kind of
+  documentation as similar to a technical blueprint. This documentation is
+  similar to a javadocs in that it may be written in terms of the internal
+  behavior of a status code. Also, just like javadocs, this documentation is
+  never presented to the end user.
+
+* (a. and b.) Documentation for the end user
+
+** message
+
+  This property may contain locations for replacements to be added. The value
+  of the "message" variable may refer to replacements using the standard of
+  Formatter.format(String, Object...). The values of replacement objects
+  (\{0\}, \{1\}, ...) depends on what caused the JVM or environment to
+  terminate:
+
+  [[1]] Explicit call to Options.exit(Enum e, Object... obj) - The values
+        of \{0\}, \{1\}, etc will be set to be the values of the array (second
+        argument).
+  
+  [[2]] Explicit call to Options.exit(int i, Object... obj)) - Idem to the
+        above.
+
+  [[3]] Explicit call to Options.exit(Throwable) - \{0\} will be set to
+        be Throwable.getLocalizedMessage() and \{1\} will be the string
+        printed by calling Throwable.printStackTrace().
+        
+  [[4]] When this exit status constant catches an exception - Exit status
+        constants may catch exceptions listed in the property
+        ExitStatusConstant.catches(). Same behavior as in 3.
+        
+  []
+
+  The following table summarizes the description above:
+  
+*----------------------------------------+-------------------------+---------------------+-----------+-----------+-----------+
+|                                        | <<\{0\}>>               | <<\{1\}>>           | <<\{2\}>> | <<...>>   | <<\{n\}>> |
+*----------------------------------------+-------------------------+---------------------+-----------+-----------+-----------+
+| 1. Options.exit(Enum e, Object... obj) | obj[0]                  | obj[1]              | obj[2]    | ...       | obj[n]    |
+*----------------------------------------+-------------------------+---------------------+-----------+-----------+-----------+
+| 2. Options.exit(int i, Object... obj)  | obj[0]                  | obj[1]              | obj[2]    | ...       | obj[n]    |
+*----------------------------------------+-------------------------+---------------------+-----------+-----------+-----------+
+| 3. Options.exit(Throwable t)           | t.getLocalizedMessage() | t.printStackTrace() | null      | ...       | null      |
+*----------------------------------------+-------------------------+---------------------+-----------+-----------+-----------+
+| 4. catching throwable t                | t.getLocalizedMessage() | t.printStackTrace() | null      | ...       | null      |
+*----------------------------------------+-------------------------+---------------------+-----------+-----------+-----------+
+Values of replacements in each usage of the message property.
+
+  Let us take a look at a simple example to illustrate this concept. Let us
+  assume that the exit code is declared as follows:
+  
++-------------------------------------------------------+
+@ExitStatusConstant(message = "Problem: {0}. Good bye.")
+PROBLEM
++-------------------------------------------------------+
+
+  If we try to terminate the JVM using the following:
+  
++--------------------------------+
+options.exit(PROBLEM, "Panic!");
++--------------------------------+
+
+  ... the user will get the following in the terminal:
+
++-------------------------+
+Problem: Panic!. Good bye.
++-------------------------+
+
+** userDescription
+
+  Unlike the "message" property, this variable cannot receive replacement
+  arguments such as \{0\}, \{1\}, ... Instead, the value of this property should
+  be a static text that documents in what situations the status code is used.
+  An example of value is "This status code is issued whenever the application
+  finds a lock file".
+
+** Writing documentation
+
+  Here we explain how to set the documentation for the end user. Both
+  variables message and userDescription can be set the same way.
+
+*** Method 1: not doing anything
+
+  If you do not provide any documentation about the exit codes, the
+  documentation formatters should use the name of the enumeration constant
+  along with the exit code number.
+
+  We say "should" instead of "will" because you can chose a documentation
+  formatter shipped with hyphenType or even create your own. In other words,
+  a documentation formatter is a standard, not an implementation. So it is
+  possible, although extremely not desireable, that a documentation formatter
+  behaves in a way that violates this standard.
+
+  For more details on how to create your own documentation formatter, please
+  check {{{creating_documentation_formatters.html}Creating Documentation Formatters}}.
+
+*** Method 2: adding the @ExitStatusDocumentation to the enumeration constants
+
+  If you add the @ExitStatusDocumentation to the enumeration constants,
+  hyphenType will automatically use the value of this annotation as the
+  text to document
+
++------------------------------------------------------+
+public enum ExitStatus implements StatusCode {
+
+	@ExitStatusDocumentation(
+	    message = "Program terminated OK.",
+	    userDescription = "Correct termination."
+	)
+	A,
+	
+	@ExitStatusDocumentation(
+	    message = "We had a problem caused by {0}.",
+	    userDescription = "Termination with error."
+	)
+	B;
+	
+	@Override
+	public void beforeExit(ExitStatusHelper helper) {
+	    // Not doing anything before exit.
+	}
+}
++------------------------------------------------------+
+
+*** Method 3: adding translations to the resource bundle
+
+  Documenting a status code can also be done using the same resource bundle files
+  used to document an options interface. If your options interface is called a.b.c.MyOpt,
+  hyphenType will search the classpath for the file /a/b/c/MyOpt.properties (which
+  contains the standard translations) and /a/b/c/MyOpt_langCode.properties, which
+  contains the translations for a language whose code is langCode.
+  
+  The keys should be the full name of each enumeration constant. For instance,
+  the keys for the MyExitStatus above should be: org.hyphenType.tests.exit.MyExitStatus.A
+  and org.hyphenType.tests.exit.MyExitStatus.B.
+
+  You can use an alias to avoid having to repeat the full enumeration name. So
+  the default translation for MyExitStatus (MyOpt.properties) could be:
+
++------------------------------------------------------+
+alias.exitcode = org.hyphenType.tests.exit.MyExitStatus
+alias.stdoc = org.hyphenType.exit.ExitStatusDocumentation
+# When no exception happened
+${exitcode}.A@${stdoc}.message = Program terminated OK.
+${exitcode}.A@${stdoc}.userDescription = Correct termination.
+# When some exception was thrown
+${exitcode}.B@${stdoc}.message = We had a problem caused by {0}.
+${exitcode}.B@${stdoc}.userDescription = Termination with error.
++------------------------------------------------------+
+
+  Each status code constant X may have two entries in the resource bundles. The
+  first entry ($\{exitcode\}.X@$\{stdoc\}.userDescription) is the explanation of
+  what the status code means. This explanation should appear in the documentation
+  of the command line interface. For instance, this is the documentation that
+  should appear when the user calls "command --help".
+  
+  The second entry (exitcode.X@$\{stdoc\}.message) is the message that is yield by
+  the {{{./apidocs/org/hyphenType/exit/ExitStatusHelper.html}ExitStatusHelper.getMessage()}}
+  method. Such message is formatted using the arguments passed to the
+  {{{./apidocs/org/hyphenType/datastructure/Options.html}Options.exit(T status)}} method.
+
+  Beware that aliases should necessarily be the same across properties files.
+  Therefore, if we have another file for documentation in Spanish, the file
+  (MyOpt_sp.properties) should have the following structure:
+
++------------------------------------------------------+
+alias.exitcode = org.hyphenType.tests.exit.MyExitStatus
+alias.stdoc = org.hyphenType.exit.ExitStatusDocumentation
+# When no exception happened
+${exitcode}.A@${stdoc}.message = Todo termino bien.
+${exitcode}.A@${stdoc}.userDescription = Êxito
+# When some exception was thrown
+${exitcode}.B@${stdoc}.message = {0} fue la causa de un problema.
+${exitcode}.B@${stdoc}.userDescription = Fracaso
++------------------------------------------------------+
+
+* (c.) Documentation for developers
+
+  In order to explain what a documentation for developers is, let us go back to
+  the examples above. In the previous section, we have shown two examples of
+  resource bundles. Both resource bundles could have been generated by the
+  RBGenerator. So the RBGenerator was in charge of creating an empty template such as:
+  
++------------------------------------------------------+
+alias.exitcode = org.hyphenType.tests.exit.MyExitStatus
+alias.stdoc = org.hyphenType.exit.ExitStatusDocumentation
+# When no exception happened
+${exitcode}.A@${stdoc}.message = 
+${exitcode}.A@${stdoc}.userDescription = 
+# When some exception was thrown
+${exitcode}.B@${stdoc}.message = 
+${exitcode}.B@${stdoc}.userDescription = 
++------------------------------------------------------+
+
+  Did you notice the comments before "exitcode.A" and "exitcode.B"? Where did
+  those comments come from? They are the documentation for developers.
+  
+  The message "When no exception happened" is target at developers, while
+  "Todo termino bien." is target at the end user who speaks Spanish. Here we
+  are assuming that the lingua franca for developers is English. That is why
+  "When no exception happened" is written in English.
+  
+  So the next natural question could be how to attach this documentation to a
+  status code. The answer is by simply decorating each status code constant with
+  the org.hyphenType.documentation.Description annotation. If this annotation is
+  present, the RBGenerator will use the value of this annotation as the contents
+  of the comment before each status code value, as in the three examples.
+  
+  Take a look at the source code of CanonicalExitCode for a simple example on how
+  to use this annotation.
+  
+  This annotation accepts the \n character to break lines, allowing for documentation
+  formatting in multiple lines. For instance, if the documentation is declared as
+  @Description("This is\nmy description.\nAnd this yet another line."), the generated
+  output will be:
+  
++------------------------------------------------------+
+# This is
+# my description.
+# And this yet another line.
++------------------------------------------------------+

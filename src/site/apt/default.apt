@@ -1,0 +1,65 @@
+A very fast start
+
+  Let's say that your application expects to receive only two arguments from the command line and ignore all other arguments. Both arguments should be plain strings. Let's take a look at a simple class that solves this problem using hyphenType:
+
+%{snippet|id=1|file=src/test/java/example/case1/XApp.java}
+
+  The source code of the interface XOpt is:
+
+%{snippet|id=1|file=src/test/java/example/case1/XOpt.java}
+
+  Now if you run XApp as any ordinary stand alone Java application, the results will be:
+
+%{snippet|file=target/output1.txt}
+
+%{snippet|file=target/output2.txt}
+
+  What happens here is that we do not need to directly deal with the arguments received. In other words, the main class we wrote does not need to handle the standard "String[] args". Instead, the arguments are read by hyphenType and transformed into simple Java objects.
+  
+  As you may have already noticed, all arguments after the second were simply ignored.
+  
+  Now what if we want to show a help message every time we do not receive anything as arguments? We will only need to change our application a little bit:
+
+%{snippet|id=1|file=src/test/java/example/case2/XApp.java}
+
+  The opt object not only comes with the values of the arguments, but can also output a documentation on how to call your program.
+  
+  What if we want to add some interesting message that actually explains what our simple program does?
+  
+  We need only to change the interface XOpt.
+
+%{snippet|id=1|file=src/test/java/example/case2/XOpt.java}
+
+  So now if we try to run our application again we will see:
+
+%{snippet|file=target/output3.txt}
+
+  What if we want to show a help message only where there is an argument -h or --help, which is a standard followed by several command line tools?
+  
+  Again, we will only need add and change a few lines of source code. We need to add an extra method to our interface:
+
+%{snippet|id=1|file=src/test/java/example/case3/XOpt.java}
+
+  And change one line of our class:
+
+%{snippet|id=1|file=src/test/java/example/case3/XApp.java}
+
+  Let's run it again. This time, passing the arguments -h and --help:
+
+%{snippet|file=target/output4.txt}
+
+%{snippet|file=target/output5.txt}
+
+  Note that so far we did not call any class of hyphenType directly. The only references to hyphenType were the SimpleArgument annotation and extending Options and StandAloneAppWrapper.
+  
+  Another interesting thing to notice is that the main method is not static. In fact, adding a static modifier to this method will not change the outcome. Internally, hyphenType will check whether the main method is static or not. If it is static, then it will simply call the method. If the method is not static, then hyphenType will first create an instance of the class (in the example above, an instance of XApp) and call the main method from that instance.
+  
+Where to go next?
+
+  At this point you already know the basic idea behind hyphenType: you need to write an options interface and hyphenType will use it to both understand how command line arguments should be parsed, and to create an object that will give you easy access to the parsed data.
+  
+  But hyphenType can parse arguments that are more complex then those of the examples we just saw. For instance, there are ways to tell hyphenType to create lists or parse arguments to custom classes.
+  
+  We designed hyphenType to be not only a command line parsing tool, but also a tool to help unit test and document stand alone applications.
+  
+  Check the menu on the left for more resources regarding hyphenType.
