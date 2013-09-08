@@ -3,7 +3,7 @@
 <rss version="0.91">
   <channel>
     <title>hyphenType - Checkstyle report</title>
-    <link>http://maven.apache.org</link>
+    <link>http://aamm.github.io/hyphenType/</link>
     <description>hyphenType - Checkstyle report</description>
     <language>en-us</language>
     <copyright>&#169;2013</copyright>
@@ -13,9 +13,9 @@
              Warnings: 0,
              Infos: 0
       </title>
-            <link>http://maven.apache.org/checkstyle.html</link>
+            <link>http://aamm.github.io/hyphenType//checkstyle.html</link>
       <description>
-        <p>Click <a href="http://maven.apache.org/checkstyle.html">here</a> for the full Checkstyle report.</p>
+        <p>Click <a href="http://aamm.github.io/hyphenType//checkstyle.html">here</a> for the full Checkstyle report.</p>
 
         <table summary="Files" boder="1">
           <thead>
@@ -29,7 +29,7 @@
           <tbody>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.datastructure.parser.option.StructureOptionArgument.java">org/hyphenType/datastructure/parser/option/StructureOptionArgument.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.datastructure.parser.option.StructureOptionArgument.java">org/hyphenType/datastructure/parser/option/StructureOptionArgument.java</a>
                 </td>
                 <td>
                   0
@@ -43,7 +43,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.exit.StatusCode.java">org/hyphenType/exit/StatusCode.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.exit.StatusCode.java">org/hyphenType/exit/StatusCode.java</a>
                 </td>
                 <td>
                   0
@@ -57,7 +57,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.datastructure.annotations.InputChannel.java">org/hyphenType/datastructure/annotations/InputChannel.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.datastructure.annotations.InputChannel.java">org/hyphenType/datastructure/annotations/InputChannel.java</a>
                 </td>
                 <td>
                   0
@@ -71,7 +71,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.datastructure.parser.option.StructureOptionMapValue.java">org/hyphenType/datastructure/parser/option/StructureOptionMapValue.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.datastructure.parser.option.StructureOptionMapValue.java">org/hyphenType/datastructure/parser/option/StructureOptionMapValue.java</a>
                 </td>
                 <td>
                   0
@@ -85,7 +85,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.optionsextractor.OptionsExtractorException.java">org/hyphenType/optionsextractor/OptionsExtractorException.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.optionsextractor.OptionsExtractorException.java">org/hyphenType/optionsextractor/OptionsExtractorException.java</a>
                 </td>
                 <td>
                   0
@@ -99,7 +99,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.dynamicproxy.package-info.java">org/hyphenType/dynamicproxy/package-info.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.dynamicproxy.package-info.java">org/hyphenType/dynamicproxy/package-info.java</a>
                 </td>
                 <td>
                   0
@@ -113,7 +113,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.datastructure.lexer.LexToken.java">org/hyphenType/datastructure/lexer/LexToken.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.datastructure.lexer.LexToken.java">org/hyphenType/datastructure/lexer/LexToken.java</a>
                 </td>
                 <td>
                   0
@@ -127,7 +127,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.optionprocessors.ArgumentsProcessorEngine.java">org/hyphenType/optionprocessors/ArgumentsProcessorEngine.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.optionprocessors.ArgumentsProcessorEngine.java">org/hyphenType/optionprocessors/ArgumentsProcessorEngine.java</a>
                 </td>
                 <td>
                   0
@@ -141,7 +141,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.util.DefaultAnnotation.java">org/hyphenType/util/DefaultAnnotation.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.util.DefaultAnnotation.java">org/hyphenType/util/DefaultAnnotation.java</a>
                 </td>
                 <td>
                   0
@@ -155,7 +155,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.lexerparser.exceptions.StringParseException.java">org/hyphenType/lexerparser/exceptions/StringParseException.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.lexerparser.exceptions.StringParseException.java">org/hyphenType/lexerparser/exceptions/StringParseException.java</a>
                 </td>
                 <td>
                   0
@@ -169,7 +169,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.datastructure.parser.StructureElement.java">org/hyphenType/datastructure/parser/StructureElement.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.datastructure.parser.StructureElement.java">org/hyphenType/datastructure/parser/StructureElement.java</a>
                 </td>
                 <td>
                   0
@@ -183,7 +183,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.lexerparser.OptionValues.java">org/hyphenType/lexerparser/OptionValues.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.lexerparser.OptionValues.java">org/hyphenType/lexerparser/OptionValues.java</a>
                 </td>
                 <td>
                   0
@@ -197,7 +197,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.util.resourcebundles.package-info.java">org/hyphenType/util/resourcebundles/package-info.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.util.resourcebundles.package-info.java">org/hyphenType/util/resourcebundles/package-info.java</a>
                 </td>
                 <td>
                   0
@@ -211,7 +211,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.documentation.OptionListResourceBundle.java">org/hyphenType/documentation/OptionListResourceBundle.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.documentation.OptionListResourceBundle.java">org/hyphenType/documentation/OptionListResourceBundle.java</a>
                 </td>
                 <td>
                   0
@@ -225,7 +225,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.datastructure.annotations.SimpleArgument.java">org/hyphenType/datastructure/annotations/SimpleArgument.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.datastructure.annotations.SimpleArgument.java">org/hyphenType/datastructure/annotations/SimpleArgument.java</a>
                 </td>
                 <td>
                   0
@@ -239,7 +239,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.lexerparser.exceptions.MandatoryMapValueNotFoundException.java">org/hyphenType/lexerparser/exceptions/MandatoryMapValueNotFoundException.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.lexerparser.exceptions.MandatoryMapValueNotFoundException.java">org/hyphenType/lexerparser/exceptions/MandatoryMapValueNotFoundException.java</a>
                 </td>
                 <td>
                   0
@@ -253,7 +253,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.datastructure.parser.option.StructureOption.java">org/hyphenType/datastructure/parser/option/StructureOption.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.datastructure.parser.option.StructureOption.java">org/hyphenType/datastructure/parser/option/StructureOption.java</a>
                 </td>
                 <td>
                   0
@@ -267,7 +267,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.datastructure.annotations.OptionValue.java">org/hyphenType/datastructure/annotations/OptionValue.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.datastructure.annotations.OptionValue.java">org/hyphenType/datastructure/annotations/OptionValue.java</a>
                 </td>
                 <td>
                   0
@@ -281,7 +281,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.optionsextractor.OptionsExtractor.java">org/hyphenType/optionsextractor/OptionsExtractor.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.optionsextractor.OptionsExtractor.java">org/hyphenType/optionsextractor/OptionsExtractor.java</a>
                 </td>
                 <td>
                   0
@@ -295,7 +295,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.documentation.package-info.java">org/hyphenType/documentation/package-info.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.documentation.package-info.java">org/hyphenType/documentation/package-info.java</a>
                 </td>
                 <td>
                   0
@@ -309,7 +309,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.exit.CanonicalExitCode.java">org/hyphenType/exit/CanonicalExitCode.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.exit.CanonicalExitCode.java">org/hyphenType/exit/CanonicalExitCode.java</a>
                 </td>
                 <td>
                   0
@@ -323,7 +323,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.datastructure.annotations.ArgumentsObject.java">org/hyphenType/datastructure/annotations/ArgumentsObject.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.datastructure.annotations.ArgumentsObject.java">org/hyphenType/datastructure/annotations/ArgumentsObject.java</a>
                 </td>
                 <td>
                   0
@@ -337,7 +337,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.datastructure.annotations.OptionArgument.java">org/hyphenType/datastructure/annotations/OptionArgument.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.datastructure.annotations.OptionArgument.java">org/hyphenType/datastructure/annotations/OptionArgument.java</a>
                 </td>
                 <td>
                   0
@@ -351,7 +351,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.datastructure.lexer.simple.package-info.java">org/hyphenType/datastructure/lexer/simple/package-info.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.datastructure.lexer.simple.package-info.java">org/hyphenType/datastructure/lexer/simple/package-info.java</a>
                 </td>
                 <td>
                   0
@@ -365,7 +365,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.unittesting.UnitTestingAppEngine.java">org/hyphenType/unittesting/UnitTestingAppEngine.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.unittesting.UnitTestingAppEngine.java">org/hyphenType/unittesting/UnitTestingAppEngine.java</a>
                 </td>
                 <td>
                   0
@@ -379,7 +379,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.debug.HTLogger.java">org/hyphenType/debug/HTLogger.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.debug.HTLogger.java">org/hyphenType/debug/HTLogger.java</a>
                 </td>
                 <td>
                   0
@@ -393,7 +393,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.exceptions.InvalidOptionsInterfaceException.java">org/hyphenType/exceptions/InvalidOptionsInterfaceException.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.exceptions.InvalidOptionsInterfaceException.java">org/hyphenType/exceptions/InvalidOptionsInterfaceException.java</a>
                 </td>
                 <td>
                   0
@@ -407,7 +407,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.lexerparser.exceptions.MandatorySimpleArgumentNotFoundException.java">org/hyphenType/lexerparser/exceptions/MandatorySimpleArgumentNotFoundException.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.lexerparser.exceptions.MandatorySimpleArgumentNotFoundException.java">org/hyphenType/lexerparser/exceptions/MandatorySimpleArgumentNotFoundException.java</a>
                 </td>
                 <td>
                   0
@@ -421,7 +421,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.documentation.rbgenerator.RBGenerator.java">org/hyphenType/documentation/rbgenerator/RBGenerator.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.documentation.rbgenerator.RBGenerator.java">org/hyphenType/documentation/rbgenerator/RBGenerator.java</a>
                 </td>
                 <td>
                   0
@@ -435,7 +435,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.input.StandardUserInput.java">org/hyphenType/input/StandardUserInput.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.input.StandardUserInput.java">org/hyphenType/input/StandardUserInput.java</a>
                 </td>
                 <td>
                   0
@@ -449,7 +449,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.lexerparser.exceptions.MandatoryValueNotFoundException.java">org/hyphenType/lexerparser/exceptions/MandatoryValueNotFoundException.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.lexerparser.exceptions.MandatoryValueNotFoundException.java">org/hyphenType/lexerparser/exceptions/MandatoryValueNotFoundException.java</a>
                 </td>
                 <td>
                   0
@@ -463,7 +463,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.optionprocessors.lib.package-info.java">org/hyphenType/optionprocessors/lib/package-info.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.optionprocessors.lib.package-info.java">org/hyphenType/optionprocessors/lib/package-info.java</a>
                 </td>
                 <td>
                   0
@@ -477,7 +477,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.datastructure.parser.package-info.java">org/hyphenType/datastructure/parser/package-info.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.datastructure.parser.package-info.java">org/hyphenType/datastructure/parser/package-info.java</a>
                 </td>
                 <td>
                   0
@@ -491,7 +491,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.util.package-info.java">org/hyphenType/util/package-info.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.util.package-info.java">org/hyphenType/util/package-info.java</a>
                 </td>
                 <td>
                   0
@@ -505,7 +505,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.dynamicproxy.ConcreteArgumentsInvocationHandler.java">org/hyphenType/dynamicproxy/ConcreteArgumentsInvocationHandler.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.dynamicproxy.ConcreteArgumentsInvocationHandler.java">org/hyphenType/dynamicproxy/ConcreteArgumentsInvocationHandler.java</a>
                 </td>
                 <td>
                   0
@@ -519,7 +519,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.input.package-info.java">org/hyphenType/input/package-info.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.input.package-info.java">org/hyphenType/input/package-info.java</a>
                 </td>
                 <td>
                   0
@@ -533,7 +533,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.unittesting.package-info.java">org/hyphenType/unittesting/package-info.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.unittesting.package-info.java">org/hyphenType/unittesting/package-info.java</a>
                 </td>
                 <td>
                   0
@@ -547,7 +547,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.datastructure.lexer.simple.LexArgument.java">org/hyphenType/datastructure/lexer/simple/LexArgument.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.datastructure.lexer.simple.LexArgument.java">org/hyphenType/datastructure/lexer/simple/LexArgument.java</a>
                 </td>
                 <td>
                   0
@@ -561,7 +561,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.input.UserInput.java">org/hyphenType/input/UserInput.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.input.UserInput.java">org/hyphenType/input/UserInput.java</a>
                 </td>
                 <td>
                   0
@@ -575,7 +575,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.input.UserInputException.java">org/hyphenType/input/UserInputException.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.input.UserInputException.java">org/hyphenType/input/UserInputException.java</a>
                 </td>
                 <td>
                   0
@@ -589,7 +589,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.datastructure.package-info.java">org/hyphenType/datastructure/package-info.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.datastructure.package-info.java">org/hyphenType/datastructure/package-info.java</a>
                 </td>
                 <td>
                   0
@@ -603,7 +603,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.lexerparser.exceptions.RegexMismatchException.java">org/hyphenType/lexerparser/exceptions/RegexMismatchException.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.lexerparser.exceptions.RegexMismatchException.java">org/hyphenType/lexerparser/exceptions/RegexMismatchException.java</a>
                 </td>
                 <td>
                   0
@@ -617,7 +617,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.datastructure.lexer.package-info.java">org/hyphenType/datastructure/lexer/package-info.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.datastructure.lexer.package-info.java">org/hyphenType/datastructure/lexer/package-info.java</a>
                 </td>
                 <td>
                   0
@@ -631,7 +631,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.datastructure.Options.java">org/hyphenType/datastructure/Options.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.datastructure.Options.java">org/hyphenType/datastructure/Options.java</a>
                 </td>
                 <td>
                   0
@@ -645,7 +645,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.exit.ExitMessageException.java">org/hyphenType/exit/ExitMessageException.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.exit.ExitMessageException.java">org/hyphenType/exit/ExitMessageException.java</a>
                 </td>
                 <td>
                   0
@@ -659,7 +659,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.unittesting.UnitTestingOptionExtractor.java">org/hyphenType/unittesting/UnitTestingOptionExtractor.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.unittesting.UnitTestingOptionExtractor.java">org/hyphenType/unittesting/UnitTestingOptionExtractor.java</a>
                 </td>
                 <td>
                   0
@@ -673,7 +673,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.optionsextractor.package-info.java">org/hyphenType/optionsextractor/package-info.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.optionsextractor.package-info.java">org/hyphenType/optionsextractor/package-info.java</a>
                 </td>
                 <td>
                   0
@@ -687,7 +687,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.documentation.rbgenerator.package-info.java">org/hyphenType/documentation/rbgenerator/package-info.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.documentation.rbgenerator.package-info.java">org/hyphenType/documentation/rbgenerator/package-info.java</a>
                 </td>
                 <td>
                   0
@@ -701,7 +701,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.datastructure.parser.option.StructureOptionValue.java">org/hyphenType/datastructure/parser/option/StructureOptionValue.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.datastructure.parser.option.StructureOptionValue.java">org/hyphenType/datastructure/parser/option/StructureOptionValue.java</a>
                 </td>
                 <td>
                   0
@@ -715,7 +715,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.documentation.lib.StandardFormatterEngine.java">org/hyphenType/documentation/lib/StandardFormatterEngine.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.documentation.lib.StandardFormatterEngine.java">org/hyphenType/documentation/lib/StandardFormatterEngine.java</a>
                 </td>
                 <td>
                   0
@@ -729,7 +729,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.datastructure.parser.simple.StructureSimpleArgument.java">org/hyphenType/datastructure/parser/simple/StructureSimpleArgument.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.datastructure.parser.simple.StructureSimpleArgument.java">org/hyphenType/datastructure/parser/simple/StructureSimpleArgument.java</a>
                 </td>
                 <td>
                   0
@@ -743,7 +743,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.lexerparser.exceptions.OptionValuesException.java">org/hyphenType/lexerparser/exceptions/OptionValuesException.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.lexerparser.exceptions.OptionValuesException.java">org/hyphenType/lexerparser/exceptions/OptionValuesException.java</a>
                 </td>
                 <td>
                   0
@@ -757,7 +757,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.optionprocessors.lib.CustomizableValidatorEngine.java">org/hyphenType/optionprocessors/lib/CustomizableValidatorEngine.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.optionprocessors.lib.CustomizableValidatorEngine.java">org/hyphenType/optionprocessors/lib/CustomizableValidatorEngine.java</a>
                 </td>
                 <td>
                   0
@@ -771,7 +771,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.unittesting.NonExceptionalExit.java">org/hyphenType/unittesting/NonExceptionalExit.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.unittesting.NonExceptionalExit.java">org/hyphenType/unittesting/NonExceptionalExit.java</a>
                 </td>
                 <td>
                   0
@@ -785,7 +785,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.datastructure.annotations.OptionMapValue.java">org/hyphenType/datastructure/annotations/OptionMapValue.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.datastructure.annotations.OptionMapValue.java">org/hyphenType/datastructure/annotations/OptionMapValue.java</a>
                 </td>
                 <td>
                   0
@@ -799,7 +799,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.util.resourcebundles.AliasResourceBundle.java">org/hyphenType/util/resourcebundles/AliasResourceBundle.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.util.resourcebundles.AliasResourceBundle.java">org/hyphenType/util/resourcebundles/AliasResourceBundle.java</a>
                 </td>
                 <td>
                   0
@@ -813,7 +813,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.lexerparser.package-info.java">org/hyphenType/lexerparser/package-info.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.lexerparser.package-info.java">org/hyphenType/lexerparser/package-info.java</a>
                 </td>
                 <td>
                   0
@@ -827,7 +827,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.optionprocessors.lib.BooleanValidatorEngine.java">org/hyphenType/optionprocessors/lib/BooleanValidatorEngine.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.optionprocessors.lib.BooleanValidatorEngine.java">org/hyphenType/optionprocessors/lib/BooleanValidatorEngine.java</a>
                 </td>
                 <td>
                   0
@@ -841,7 +841,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.util.I18NResourceBundle.java">org/hyphenType/util/I18NResourceBundle.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.util.I18NResourceBundle.java">org/hyphenType/util/I18NResourceBundle.java</a>
                 </td>
                 <td>
                   0
@@ -855,7 +855,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.util.resourcebundles.ConfigurableListResourceBundle.java">org/hyphenType/util/resourcebundles/ConfigurableListResourceBundle.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.util.resourcebundles.ConfigurableListResourceBundle.java">org/hyphenType/util/resourcebundles/ConfigurableListResourceBundle.java</a>
                 </td>
                 <td>
                   0
@@ -869,7 +869,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.exit.ExitStatusConstant.java">org/hyphenType/exit/ExitStatusConstant.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.exit.ExitStatusConstant.java">org/hyphenType/exit/ExitStatusConstant.java</a>
                 </td>
                 <td>
                   0
@@ -883,7 +883,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.documentation.rbgenerator.RBGeneratorOptions.java">org/hyphenType/documentation/rbgenerator/RBGeneratorOptions.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.documentation.rbgenerator.RBGeneratorOptions.java">org/hyphenType/documentation/rbgenerator/RBGeneratorOptions.java</a>
                 </td>
                 <td>
                   0
@@ -897,7 +897,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.lexerparser.LexTokenStream.java">org/hyphenType/lexerparser/LexTokenStream.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.lexerparser.LexTokenStream.java">org/hyphenType/lexerparser/LexTokenStream.java</a>
                 </td>
                 <td>
                   0
@@ -911,7 +911,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.datastructure.annotations.Option.java">org/hyphenType/datastructure/annotations/Option.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.datastructure.annotations.Option.java">org/hyphenType/datastructure/annotations/Option.java</a>
                 </td>
                 <td>
                   0
@@ -925,7 +925,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.exit.ExitStatusHelper.java">org/hyphenType/exit/ExitStatusHelper.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.exit.ExitStatusHelper.java">org/hyphenType/exit/ExitStatusHelper.java</a>
                 </td>
                 <td>
                   0
@@ -939,7 +939,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.datastructure.parser.simple.package-info.java">org/hyphenType/datastructure/parser/simple/package-info.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.datastructure.parser.simple.package-info.java">org/hyphenType/datastructure/parser/simple/package-info.java</a>
                 </td>
                 <td>
                   0
@@ -953,7 +953,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.lexerparser.LexerParser.java">org/hyphenType/lexerparser/LexerParser.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.lexerparser.LexerParser.java">org/hyphenType/lexerparser/LexerParser.java</a>
                 </td>
                 <td>
                   0
@@ -967,7 +967,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.documentation.lib.HTMLFormatterEngine.java">org/hyphenType/documentation/lib/HTMLFormatterEngine.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.documentation.lib.HTMLFormatterEngine.java">org/hyphenType/documentation/lib/HTMLFormatterEngine.java</a>
                 </td>
                 <td>
                   0
@@ -981,7 +981,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.datastructure.lexer.option.LexOptionValue.java">org/hyphenType/datastructure/lexer/option/LexOptionValue.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.datastructure.lexer.option.LexOptionValue.java">org/hyphenType/datastructure/lexer/option/LexOptionValue.java</a>
                 </td>
                 <td>
                   0
@@ -995,7 +995,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.util.soc.StringObjectConversion.java">org/hyphenType/util/soc/StringObjectConversion.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.util.soc.StringObjectConversion.java">org/hyphenType/util/soc/StringObjectConversion.java</a>
                 </td>
                 <td>
                   0
@@ -1009,7 +1009,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.documentation.lib.package-info.java">org/hyphenType/documentation/lib/package-info.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.documentation.lib.package-info.java">org/hyphenType/documentation/lib/package-info.java</a>
                 </td>
                 <td>
                   0
@@ -1023,7 +1023,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.wrapper.StandAloneAppWrapper.java">org/hyphenType/wrapper/StandAloneAppWrapper.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.wrapper.StandAloneAppWrapper.java">org/hyphenType/wrapper/StandAloneAppWrapper.java</a>
                 </td>
                 <td>
                   0
@@ -1037,7 +1037,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.exit.package-info.java">org/hyphenType/exit/package-info.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.exit.package-info.java">org/hyphenType/exit/package-info.java</a>
                 </td>
                 <td>
                   0
@@ -1051,7 +1051,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.unittesting.MockArgumentsInvocationHandler.java">org/hyphenType/unittesting/MockArgumentsInvocationHandler.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.unittesting.MockArgumentsInvocationHandler.java">org/hyphenType/unittesting/MockArgumentsInvocationHandler.java</a>
                 </td>
                 <td>
                   0
@@ -1065,7 +1065,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.dynamicproxy.AbstractArgumentsInvocationHandler.java">org/hyphenType/dynamicproxy/AbstractArgumentsInvocationHandler.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.dynamicproxy.AbstractArgumentsInvocationHandler.java">org/hyphenType/dynamicproxy/AbstractArgumentsInvocationHandler.java</a>
                 </td>
                 <td>
                   0
@@ -1079,7 +1079,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.exceptions.package-info.java">org/hyphenType/exceptions/package-info.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.exceptions.package-info.java">org/hyphenType/exceptions/package-info.java</a>
                 </td>
                 <td>
                   0
@@ -1093,7 +1093,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.datastructure.parser.option.package-info.java">org/hyphenType/datastructure/parser/option/package-info.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.datastructure.parser.option.package-info.java">org/hyphenType/datastructure/parser/option/package-info.java</a>
                 </td>
                 <td>
                   0
@@ -1107,7 +1107,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.datastructure.lexer.option.package-info.java">org/hyphenType/datastructure/lexer/option/package-info.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.datastructure.lexer.option.package-info.java">org/hyphenType/datastructure/lexer/option/package-info.java</a>
                 </td>
                 <td>
                   0
@@ -1121,7 +1121,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.datastructure.lexer.option.LexOptionMapValue.java">org/hyphenType/datastructure/lexer/option/LexOptionMapValue.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.datastructure.lexer.option.LexOptionMapValue.java">org/hyphenType/datastructure/lexer/option/LexOptionMapValue.java</a>
                 </td>
                 <td>
                   0
@@ -1135,7 +1135,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.datastructure.lexer.option.LexOption.java">org/hyphenType/datastructure/lexer/option/LexOption.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.datastructure.lexer.option.LexOption.java">org/hyphenType/datastructure/lexer/option/LexOption.java</a>
                 </td>
                 <td>
                   0
@@ -1149,7 +1149,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.documentation.Description.java">org/hyphenType/documentation/Description.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.documentation.Description.java">org/hyphenType/documentation/Description.java</a>
                 </td>
                 <td>
                   0
@@ -1163,7 +1163,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.lexerparser.exceptions.StringParsingErrorException.java">org/hyphenType/lexerparser/exceptions/StringParsingErrorException.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.lexerparser.exceptions.StringParsingErrorException.java">org/hyphenType/lexerparser/exceptions/StringParsingErrorException.java</a>
                 </td>
                 <td>
                   0
@@ -1177,7 +1177,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.optionprocessors.package-info.java">org/hyphenType/optionprocessors/package-info.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.optionprocessors.package-info.java">org/hyphenType/optionprocessors/package-info.java</a>
                 </td>
                 <td>
                   0
@@ -1191,7 +1191,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.wrapper.package-info.java">org/hyphenType/wrapper/package-info.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.wrapper.package-info.java">org/hyphenType/wrapper/package-info.java</a>
                 </td>
                 <td>
                   0
@@ -1205,7 +1205,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.util.resourcebundles.GenericEncodingControl.java">org/hyphenType/util/resourcebundles/GenericEncodingControl.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.util.resourcebundles.GenericEncodingControl.java">org/hyphenType/util/resourcebundles/GenericEncodingControl.java</a>
                 </td>
                 <td>
                   0
@@ -1219,7 +1219,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.unittesting.UnitTestingUserInput.java">org/hyphenType/unittesting/UnitTestingUserInput.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.unittesting.UnitTestingUserInput.java">org/hyphenType/unittesting/UnitTestingUserInput.java</a>
                 </td>
                 <td>
                   0
@@ -1233,7 +1233,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.datastructure.parser.StructureArgument.java">org/hyphenType/datastructure/parser/StructureArgument.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.datastructure.parser.StructureArgument.java">org/hyphenType/datastructure/parser/StructureArgument.java</a>
                 </td>
                 <td>
                   0
@@ -1247,7 +1247,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.datastructure.annotations.package-info.java">org/hyphenType/datastructure/annotations/package-info.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.datastructure.annotations.package-info.java">org/hyphenType/datastructure/annotations/package-info.java</a>
                 </td>
                 <td>
                   0
@@ -1261,7 +1261,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.util.soc.StringParsingError.java">org/hyphenType/util/soc/StringParsingError.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.util.soc.StringParsingError.java">org/hyphenType/util/soc/StringParsingError.java</a>
                 </td>
                 <td>
                   0
@@ -1275,7 +1275,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://maven.apache.org/checkstyle.html#org.hyphenType.documentation.DocumentationFormatterEngine.java">org/hyphenType/documentation/DocumentationFormatterEngine.java</a>
+                  <a href="http://aamm.github.io/hyphenType//checkstyle.html#org.hyphenType.documentation.DocumentationFormatterEngine.java">org/hyphenType/documentation/DocumentationFormatterEngine.java</a>
                 </td>
                 <td>
                   0
