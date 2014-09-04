@@ -8,10 +8,10 @@
 	
 	<name>hyphenType</name>
 	<description>hyphenType is a tool to read command line arguments.</description>
-	<groupId>org.hyphenType</groupId>
+	<groupId>com.github.aamm</groupId>
 	<artifactId>hyphenType</artifactId>
 	<version>0.1</version>
-	<url>http://maven.apache.org</url>
+	<url>https://github.com/aamm/hyphenType</url>
 
 	<packaging>jar</packaging>
 
@@ -77,13 +77,22 @@
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
 				<version>2.4</version>
 				<configuration>
 					<archive>
 						<manifest>
 							<addClasspath>false</addClasspath>
-							<mainClass>org.hyphenType.documentation.rbgenerator.RBGenerator</mainClass>
+							<mainClass>com.github.aamm.hyphenType.documentation.rbgenerator.RBGenerator</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
@@ -156,11 +165,6 @@
 								</reportSet>
 							</reportSets>
 						</plugin>
-						<!--
-							<plugin> <groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-changelog-plugin</artifactId>
-							<version>2.2</version> </plugin>
-						-->
 					</reportPlugins>
 				</configuration>
 			</plugin>

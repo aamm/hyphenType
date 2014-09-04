@@ -12,8 +12,8 @@
 //START SNIPPET: 1
 package example.case1;
 
-import org.hyphenType.datastructure.Options;
-import org.hyphenType.datastructure.annotations.SimpleArgument;
+import com.github.aamm.hyphenType.datastructure.Options;
+import com.github.aamm.hyphenType.datastructure.annotations.SimpleArgument;
 
 @SuppressWarnings("unchecked")
 public interface XOpt extends Options {

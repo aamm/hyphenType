@@ -13,9 +13,10 @@ package example.case3;
 
 import java.io.IOException;
 
-import org.hyphenType.exceptions.InvalidOptionsInterfaceException;
-import org.hyphenType.unittesting.UnitTestingAppEngine;
 import org.junit.Test;
+
+import com.github.aamm.hyphenType.exceptions.InvalidOptionsInterfaceException;
+import com.github.aamm.hyphenType.unittesting.UnitTestingAppEngine;
 
 public class _Test {
 

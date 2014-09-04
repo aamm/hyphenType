@@ -12,9 +12,9 @@
 //START SNIPPET: 1
 package example.case2;
 
-import org.hyphenType.datastructure.Options;
-import org.hyphenType.datastructure.annotations.ArgumentsObject;
-import org.hyphenType.datastructure.annotations.SimpleArgument;
+import com.github.aamm.hyphenType.datastructure.Options;
+import com.github.aamm.hyphenType.datastructure.annotations.ArgumentsObject;
+import com.github.aamm.hyphenType.datastructure.annotations.SimpleArgument;
 
 @SuppressWarnings("unchecked")
 @ArgumentsObject(description = "Prints argA and argB to stdout.")

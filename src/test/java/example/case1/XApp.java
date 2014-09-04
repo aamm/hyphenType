@@ -12,7 +12,7 @@
 //START SNIPPET: 1
 package example.case1;
 
-import org.hyphenType.wrapper.StandAloneAppWrapper;
+import com.github.aamm.hyphenType.wrapper.StandAloneAppWrapper;
 
 public class XApp extends StandAloneAppWrapper {
 

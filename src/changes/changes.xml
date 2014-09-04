@@ -5,9 +5,13 @@
 		<author email="keitai.1948@gmail.com">Akira</author>
 	</properties>
 	<body>
-		<release version="current" description="Current work version">
+		<release version="0.1" description="Current work version">
 			<action dev="Akira" type="add">Creation of web site.</action>
 			<action dev="Akira" type="add">Basic features of hyphenType.</action>
+		</release>
+		<release version="current" description="Current work version">
+			<action dev="Akira" type="fix">Changed package from org.hyphenType to com.github.aamm.hyphenType</action>
+			<action dev="Akira" type="fix">Changed pom.xml to have the group ID: com.github.aamm</action>
 		</release>
 		<!-- Example for future references... 
 		<release version="0.01" date="2005-11-18" description="Release fix">
