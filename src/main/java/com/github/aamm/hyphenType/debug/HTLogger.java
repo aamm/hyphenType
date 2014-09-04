@@ -15,7 +15,7 @@ public class HTLogger {
    /**
     * System environment key to allow for users to change the debug mode when calling the JVM 
     */
-    public static final String HYPHEN_TYPE_DEBUG_MODE = "org.hyphenType.debug.debug-mode";
+    public static final String HYPHEN_TYPE_DEBUG_MODE = "com.github.aamm.hyphenType.debug.debug-mode";
    
    /**
     * If true, this class was already initialized. 

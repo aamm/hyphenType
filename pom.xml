@@ -10,7 +10,7 @@
 	<description>hyphenType is a tool to read command line arguments.</description>
 	<groupId>com.github.aamm</groupId>
 	<artifactId>hyphenType</artifactId>
-	<version>0.1</version>
+	<version>0.2</version>
 	<url>https://github.com/aamm/hyphenType</url>
 
 	<packaging>jar</packaging>

@@ -154,15 +154,15 @@ public enum ExitStatus implements StatusCode {
   contains the translations for a language whose code is langCode.
   
   The keys should be the full name of each enumeration constant. For instance,
-  the keys for the MyExitStatus above should be: org.hyphenType.tests.exit.MyExitStatus.A
-  and org.hyphenType.tests.exit.MyExitStatus.B.
+  the keys for the MyExitStatus above should be: com.github.aamm.hyphenType.tests.exit.MyExitStatus.A
+  and com.github.aamm.hyphenType.tests.exit.MyExitStatus.B.
 
   You can use an alias to avoid having to repeat the full enumeration name. So
   the default translation for MyExitStatus (MyOpt.properties) could be:
 
 +------------------------------------------------------+
-alias.exitcode = org.hyphenType.tests.exit.MyExitStatus
-alias.stdoc = org.hyphenType.exit.ExitStatusDocumentation
+alias.exitcode = com.github.aamm.hyphenType.tests.exit.MyExitStatus
+alias.stdoc = com.github.aamm.hyphenType.exit.ExitStatusDocumentation
 # When no exception happened
 ${exitcode}.A@${stdoc}.message = Program terminated OK.
 ${exitcode}.A@${stdoc}.userDescription = Correct termination.
@@ -187,8 +187,8 @@ ${exitcode}.B@${stdoc}.userDescription = Termination with error.
   (MyOpt_sp.properties) should have the following structure:
 
 +------------------------------------------------------+
-alias.exitcode = org.hyphenType.tests.exit.MyExitStatus
-alias.stdoc = org.hyphenType.exit.ExitStatusDocumentation
+alias.exitcode = com.github.aamm.hyphenType.tests.exit.MyExitStatus
+alias.stdoc = com.github.aamm.hyphenType.exit.ExitStatusDocumentation
 # When no exception happened
 ${exitcode}.A@${stdoc}.message = Todo termino bien.
 ${exitcode}.A@${stdoc}.userDescription = Êxito
@@ -205,8 +205,8 @@ ${exitcode}.B@${stdoc}.userDescription = Fracaso
   RBGenerator. So the RBGenerator was in charge of creating an empty template such as:
   
 +------------------------------------------------------+
-alias.exitcode = org.hyphenType.tests.exit.MyExitStatus
-alias.stdoc = org.hyphenType.exit.ExitStatusDocumentation
+alias.exitcode = com.github.aamm.hyphenType.tests.exit.MyExitStatus
+alias.stdoc = com.github.aamm.hyphenType.exit.ExitStatusDocumentation
 # When no exception happened
 ${exitcode}.A@${stdoc}.message = 
 ${exitcode}.A@${stdoc}.userDescription = 
@@ -225,7 +225,7 @@ ${exitcode}.B@${stdoc}.userDescription =
   
   So the next natural question could be how to attach this documentation to a
   status code. The answer is by simply decorating each status code constant with
-  the org.hyphenType.documentation.Description annotation. If this annotation is
+  the com.github.aamm.hyphenType.documentation.Description annotation. If this annotation is
   present, the RBGenerator will use the value of this annotation as the contents
   of the comment before each status code value, as in the three examples.
   

@@ -39,7 +39,7 @@ package my.package;
 
 import java.io.InputStream;
 
-import org.hyphenType.optionprocessors.lib.CustomizableValidatorEngine.Rule;
+import com.github.aamm.hyphenType.optionprocessors.lib.CustomizableValidatorEngine.Rule;
 
 public class WelcomeMessage implements Rule<CommandLineArguments> {
 

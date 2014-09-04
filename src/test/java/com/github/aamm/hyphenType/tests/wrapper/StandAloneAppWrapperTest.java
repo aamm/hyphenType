@@ -26,7 +26,7 @@ public class StandAloneAppWrapperTest {
     public void test1() throws Throwable {
 	MyApp.x = false;
 	MyApp.xopt = "";
-	StandAloneAppWrapper.main(new String[] {StandAloneAppWrapper.ARGUMENT + "org.hyphenType.tests.wrapper.MyApp", "-x=BLA!" });
+	StandAloneAppWrapper.main(new String[] {StandAloneAppWrapper.ARGUMENT + "com.github.aamm.hyphenType.tests.wrapper.MyApp", "-x=BLA!" });
 	assertEquals(true, MyApp.x);
 	assertEquals("BLA!", MyApp.xopt);
     }

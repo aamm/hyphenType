@@ -109,10 +109,10 @@ public class DefaultAnnotationTest {
         X1 annotation = DefaultAnnotation.getAnnotation(Z1.class, X1.class);
 
         HashMap<String, String> map = new HashMap<String, String>();
-        map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X1.a", "avocado");
-        map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X1.b", "pineapple");
-        map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X1.c", "lemon");
-        map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X1.d", "strawberry");
+        map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X1.a", "avocado");
+        map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X1.b", "pineapple");
+        map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X1.c", "lemon");
+        map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X1.d", "strawberry");
         /*
          * DefaultAnnotation should tolerate options that are not present in the annotation.
          */
@@ -129,7 +129,7 @@ public class DefaultAnnotationTest {
         X1 annotation = DefaultAnnotation.getAnnotationWithDefaults(X1.class);
 
         HashMap<String, String> map = new HashMap<String, String>();
-        map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X1.c", "banana");
+        map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X1.c", "banana");
 
         DefaultAnnotation.fillWithResourceBundle(annotation, new ConfigurableListResourceBundle(map));
 
@@ -174,10 +174,10 @@ public class DefaultAnnotationTest {
         X1Method annotation = DefaultAnnotation.getAnnotation(Z1.class.getMethod("x"), X1Method.class);
 
         HashMap<String, String> map = new HashMap<String, String>();
-        map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X1Method.d", "avocado");
-        map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X1Method.e", "pineapple");
-        map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X1Method.f", "lemon");
-        map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X1Method.g", "strawberry");
+        map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X1Method.d", "avocado");
+        map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X1Method.e", "pineapple");
+        map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X1Method.f", "lemon");
+        map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X1Method.g", "strawberry");
         /*
          * DefaultAnnotation should ignore entries in the resource bundles that are not present in the annotation.
          * g is an example of such entry.
@@ -195,7 +195,7 @@ public class DefaultAnnotationTest {
         X1Method annotation = DefaultAnnotation.getAnnotationWithDefaults(X1Method.class);
 
         HashMap<String, String> map = new HashMap<String, String>();
-        map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X1Method.f", "banana");
+        map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X1Method.f", "banana");
 
         DefaultAnnotation.fillWithResourceBundle(annotation, new ConfigurableListResourceBundle(map));
 
@@ -216,9 +216,9 @@ public class DefaultAnnotationTest {
         X1 annotation = DefaultAnnotation.getAnnotation(Z1.class, X1.class);
 
         HashMap<String, String> map = new HashMap<String, String>();
-        map.put("org.hyphenType.tests.util.DefaultAnnotationTest$Z1@org.hyphenType.tests.util.DefaultAnnotationTest$X1.a", "AA");
-        map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X1.a", "QQQ");
-        map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X1.b", "BB");
+        map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$Z1@com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X1.a", "AA");
+        map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X1.a", "QQQ");
+        map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X1.b", "BB");
 
         DefaultAnnotation.fillWithResourceBundle(annotation, new ConfigurableListResourceBundle(map));
 
@@ -240,11 +240,11 @@ public class DefaultAnnotationTest {
         X1Method yAnnotation = DefaultAnnotation.getAnnotation(Z1.class.getMethod("y"), X1Method.class);
         
         HashMap<String, String> map = new HashMap<String, String>();
-        map.put("org.hyphenType.tests.util.DefaultAnnotationTest$Z1.x@org.hyphenType.tests.util.DefaultAnnotationTest$X1Method.d", "xD");
-        map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X1Method.e", "xE");
-        map.put("org.hyphenType.tests.util.DefaultAnnotationTest$Z1.y@org.hyphenType.tests.util.DefaultAnnotationTest$X1Method.d", "yD");
-        map.put("org.hyphenType.tests.util.DefaultAnnotationTest$Z1.y@org.hyphenType.tests.util.DefaultAnnotationTest$X1Method.e", "yE");
-        map.put("org.hyphenType.tests.util.DefaultAnnotationTest$Z1.y@org.hyphenType.tests.util.DefaultAnnotationTest$X1Method.f", "yF");
+        map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$Z1.x@com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X1Method.d", "xD");
+        map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X1Method.e", "xE");
+        map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$Z1.y@com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X1Method.d", "yD");
+        map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$Z1.y@com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X1Method.e", "yE");
+        map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$Z1.y@com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X1Method.f", "yF");
         
         DefaultAnnotation.fillWithResourceBundle(xAnnotation, new ConfigurableListResourceBundle(map));
         DefaultAnnotation.fillWithResourceBundle(yAnnotation, new ConfigurableListResourceBundle(map));
@@ -271,11 +271,11 @@ public class DefaultAnnotationTest {
         X1Field f2Annotation = DefaultAnnotation.getAnnotation(Z1.class.getField("f2"), X1Field.class);
         
         HashMap<String, String> map = new HashMap<String, String>();
-        map.put("org.hyphenType.tests.util.DefaultAnnotationTest$Z1.f1@org.hyphenType.tests.util.DefaultAnnotationTest$X1Field.g", "f1g");
-        map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X1Field.h", "hhhh");
-        map.put("org.hyphenType.tests.util.DefaultAnnotationTest$Z1.f2@org.hyphenType.tests.util.DefaultAnnotationTest$X1Field.g", "f2g");
-        map.put("org.hyphenType.tests.util.DefaultAnnotationTest$Z1.f2@org.hyphenType.tests.util.DefaultAnnotationTest$X1Field.h", "f2h");
-        map.put("org.hyphenType.tests.util.DefaultAnnotationTest$Z1.f2@org.hyphenType.tests.util.DefaultAnnotationTest$X1Field.i", "f2i");
+        map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$Z1.f1@com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X1Field.g", "f1g");
+        map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X1Field.h", "hhhh");
+        map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$Z1.f2@com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X1Field.g", "f2g");
+        map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$Z1.f2@com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X1Field.h", "f2h");
+        map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$Z1.f2@com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X1Field.i", "f2i");
         
         DefaultAnnotation.fillWithResourceBundle(f1Annotation, new ConfigurableListResourceBundle(map));
         DefaultAnnotation.fillWithResourceBundle(f2Annotation, new ConfigurableListResourceBundle(map));
@@ -341,12 +341,12 @@ public class DefaultAnnotationTest {
 	X2 x2 = DefaultAnnotation.getAnnotation(Z2.class, X2.class);
 
 	HashMap<String, String> map = new HashMap<String, String>();
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X2.a[0]", "tuna");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X2.a[1]", "shrimp");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X2.b[0]", "starfish");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X2.b[1]", "oister");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X2.b[2]", "cod");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X2.c", "strawberry"); // DefaultAnnotation
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X2.a[0]", "tuna");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X2.a[1]", "shrimp");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X2.b[0]", "starfish");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X2.b[1]", "oister");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X2.b[2]", "cod");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X2.c", "strawberry"); // DefaultAnnotation
 	// should tolerate
 	// options that are
 	// not present in the
@@ -411,15 +411,15 @@ public class DefaultAnnotationTest {
 
 	HashMap<String, String> map = new HashMap<String, String>();
 	
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X3.subA.a", "w1");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X3.subA.b[0]", "w2");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X3.subA.b[1]", "w3");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X3.subA.b[2]", "w4");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X3.subB.a", "w5");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X3.subB.b[0]", "w6");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X3.subB.b[1]", "w7");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X3.subB.b[2]", "w8");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X3.subB.b[3]", "w9");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X3.subA.a", "w1");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X3.subA.b[0]", "w2");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X3.subA.b[1]", "w3");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X3.subA.b[2]", "w4");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X3.subB.a", "w5");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X3.subB.b[0]", "w6");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X3.subB.b[1]", "w7");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X3.subB.b[2]", "w8");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X3.subB.b[3]", "w9");
 
 	DefaultAnnotation.fillWithResourceBundle(x3, new ConfigurableListResourceBundle(map));
 
@@ -478,23 +478,23 @@ public class DefaultAnnotationTest {
 	X4 x4 = DefaultAnnotation.getAnnotation(Z4.class, X4.class);
 
 	HashMap<String, String> map = new HashMap<String, String>();
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X4.subA[0].a", "w1");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X4.subA[0].b[0]", "w2");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X4.subA[0].b[1]", "w3");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X4.subA[0].b[2]", "w4");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X4.subA[1].a", "w5");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X4.subA[1].b[0]", "w6");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X4.subA[1].b[1]", "w7");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X4.subA[1].b[2]", "w8");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X4.subA[1].b[3]", "w9");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X4.subA[1].b[4]", "w10");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X4.subB.a", "w11");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X4.subB.b[0]", "w12");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X4.subB.b[1]", "w13");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X4.subB.b[2]", "w14");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X4.subB.b[3]", "w15");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X4.subB.b[4]", "w16");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X4.subB.b[5]", "w17");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X4.subA[0].a", "w1");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X4.subA[0].b[0]", "w2");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X4.subA[0].b[1]", "w3");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X4.subA[0].b[2]", "w4");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X4.subA[1].a", "w5");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X4.subA[1].b[0]", "w6");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X4.subA[1].b[1]", "w7");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X4.subA[1].b[2]", "w8");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X4.subA[1].b[3]", "w9");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X4.subA[1].b[4]", "w10");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X4.subB.a", "w11");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X4.subB.b[0]", "w12");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X4.subB.b[1]", "w13");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X4.subB.b[2]", "w14");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X4.subB.b[3]", "w15");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X4.subB.b[4]", "w16");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X4.subB.b[5]", "w17");
 
 	DefaultAnnotation.fillWithResourceBundle(x4, new ConfigurableListResourceBundle(map));
 
@@ -513,10 +513,10 @@ public class DefaultAnnotationTest {
 
 	// The following map is not overriding the subA property.
 	HashMap<String, String> map = new HashMap<String, String>();
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X4.subB.a", "z0");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X4.subB.b[0]", "z1");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X4.subB.b[1]", "z2");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X4.subB.b[2]", "z3");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X4.subB.a", "z0");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X4.subB.b[0]", "z1");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X4.subB.b[1]", "z2");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X4.subB.b[2]", "z3");
 
 	DefaultAnnotation.fillWithResourceBundle(x4, new ConfigurableListResourceBundle(map));
 
@@ -534,7 +534,7 @@ public class DefaultAnnotationTest {
 	X4 x4 = DefaultAnnotation.getAnnotation(Z4.class, X4.class);
 
 	HashMap<String, String> map = new HashMap<String, String>();
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X4.subA[1].a", "tttttt");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X4.subA[1].a", "tttttt");
 
 	DefaultAnnotation.fillWithResourceBundle(x4, new ConfigurableListResourceBundle(map));
 
@@ -649,34 +649,34 @@ public class DefaultAnnotationTest {
 	assertNotNull(x6);
 
 	HashMap<String, String> map = new HashMap<String, String>();
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X6.name", "World");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].name", "Americas");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[0].name", "North America");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[0].subs[0].name", "Canada");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[0].subs[1].name", "United States");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[0].subs[2].name", "Mexico");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[1].name", "Central America");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[1].subs[0].name", "Cuba");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[1].subs[1].name", "El Salvador");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[1].subs[2].name", "Puerto Rico");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[1].subs[3].name", "Haiti");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[2].name", "South America");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[2].subs[0].name", "Colombia");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[2].subs[1].name", "Venezuela");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[2].subs[2].name", "Brazil");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[2].subs[3].name", "Chile");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[2].subs[4].name", "Uruguay");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[1].name", "Eurasia");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[1].subs[0].name", "Europe");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[1].subs[0].subs[0].name", "France");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[1].subs[0].subs[1].name", "Germany");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[1].subs[0].subs[2].name", "Italy");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[1].subs[1].name", "Asia");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[1].subs[1].subs[0].name", "China");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[1].subs[1].subs[1].name", "Mongolia");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[1].subs[1].subs[2].name", "Japan");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[1].subs[1].subs[3].name", "South Korea");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[1].subs[1].subs[4].name", "Vietnam");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X6.name", "World");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].name", "Americas");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[0].name", "North America");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[0].subs[0].name", "Canada");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[0].subs[1].name", "United States");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[0].subs[2].name", "Mexico");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[1].name", "Central America");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[1].subs[0].name", "Cuba");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[1].subs[1].name", "El Salvador");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[1].subs[2].name", "Puerto Rico");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[1].subs[3].name", "Haiti");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[2].name", "South America");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[2].subs[0].name", "Colombia");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[2].subs[1].name", "Venezuela");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[2].subs[2].name", "Brazil");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[2].subs[3].name", "Chile");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[2].subs[4].name", "Uruguay");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[1].name", "Eurasia");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[1].subs[0].name", "Europe");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[1].subs[0].subs[0].name", "France");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[1].subs[0].subs[1].name", "Germany");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[1].subs[0].subs[2].name", "Italy");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[1].subs[1].name", "Asia");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[1].subs[1].subs[0].name", "China");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[1].subs[1].subs[1].name", "Mongolia");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[1].subs[1].subs[2].name", "Japan");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[1].subs[1].subs[3].name", "South Korea");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[1].subs[1].subs[4].name", "Vietnam");
 
 	DefaultAnnotation.fillWithResourceBundle(x6,
 		new ConfigurableListResourceBundle(map));
@@ -711,7 +711,7 @@ public class DefaultAnnotationTest {
 	assertEquals("Vietnam", x6.subs()[1].subs()[1].subs()[4].name());
 
 	map = new HashMap<String, String>();
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[1].subs[2].name", "Nicaragua");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[1].subs[2].name", "Nicaragua");
 
 	DefaultAnnotation.fillWithResourceBundle(x6, new ConfigurableListResourceBundle(map));
 	assertEquals("World", x6.name());
@@ -744,9 +744,9 @@ public class DefaultAnnotationTest {
 	assertEquals("Vietnam", x6.subs()[1].subs()[1].subs()[4].name());
 
 	map = new HashMap<String, String>();
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[3].name", "Others");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[3].subs[0].name", "Easter Island");
-	map.put("org.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[3].subs[1].name", "Hawaii");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[3].name", "Others");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[3].subs[0].name", "Easter Island");
+	map.put("com.github.aamm.hyphenType.tests.util.DefaultAnnotationTest$X6.subs[0].subs[3].subs[1].name", "Hawaii");
 
 	DefaultAnnotation.fillWithResourceBundle(x6, new ConfigurableListResourceBundle(map));
 	assertEquals("World", x6.name());

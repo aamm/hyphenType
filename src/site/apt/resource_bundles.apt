@@ -20,10 +20,10 @@ Example
   Let us start by checking a very simple example.
   
 +------------------------------------------------------+
-org.hyphenType.tests.exit.MyExitStatus.A = x 
-org.hyphenType.tests.exit.MyExitStatus.A.message = y 
-org.hyphenType.tests.exit.MyExitStatus.B = z
-org.hyphenType.tests.exit.MyExitStatus.B.message = w 
+com.github.aamm.hyphenType.tests.exit.MyExitStatus.A = x 
+com.github.aamm.hyphenType.tests.exit.MyExitStatus.A.message = y 
+com.github.aamm.hyphenType.tests.exit.MyExitStatus.B = z
+com.github.aamm.hyphenType.tests.exit.MyExitStatus.B.message = w 
 +------------------------------------------------------+
   
 How resource bundles are read
@@ -56,7 +56,7 @@ Resource bundle syntax
    
   [[2]] UTF-8 encoding - Standard Java resource bundles are not encoded at UFT-8. As a result, documentation in languages that uses anything not in the ASCII table need special editors or cumbersome translations to escaping formats.
   
-  [[3]] Arrays - Sometimes we need to store arrays. For instance, the {{{.site/apidocs/org/hyphenType/datastructure/annotations/Option.html}org.hyphenType.annotations.Option}} annotation has the "names" property, which is an array of strings.
+  [[3]] Arrays - Sometimes we need to store arrays. For instance, the {{{.site/apidocs/com/github/aamm/hyphenType/datastructure/annotations/Option.html}com.github.aamm.hyphenType.annotations.Option}} annotation has the "names" property, which is an array of strings.
   
   []
   
@@ -148,7 +148,7 @@ MyOptions@MyAnnotation.p3 = "3"
   rewritten as:
 
 +------------------------------------------------------+
-alias.status = org.hyphenType.tests.exit.MyExitStatus
+alias.status = com.github.aamm.hyphenType.tests.exit.MyExitStatus
 ${status}.A = x 
 ${status}.A.message = y 
 ${status}.B = z
@@ -165,7 +165,7 @@ ${status}.B.message = w
   declaring the application of an annotation:
   
 +------------------------------------------------------+
-alias.a = org.hyphenType.tests.exit.MyExitStatus
+alias.a = com.github.aamm.hyphenType.tests.exit.MyExitStatus
 alias.b = bla.bla.bla
 ${a}@${b} = x
 +------------------------------------------------------+
@@ -242,7 +242,7 @@ RBGenerator
   Writing a complete configuration for an options interface can be a tedious
   task. We provide the RBGenerator tool to make this task easier.
   
-  {{{.site/apidocs/org/hyphenType/documentation/rbgenerator/RBGenerator.html}org.hyphenType.documentation.rbgenerator.RBGenerator}}
+  {{{.site/apidocs/com/github/aamm/hyphenType/documentation/rbgenerator/RBGenerator.html}com.github.aamm.hyphenType.documentation.rbgenerator.RBGenerator}}
   is a simple command line application that generates a template for an options
   interface. When calling the RBGenerator, one needs to pass the full name of
   the options interface. The RBGenerator analyzes the options interface and
@@ -252,12 +252,12 @@ RBGenerator
 
   The hyphenType JAR is set to execute the RBGenerator as the default main class. So calling the
   RBGenerator tool is done by simply running the
-  org.hyphenType.documentation.rbgenerator.RBGenerator class in the distribution JAR. The following
+  com.github.aamm.hyphenType.documentation.rbgenerator.RBGenerator class in the distribution JAR. The following
   shows how to it. Please note that you may have a different version of the hyphenType distribution,
   so the JAR file name can be something other than "hyphenType-0.1.jar" depending on the version.
   
 +----------------------------------------------------------------------------------------------+
-java -classpath hyphenType-0.1.jar org.hyphenType.documentation.rbgenerator.RBGenerator
+java -classpath hyphenType-0.1.jar com.github.aamm.hyphenType.documentation.rbgenerator.RBGenerator
 +----------------------------------------------------------------------------------------------+
 
   And this is the output you should get:
@@ -273,7 +273,7 @@ No options interface. Giving up. Use --help for more details.
   argument. Here is how to provide this argument:
 
 +----------------------------------------------------------------------------------------------+
-java -classpath hyphenType-0.1.jar org.hyphenType.documentation.rbgenerator.RBGenerator --help
+java -classpath hyphenType-0.1.jar com.github.aamm.hyphenType.documentation.rbgenerator.RBGenerator --help
 +----------------------------------------------------------------------------------------------+
 
   And this is the output you should get:
@@ -308,7 +308,7 @@ Options
   the following:
 
 +----------------------------------------------------------------------------------------------------------------+
-java -classpath MyApp.jar:hyphenType-0.1.jar org.hyphenType.documentation.rbgenerator.RBGenerator a.b.c.MyOptions
+java -classpath MyApp.jar:hyphenType-0.1.jar com.github.aamm.hyphenType.documentation.rbgenerator.RBGenerator a.b.c.MyOptions
 +----------------------------------------------------------------------------------------------------------------+
 
   As you did not provide a 
@@ -317,7 +317,7 @@ java -classpath MyApp.jar:hyphenType-0.1.jar org.hyphenType.documentation.rbgene
 
   Besides the obvious properties (the ones that can be printed as part of the documentation, for
   instance), the RBGenerator also outputs the keys for internal error messages, such as the one
-  that controls how org.hyphenType.lexerparser.exceptions.MandatoryMapValueNotFoundException
+  that controls how com.github.aamm.hyphenType.lexerparser.exceptions.MandatoryMapValueNotFoundException
   outputs error messages.
   
   These properties are hard to remember since they are spread across the hyphenType API. This is

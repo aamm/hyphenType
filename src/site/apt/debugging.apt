@@ -9,20 +9,20 @@ Debugging
   of improvements for hyphenType. Then how to balance those two things?
   
   Our solution is to allow a user to turn on the messages by setting the environment variable
-  org.hyphenType.debug.debug-mode to "true". Also, debug mode can be turned on by calling
-  org.hyphenType.debug.HTLogger.setDebugMode(true). The following illustrates the former:
+  com.github.aamm.hyphenType.debug.debug-mode to "true". Also, debug mode can be turned on by calling
+  com.github.aamm.hyphenType.debug.HTLogger.setDebugMode(true). The following illustrates the former:
   
 +-------------------------------------------------+
-java -Dorg.hyphenType.debug.debug-mode=true MyApp
+java -Dcom.github.aamm.hyphenType.debug.debug-mode=true MyApp
 +-------------------------------------------------+
   
   The default print stream used is System.out and this print stream can be replaced by calling the
-  org.hyphenType.debug.HTLogger.setOutput(PrintStream newPrintStream) method.
+  com.github.aamm.hyphenType.debug.HTLogger.setOutput(PrintStream newPrintStream) method.
   
   Although it is advisable that to use a more sophisticated log tool such as Log4J, it is possible
-  to use org.hyphenType.debug.HTLogger.log(String message) for simple logging.
+  to use com.github.aamm.hyphenType.debug.HTLogger.log(String message) for simple logging.
   
-  org.hyphenType.debug.HTLogger.log(String message) does reflection in order to find out what is
+  com.github.aamm.hyphenType.debug.HTLogger.log(String message) does reflection in order to find out what is
   the caller class and method, which makes this method extremely slow.
   
   We did not opt for using another more advanced log utility to avoid adding a dependency in
